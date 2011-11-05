@@ -1,5 +1,9 @@
 package com.uoc.loadsensing;
 
+/**
+ * Comentario de Prueba para validar cambios con EGit
+ */
+
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
@@ -27,7 +31,7 @@ public class LoginActivity extends Activity {
         etUser = (EditText)findViewById(R.id.et_user);
         etPass= (EditText)findViewById(R.id.et_pass);
         
-        // Listening to click on LoginButton
+        // Listening to click on LoginButton 
         btnLogin.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
