@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+ 
+  <!-- Screen Design for the MapNetwork Activity -->
+  <!--  
+  	android:apiKey="0QhwC8zAj3ptLnveVVM3FEJMqAl76OZoLM3Q2jw"   (Emulador)
+  	android:apiKey="0QhwC8zAj3puB2zinULhl2SFw-HQwapI6VyP5yw"   (Real)
+	-->  
+	<com.google.android.maps.MapView
+    	android:id="@+id/mapa"
+    	android:layout_width="fill_parent"
+    	android:layout_height="fill_parent"
+  		android:apiKey="0QhwC8zAj3puB2zinULhl2SFw-HQwapI6VyP5yw"  	
+    	android:clickable="true" />              
+</LinearLayout>
+

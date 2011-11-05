@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:orientation="vertical"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent">
+  <!--  
+  	android:apiKey="0QhwC8zAj3ptLnveVVM3FEJMqAl76OZoLM3Q2jw"   (Emulador)
+  	android:apiKey="0QhwC8zAj3puB2zinULhl2SFw-HQwapI6VyP5yw"   (Real)
+	-->  
+	<TextView
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text="Hello"/>
+
+	<com.google.android.maps.MapView
+		android:id="@+id/mapview"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:clickable="true"
+		android:apiKey="0QhwC8zAj3puB2zinULhl2SFw-HQwapI6VyP5yw" />
+ 
+</LinearLayout>

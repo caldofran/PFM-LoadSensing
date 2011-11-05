@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical" 
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+	<ImageView android:src="@drawable/ico_camera"
+  		android:layout_width="fill_parent"
+  		android:layout_height="wrap_content"
+  		android:layout_marginLeft="10dip"
+    	android:gravity="center"/>	
+	<FrameLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content">
+	    <EditText android:id="@+id/editTextShowLocation"
+	    	android:layout_height="wrap_content" 
+	    	android:text=""
+    		android:layout_width="match_parent" 
+    		android:lines="2" 
+    		android:gravity="top"/>
+	</FrameLayout>
+	<Button android:layout_height="wrap_content"
+		android:layout_width="match_parent" android:id="@+id/btnScanQR"
+		android:text="Scan QR Code" android:textSize="15sp"
+		android:textStyle="bold" android:layout_marginTop="10dip" />
+	<Button android:layout_height="wrap_content"
+		android:layout_width="match_parent" android:id="@+id/btnSendQR"
+		android:text="Send QR Code" android:textSize="15sp"
+		android:textStyle="bold" android:layout_marginTop="10dip" />		
+</LinearLayout>

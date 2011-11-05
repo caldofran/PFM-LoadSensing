@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="uoc_id">UOC Project</string>
+    <string name="app_name">LoadSensing</string>
+    
+    <!-- Literales para Login Activity -->
+    <string name="user_name">User</string>
+    <string name="user_pass">Password</string>
+    <string name="url_ws">http://www.worldsensing.com</string>
+    <string name="visit_ws">Click here to Visit WorldSensing</string>
+	
+	<!-- Literales para ListNetworkActivity -->
+    <string name="lst_not_available">Networks List Not Available</string>
+    <string name="lst_wait">Please wait...</string>
+    <string name="lst_retreive_data">Retrieving Network List...</string>
+    <string name="lst_click_network">Click Menu Button to see Actions</string>
+    
+    <!-- Literales para el option menu de una Network -->
+    <string name="menu_nt_state">State</string>
+    <string name="menu_nt_sensors">Sensors</string>
+    <string name="menu_nt_images">Images</string>
+    
+    <!-- Literales para el TabMenu -->
+    <string name="tab_map">Map</string>
+    <string name="tab_list">Networks</string>
+    <string name="tab_qrcode">QR Code</string>
+</resources>
