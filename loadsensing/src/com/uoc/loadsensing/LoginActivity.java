@@ -1,7 +1,7 @@
 package com.uoc.loadsensing;
 
 /**
- * Comentario de Prueba para validar cambios con EGit
+ * Cabecera de Clase
  */
 
 import android.app.Activity;
