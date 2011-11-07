@@ -19,3 +19,7 @@ Cuando tengamos algo estable en esta rama fusionaremos los cambios a la rama "ma
 "master" sera la rama principal la cual liberaremos cuando tengamos la versión final.
 
 Ahora esta linea va para ver si puedo hacer push solo en la rama "develop"
+
+Esta rama va a ser para crear el feature "mapa".
+Cuando haya terminado con el mapa fusionare esta rama con la de desarrollo.
+
