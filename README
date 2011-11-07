@@ -12,3 +12,8 @@ Otras lineas mas!
 Ya le vamos pillando el punto a esto de GIT ;-)
 
 Ahora voy a editar estas lienas para bajarmelas a mi local...
+
+Esta linea del README es para crear la branch "develop".
+Esta rama la usaremos para llevar a cabo todo el desarrollo.
+Cuando tengamos algo estable en esta rama fusionaremos los cambios a la rama "master".
+"master" sera la rama principal la cual liberaremos cuando tengamos la versión final.
