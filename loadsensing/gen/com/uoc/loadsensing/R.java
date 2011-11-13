@@ -15,44 +15,52 @@ public final class R {
     }
     public static final class drawable {
         public static final int bg=0x7f020000;
-        public static final int ico_barcode_gray=0x7f020001;
-        public static final int ico_barcode_white=0x7f020002;
-        public static final int ico_camera=0x7f020003;
-        public static final int ico_globe_gray=0x7f020004;
-        public static final int ico_globe_white=0x7f020005;
-        public static final int ico_list_gray=0x7f020006;
-        public static final int ico_list_white=0x7f020007;
-        public static final int ico_menu_images=0x7f020008;
-        public static final int ico_menu_sensors=0x7f020009;
-        public static final int ico_menu_state=0x7f02000a;
-        public static final int ico_qrcode=0x7f02000b;
-        public static final int icon=0x7f02000c;
-        public static final int icon_barcode_tab=0x7f02000d;
-        public static final int icon_globe_tab=0x7f02000e;
-        public static final int icon_list_tab=0x7f02000f;
-        public static final int login_button_theme=0x7f020010;
-        public static final int logo=0x7f020011;
-        public static final int repeat_bg=0x7f020012;
-        public static final int tag=0x7f020013;
+        public static final int gray_button_theme=0x7f020001;
+        public static final int ico_barcode_gray=0x7f020002;
+        public static final int ico_barcode_white=0x7f020003;
+        public static final int ico_camera=0x7f020004;
+        public static final int ico_globe_gray=0x7f020005;
+        public static final int ico_globe_white=0x7f020006;
+        public static final int ico_list_gray=0x7f020007;
+        public static final int ico_list_white=0x7f020008;
+        public static final int ico_menu_images=0x7f020009;
+        public static final int ico_menu_sensors=0x7f02000a;
+        public static final int ico_menu_state=0x7f02000b;
+        public static final int ico_qrcode=0x7f02000c;
+        public static final int icon=0x7f02000d;
+        public static final int icon_barcode_tab=0x7f02000e;
+        public static final int icon_globe_tab=0x7f02000f;
+        public static final int icon_list_tab=0x7f020010;
+        public static final int location=0x7f020011;
+        public static final int location_p=0x7f020012;
+        public static final int login_button_theme=0x7f020013;
+        public static final int logo=0x7f020014;
+        public static final int nav_bar=0x7f020015;
+        public static final int repeat_bg=0x7f020016;
+        public static final int tag=0x7f020017;
     }
     public static final class id {
         public static final int btnLogin=0x7f070004;
-        public static final int btnScanQR=0x7f07000c;
-        public static final int btnSendQR=0x7f07000d;
-        public static final int descripttext=0x7f070010;
-        public static final int editTextShowLocation=0x7f07000b;
+        public static final int btnScanQR=0x7f070010;
+        public static final int btnSendQR=0x7f070011;
+        public static final int descripttext=0x7f070014;
+        public static final int editTextShowLocation=0x7f07000f;
         public static final int et_pass=0x7f070003;
         public static final int et_user=0x7f070002;
         public static final int footer=0x7f070001;
         public static final int header=0x7f070000;
-        public static final int icon=0x7f07000e;
-        public static final int mapa=0x7f070007;
+        public static final int icon=0x7f070012;
+        public static final int linearLayout2=0x7f07000a;
+        public static final int map_menu_bar=0x7f070007;
+        public static final int map_name=0x7f070008;
+        public static final int mapa=0x7f07000b;
         public static final int mapview=0x7f070006;
-        public static final int menu_images=0x7f07000a;
-        public static final int menu_sensors=0x7f070009;
-        public static final int menu_state=0x7f070008;
-        public static final int nametext=0x7f07000f;
-        public static final int network_name=0x7f070011;
+        public static final int menu_images=0x7f07000e;
+        public static final int menu_sensors=0x7f07000d;
+        public static final int menu_state=0x7f07000c;
+        public static final int my_location_button=0x7f070009;
+        public static final int nametext=0x7f070013;
+        public static final int network_name=0x7f070015;
         public static final int visit_worldsensing=0x7f070005;
     }
     public static final class layout {
@@ -82,6 +90,9 @@ public final class R {
         /**  Literales para el option menu de una Network 
          */
         public static final int menu_nt_state=0x7f05000a;
+        /**  Literales para el Mapa 
+         */
+        public static final int network_map_title=0x7f050010;
         public static final int tab_list=0x7f05000e;
         /**  Literales para el TabMenu 
          */
@@ -96,6 +107,7 @@ public final class R {
         public static final int visit_ws=0x7f050005;
     }
     public static final class style {
+        public static final int ButtonGray=0x7f060001;
         public static final int LoginButton=0x7f060000;
     }
 }

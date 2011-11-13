@@ -4,17 +4,53 @@
   android:orientation="vertical"
   android:layout_width="fill_parent"
   android:layout_height="fill_parent">
+  
+  <!-- Map menu bar to place localization button -->
+  <RelativeLayout android:layout_width="fill_parent" 
+    android:layout_height="fill_parent"
+    android:layout_weight = "8"
+    android:background="@drawable/nav_bar" 
+    android:id="@+id/map_menu_bar" 
+    android:baselineAligned="false" 
+    android:orientation="horizontal" android:gravity="center_vertical|center_horizontal">
+        
+        <TextView android:layout_height="wrap_content" 
+        android:textColor="#FFF"  
+        android:layout_width="fill_parent"
+        android:gravity="center_vertical|center_horizontal" 
+        android:textStyle="bold" 
+        android:text="@string/network_map_title" 
+        android:textSize="22sp" 
+        android:id="@+id/map_name" android:layout_centerVertical="true"></TextView>
+	    
+ 		<ImageButton 
+        android:gravity="left" 
+        android:id="@+id/my_location_button" 
+        android:src="@drawable/location" 
+        android:layout_height="wrap_content" 
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        style="@style/ButtonGray"
+        android:layout_margin="3dip" android:visibility="visible" android:layout_centerVertical="true"></ImageButton>         
+        
+    </RelativeLayout>
  
   <!-- Screen Design for the MapNetwork Activity -->
   <!--  
   	android:apiKey="0QhwC8zAj3ptLnveVVM3FEJMqAl76OZoLM3Q2jw"   (Emulador)
   	android:apiKey="0QhwC8zAj3puB2zinULhl2SFw-HQwapI6VyP5yw"   (Real)
-	-->  
-	<com.google.android.maps.MapView
-    	android:id="@+id/mapa"
-    	android:layout_width="fill_parent"
-    	android:layout_height="fill_parent"
-  		android:apiKey="0QhwC8zAj3puB2zinULhl2SFw-HQwapI6VyP5yw"  	
-    	android:clickable="true" />              
+	-->
+	<LinearLayout android:id="@+id/linearLayout2" 
+	    android:layout_width="fill_parent" 
+	    android:layout_height="fill_parent"
+	    android:layout_weight = "1"
+	    android:orientation="vertical">  
+		<com.google.android.maps.MapView
+    		android:id="@+id/mapa"
+    		android:layout_width="fill_parent"
+    		android:layout_height="fill_parent"
+  			android:apiKey="0QhwC8zAj3puB2zinULhl2SFw-HQwapI6VyP5yw"  	
+    		android:clickable="true" />
+    </LinearLayout>              
 </LinearLayout>
 
