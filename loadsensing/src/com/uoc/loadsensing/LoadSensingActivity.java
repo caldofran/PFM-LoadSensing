@@ -32,7 +32,7 @@ public class LoadSensingActivity extends Activity {
 				break;
 
 			case LISTNETWORKS_ACTIVITY: 
-				ActivityIntent.setClass(getApplicationContext(), ListNetworkActivity.class);
+				ActivityIntent.setClass(getApplicationContext(), ListNetworksActivity.class);
 				break;
 				
 			case QRCODE_ACTIVITY: 
@@ -52,7 +52,7 @@ public class LoadSensingActivity extends Activity {
 		final ImageButton img_bt_qrcode	= (ImageButton) findViewById(R.id.btn_qrcode);
 
 		if (section.compareTo(MAP_SECTION) != 0) {
-			img_btn_map.setImageResource(R.drawable.btn_map);
+			img_btn_map.setImageResource(R.drawable.btn_map_btn);
 
 			img_btn_map.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -61,11 +61,11 @@ public class LoadSensingActivity extends Activity {
 				}
 			});
 		} else {
-			img_btn_map.setImageResource(R.drawable.btn_map_enabled);
+			img_btn_map.setImageResource(R.drawable.btn_map_btn_enabled);
 		}
 
 		if (section.compareTo(LISTNETWORKS_SECTION) != 0) {
-			img_btn_list.setImageResource(R.drawable.btn_listnetwork);
+			img_btn_list.setImageResource(R.drawable.btn_listnetwork_btn);
 
 			img_btn_list.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -74,11 +74,11 @@ public class LoadSensingActivity extends Activity {
 				}
 			});
 		} else {
-			img_btn_list.setImageResource(R.drawable.btn_listnetwork_enabled);
+			img_btn_list.setImageResource(R.drawable.btn_listnetwork_btn_enabled);
 		}
 
 		if (section.compareTo(QRCODE_SECTION) != 0) {
-			img_bt_qrcode.setImageResource(R.drawable.btn_qrcode);
+			img_bt_qrcode.setImageResource(R.drawable.btn_qrcode_btn);
 			img_bt_qrcode.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View v) {
@@ -87,7 +87,7 @@ public class LoadSensingActivity extends Activity {
 			});
 
 		} else {
-			img_bt_qrcode.setImageResource(R.drawable.btn_qrcode_enabled);
+			img_bt_qrcode.setImageResource(R.drawable.btn_qrcode_btn_enabled);
 		}
 
 	}
