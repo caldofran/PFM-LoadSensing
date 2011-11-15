@@ -38,6 +38,7 @@ public final class R {
         public static final int nav_bar=0x7f020015;
         public static final int repeat_bg=0x7f020016;
         public static final int tag=0x7f020017;
+        public static final int world=0x7f020018;
     }
     public static final class id {
         public static final int btnLogin=0x7f070004;

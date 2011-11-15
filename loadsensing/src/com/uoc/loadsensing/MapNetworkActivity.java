@@ -1,17 +1,44 @@
 package com.uoc.loadsensing;
 
+import java.util.List;
+
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Point;
 import android.os.Bundle;
 
 import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapActivity;
 import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
+import com.google.android.maps.Overlay;
 
 
 public class MapNetworkActivity extends MapActivity {
 	MapView mapView;
 	MapController mc;
 	GeoPoint p;
+	
+	/** Extendemos la clase overlay para a–adir markers */
+	class MapOverlay extends com.google.android.maps.Overlay
+	{
+		@Override
+		public boolean draw(Canvas canvas, MapView mapView, boolean shadow, long when)
+		{
+			super.draw(canvas, mapView, shadow);
+			
+			// Translate the geopoint to screen pixels
+			Point screenPts = new Point();
+			mapView.getProjection().toPixels(p, screenPts);
+			
+			// Add the marker
+			Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.world);
+			canvas.drawBitmap(bmp, screenPts.x, screenPts.y - 37, null);
+			return true;
+			
+		}
+	}
 
 	/** Called when the activity is first created. */
     @Override
@@ -34,9 +61,16 @@ public class MapNetworkActivity extends MapActivity {
         p = new GeoPoint(
                 (int) (lat * 1E6), 
                 (int) (lng * 1E6));
-     
+        
+        // Add a location marker
+        MapOverlay mapOverlay = new MapOverlay();
+        List<Overlay> listOfOverlays = mapView.getOverlays();
+        listOfOverlays.clear();
+        listOfOverlays.add(mapOverlay);
+        
         mc.animateTo(p);
-        mc.setZoom(17); 
+        mc.setZoom(17);
+        
         mapView.invalidate();
     }
  
