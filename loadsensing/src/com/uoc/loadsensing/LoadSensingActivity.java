@@ -1,5 +1,9 @@
 package com.uoc.loadsensing;
 
+import java.util.ArrayList;
+
+import com.uoc.loadsensing.beans.NetworkBean;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -20,6 +24,9 @@ public class LoadSensingActivity extends Activity {
 	public static final String QRCODE_SECTION = "QRCODE";
 	
 	public static Context AppContext = null;
+	
+	// Lista de Redes
+	public static ArrayList<NetworkBean> array_networks = null;
 	
 	public void startActivity(int activityReference) {
 

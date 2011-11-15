@@ -1,5 +1,7 @@
 package com.uoc.loadsensing;
 
+import com.uoc.loadsensing.beans.NetworkBean;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,8 +11,10 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class SingleNetworkActivity extends Activity {
+public class SingleNetworkActivity extends LoadSensingActivity {
 
+	NetworkBean mNetwork = null;
+	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,12 +22,14 @@ public class SingleNetworkActivity extends Activity {
         
         TextView txtNetworkName = (TextView) findViewById(R.id.network_name);
 
-        Intent i = getIntent();
+        final Bundle bundle = getIntent().getExtras();
         // Recogemos informacion del Intent
-        String sNetworkName = i.getStringExtra("network_name");
+        int sNetworkId = bundle.getInt("current_network");
+        
+        mNetwork = array_networks.get(sNetworkId);
 
         // Mostramos la informacion recogida
-        txtNetworkName.setText(sNetworkName);
+        txtNetworkName.setText(mNetwork.getName());
         
 	}
 	

@@ -9,10 +9,17 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AbsListView;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class ListNetworksActivity extends LoadSensingActivity implements ListView.OnScrollListener {
@@ -24,6 +31,9 @@ public class ListNetworksActivity extends LoadSensingActivity implements ListVie
 	public ProgressDialog dialog;
 	
 	public ArrayList<NetworkBean> aNetworkList = null;
+	
+    /** Clase propia que extiende de ArrayAdapter */
+    private OrderAdapter oAdapter;
 
 	
 	public void onCreate(Bundle savedInstanceState) {
@@ -33,12 +43,48 @@ public class ListNetworksActivity extends LoadSensingActivity implements ListVie
         mContext=this;
         activity=this;
         
+        // Creamos objetos contenedores
+        list=(ListView)findViewById(R.id.list);
+        aNetworkList = new ArrayList<NetworkBean>();
+        
+        // Obtenemos la lista de redes
         requestListNetwork();
         
-        if ( list != null ) {
-        	list.setOnScrollListener(this);
-        }
+        
+    	list.setOnScrollListener(this);
+    	
+    	// Establecemos accion para click en Network Item
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id) 
+            {
+            	
+            	Toast.makeText(mContext, "Es el "+position, Toast.LENGTH_LONG).show();
+            	
+				// Launching new Activity on selecting single List Item
+				Intent i = new Intent(mContext, SingleNetworkActivity.class);
+				 
+				// sending data to new activity
+				i.putExtra("current_network", position);
+				array_networks = aNetworkList;
+				startActivity(i);             	
+            }
+        });    	
     }	
+	
+    public void onResume() {
+		super.onResume();
+	}	
+
+    @Override
+    public void onDestroy()
+    {
+        try{
+        	//adapter.imageLoader.stopThread();
+        	list.setAdapter(null);
+        }catch(Exception e){}
+        super.onDestroy();
+    }    
+    
 	
 	private void requestListNetwork()
     {
@@ -46,8 +92,7 @@ public class ListNetworksActivity extends LoadSensingActivity implements ListVie
 		{
 			Environment.errorAlert(getApplicationContext(), getApplicationContext().getString(R.string.no_connection));
 		}else{
-			aNetworkList = new ArrayList<NetworkBean>();
-	        list=(ListView)findViewById(R.id.list);
+
 	        dialog = new ProgressDialog(this);
 	        dialog.setProgressStyle(0);
 	        dialog.setMessage(this.getString(R.string.lst_retreive_data));
@@ -58,18 +103,15 @@ public class ListNetworksActivity extends LoadSensingActivity implements ListVie
 				{
 					finish();
 				}
-			});
+				});
 	        dialog.setProgress(0);
 	        dialog.setMax(100);
 	        dialog.show();
 			
-//	    	if (!busy)
-//	    	{
-//	    		busy=true;
+	        // Recogemos lista de Redes
 	        getNetworks task = new getNetworks();
 	        task.execute();
-	        dialog.dismiss();
-//	    	}
+
 		}
     }	
 
@@ -90,13 +132,79 @@ public class ListNetworksActivity extends LoadSensingActivity implements ListVie
 	
 	private class getNetworks extends AsyncTask<String, Void, Void>{
 
-		@Override
-		protected Void doInBackground(String... params) {
-			// TODO Auto-generated method stub
-			return null;
-		}
+        @Override
+        protected void onPreExecute() {
+        	
+        }
+ 
+        @Override
+        protected Void doInBackground(String... params) {
+            // TODO Peticion Asyn a API WS?
+            return null;
+        }
+        
+        @Override
+        protected void onPostExecute(Void result) {
+        	
+        	// TODO Utilizar Redes de WS: Now Fake Items 
+        	for ( int i=0; i<10; i++ ) {
+        		NetworkBean t = new NetworkBean();
+        		t.setName("Red "+i);
+        		t.setDescription("Description "+i);
+        		aNetworkList.add(t);
+        	}
+        	
+            oAdapter = new OrderAdapter(mContext, R.layout.row, aNetworkList);
+            list.setAdapter(oAdapter);              	
+        	
+        	//oAdapter.setDataSet(aNetworkList);
+        	oAdapter.notifyDataSetChanged();            
+            
+        	// Al final quitamos dialog
+        	dialog.dismiss();
+        }
 		
 	}
 			
 
+    /**
+     * Clase Adapter customizada para nuestra propia lista de Redes
+     *
+     */
+    private class OrderAdapter extends ArrayAdapter<NetworkBean> {
+
+        private ArrayList<NetworkBean> items;
+
+        public OrderAdapter(Context context, int textViewResourceId, ArrayList<NetworkBean> items) {
+                super(context, textViewResourceId, items);
+                this.items = items;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+
+                if (convertView == null) {
+                    LayoutInflater vi = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                    convertView = vi.inflate(R.layout.row, null);
+                }
+                
+                NetworkBean o = items.get(position);
+                if (o != null) {
+                        TextView tName = (TextView) convertView.findViewById(R.id.nametext);
+                        TextView tDescript = (TextView) convertView.findViewById(R.id.descripttext);
+                        
+                        if (tName != null) {
+                        	tName.setText(o.getName());         
+                        }
+                        
+                        if(tDescript != null){
+                        	tDescript.setText(o.getDescription());
+                        }
+                        
+                }
+                return convertView;
+        }
+    }
+       	
+	
 }
