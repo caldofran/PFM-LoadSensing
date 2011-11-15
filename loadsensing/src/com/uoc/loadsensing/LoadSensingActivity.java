@@ -92,4 +92,13 @@ public class LoadSensingActivity extends Activity {
 
 	}
 	
+	public void onResume() {
+		super.onResume();
+	}
+	
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+	}
+	
 }

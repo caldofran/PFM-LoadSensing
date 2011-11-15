@@ -28,7 +28,7 @@
 		android:layout_width="fill_parent" 
 		android:layout_height="fill_parent"
 		android:layout_weight = "1"
-		android:orientation="vertical" android:background="@color/backgroung_app">
+		android:orientation="vertical" android:background="@color/background_activity">
 	
         <LinearLayout android:id="@+id/linearLayout3" 
         	android:layout_width="fill_parent" 
