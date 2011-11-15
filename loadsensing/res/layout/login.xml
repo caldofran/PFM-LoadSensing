@@ -6,7 +6,7 @@
   android:fillViewport="true">
   <RelativeLayout 
   		android:layout_width="fill_parent"
-  		android:layout_height="wrap_content" android:background="@color/backgroung_app">
+  		android:layout_height="wrap_content" android:background="@color/background_app">
   		
   		<!--  Header  Starts-->
   		<LinearLayout android:id="@+id/header"

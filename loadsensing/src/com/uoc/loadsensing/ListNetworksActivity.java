@@ -35,14 +35,16 @@ public class ListNetworksActivity extends LoadSensingActivity implements ListVie
         
         requestListNetwork();
         
-        list.setOnScrollListener(this);
+        if ( list != null ) {
+        	list.setOnScrollListener(this);
+        }
     }	
 	
 	private void requestListNetwork()
     {
 		if (!Environment.internetIsAvailable(ListNetworksActivity.this))
 		{
-			Toast.makeText(mContext, "Debe estar conectado a Internet para utilizar LoadSensing!", Toast.LENGTH_LONG).show();
+			Environment.errorAlert(getApplicationContext(), getApplicationContext().getString(R.string.no_connection));
 		}else{
 			aNetworkList = new ArrayList<NetworkBean>();
 	        list=(ListView)findViewById(R.id.list);
@@ -71,6 +73,7 @@ public class ListNetworksActivity extends LoadSensingActivity implements ListVie
 		}
     }	
 
+	
 	@Override
 	public void onScroll(AbsListView view, int firstVisibleItem,
 			int visibleItemCount, int totalItemCount) {

@@ -24,15 +24,15 @@
 		<activity android:name=".TabMenuActivity"></activity>
  
         <!--  Map Activity -->
-        <activity android:name=".MapNetworkActivity"></activity>
+        <activity android:name=".MapNetworkActivity" android:launchMode="singleTask"></activity>
 		<activity android:name=".AndroidMapViewActivity"></activity>
  
         <!--  List Network Activity -->
         <activity android:name=".ListNetworkActivity"></activity>
-        <activity android:name=".ListNetworksActivity"></activity>
+        <activity android:name=".ListNetworksActivity" android:launchMode="singleTask"></activity>
  
         <!--  QR Codes Activity -->
-        <activity android:name=".QRCodeActivity"></activity>        
+        <activity android:name=".QRCodeActivity" android:launchMode="singleTask"></activity>        
         
         <!-- Single Network Activity -->
         <activity android:name=".SingleNetworkActivity"></activity>

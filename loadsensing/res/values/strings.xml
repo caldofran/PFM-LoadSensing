@@ -6,6 +6,8 @@
     <!-- Literales Generales -->
     <string name="ok">Aceptar</string>
     <string name="title_alert_error">Aviso</string>
+    <string name="no_connection">Debe estar conectado a internet para trabajar con LoadSensing</string>
+    <string name="accept">Aceptar</string>
 
 	<!-- Titulos -->
 	<string name="title_listnetwork">Network List</string>

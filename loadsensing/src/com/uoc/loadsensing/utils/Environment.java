@@ -1,5 +1,9 @@
 package com.uoc.loadsensing.utils;
 
+
+import com.uoc.loadsensing.R;
+
+import android.app.AlertDialog;
 import android.content.Context;
 import android.net.ConnectivityManager;
 
@@ -22,5 +26,13 @@ public class Environment {
 		return bSuccess;
 	}
 	
+	public static void errorAlert(Context mContext, String text) {
+		AlertDialog.Builder dialog = new AlertDialog.Builder(mContext);
+		dialog.setTitle(mContext.getString(R.string.title_alert_error));
+		dialog.setMessage(text);
+		dialog.setIcon(R.drawable.error);
+		dialog.setPositiveButton(mContext.getString(R.string.accept), null);
+		dialog.show();
+	}	
 
 }
