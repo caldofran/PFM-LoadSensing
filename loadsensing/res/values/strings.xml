@@ -3,6 +3,15 @@
     <string name="uoc_id">UOC Project</string>
     <string name="app_name">LoadSensing</string>
     
+    <!-- Literales Generales -->
+    <string name="ok">Aceptar</string>
+    <string name="title_alert_error">Aviso</string>
+
+	<!-- Titulos -->
+	<string name="title_listnetwork">Network List</string>
+	<string name="title_qrcode">QR Code</string>
+	<string name="title_map">Map</string>
+    
     <!-- Literales para Login Activity -->
     <string name="user_name">User</string>
     <string name="user_pass">Password</string>
@@ -14,6 +23,7 @@
     <string name="lst_wait">Please wait...</string>
     <string name="lst_retreive_data">Retrieving Network List...</string>
     <string name="lst_click_network">Click Menu Button to see Actions</string>
+    <string name="no_internet_available">Your Device doesn\'t have access to Internet!</string>
     
     <!-- Literales para el option menu de una Network -->
     <string name="menu_nt_state">State</string>

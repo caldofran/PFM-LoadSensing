@@ -39,7 +39,8 @@ public class LoginActivity extends Activity {
 
 				//twVisitWS.setText("Request Loging "+etUser.getText().toString()+"-"+etPass.getText().toString());
 				
-				Intent i = new Intent(getApplicationContext(), TabMenuActivity.class);
+				//Intent i = new Intent(getApplicationContext(), TabMenuActivity.class);
+				Intent i = new Intent(getApplicationContext(), ListNetworksActivity.class);
 				startActivity(i);
 			}
 		});
