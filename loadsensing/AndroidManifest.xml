@@ -19,16 +19,12 @@
         
         <!-- Login Activity -->
         <activity android:name=".LoginActivity"></activity>
-        
-        <!-- Tab Menu Activity -->
-		<activity android:name=".TabMenuActivity"></activity>
  
         <!--  Map Activity -->
         <activity android:name=".MapNetworkActivity" android:launchMode="singleTask"></activity>
 		<activity android:name=".AndroidMapViewActivity"></activity>
  
         <!--  List Network Activity -->
-        <activity android:name=".ListNetworkActivity"></activity>
         <activity android:name=".ListNetworksActivity" android:launchMode="singleTask"></activity>
  
         <!--  QR Codes Activity -->

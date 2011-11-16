@@ -190,8 +190,9 @@ public class ListNetworksActivity extends LoadSensingActivity implements ListVie
                 
                 NetworkBean o = items.get(position);
                 if (o != null) {
-                        TextView tName = (TextView) convertView.findViewById(R.id.nametext);
-                        TextView tDescript = (TextView) convertView.findViewById(R.id.descripttext);
+                        TextView tName = (TextView) convertView.findViewById(R.id.network_name);
+                        TextView tDescript = (TextView) convertView.findViewById(R.id.network_description);
+                        TextView tNumSensors = (TextView) convertView.findViewById(R.id.num_sensors);
                         
                         if (tName != null) {
                         	tName.setText(o.getName());         
@@ -200,6 +201,8 @@ public class ListNetworksActivity extends LoadSensingActivity implements ListVie
                         if(tDescript != null){
                         	tDescript.setText(o.getDescription());
                         }
+                        
+                        tNumSensors.setText("0");
                         
                 }
                 return convertView;
