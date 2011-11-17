@@ -7,39 +7,40 @@
   android:gravity="center_vertical" 
   android:weightSum="9" android:id="@+id/RootView">
     <LinearLayout android:id="@+id/linearLayout1"
-    android:layout_width="fill_parent" 
-    android:layout_height="fill_parent"
-    android:layout_weight = "8"
-    android:background="@drawable/nav_bar" 
-    android:gravity="center_vertical|center_horizontal"
-    >
-    <TextView 
-		android:id="@+id/profile_title" 
-		android:layout_height="wrap_content" 
-		android:layout_width="fill_parent"
-		android:gravity="center_vertical|center_horizontal" 
-		android:textColor="#FFF" 
-		android:textSize="22sp" 
-		android:textStyle="bold" android:text="@string/title_listnetwork"></TextView>
+    	android:layout_width="fill_parent" 
+    	android:layout_height="fill_parent"
+    	android:layout_weight = "8"
+    	android:background="@drawable/nav_bar" 
+    	android:gravity="center_vertical|center_horizontal">
+    	<TextView 
+			android:id="@+id/profile_title" 
+			android:layout_height="wrap_content" 
+			android:layout_width="fill_parent"
+			android:gravity="center_vertical|center_horizontal" 
+			android:textColor="#FFF" 
+			android:textSize="22sp" 
+			android:textStyle="bold" android:text="@string/title_listnetwork"></TextView>
     </LinearLayout>
     <LinearLayout android:id="@+id/linearLayout2" 
-    android:layout_width="fill_parent" 
-    android:layout_height="fill_parent"
-    android:layout_weight = "1"
-    android:orientation="vertical" android:background="@color/background_activity">
+    	android:layout_width="fill_parent" 
+    	android:layout_height="fill_parent"
+    	android:layout_weight = "1"
+    	android:orientation="vertical" android:background="@color/background_activity">
         <LinearLayout android:id="@+id/linearLayout3" 
-        android:layout_width="fill_parent" 
-    android:layout_height="fill_parent"
-    android:layout_weight = "1" android:orientation="vertical">
-            <ListView android:layout_width="fill_parent" android:layout_height="fill_parent" android:id="@+id/list"
-            android:background="@color/background_activity" android:divider="@color/list_bg"></ListView>
+        	android:layout_width="fill_parent" 
+    		android:layout_height="fill_parent"
+    		android:layout_weight = "1" android:orientation="vertical">
+            <ListView android:id="@+id/list"
+            	android:layout_width="fill_parent" android:layout_height="fill_parent" 
+            	android:background="@color/background_activity" android:divider="@color/list_bg">
+            </ListView>
         </LinearLayout>
         <LinearLayout android:id="@+id/linearLayout4" 
-                android:layout_width="fill_parent" 
-			    android:layout_height="fill_parent"
-			    android:layout_weight = "7"
-			    android:layout_gravity="center_vertical|center_horizontal">
-			    <include 
+			android:layout_width="fill_parent" 
+			android:layout_height="fill_parent"
+			android:layout_weight = "7"
+			android:layout_gravity="center_vertical|center_horizontal">
+			<include 
 			    android:layout_gravity="center_vertical|center_horizontal"
 				android:id="@+id/menu_app" 
 				layout="@layout/menu_bottom" />

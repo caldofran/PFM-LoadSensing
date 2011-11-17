@@ -67,11 +67,12 @@ public final class R {
         public static final int btn_map=0x7f07000a;
         public static final int btn_qrcode=0x7f07000e;
         public static final int editTextShowLocation=0x7f07001a;
+        public static final int embeddedwebview=0x7f070022;
         public static final int et_pass=0x7f070003;
         public static final int et_user=0x7f070002;
         public static final int footer=0x7f070001;
         public static final int header=0x7f070000;
-        public static final int imageView1=0x7f070021;
+        public static final int imageView1=0x7f070023;
         public static final int lay_list=0x7f07000b;
         public static final int lay_map=0x7f070009;
         public static final int lay_qrcode=0x7f07000d;
@@ -86,8 +87,9 @@ public final class R {
         public static final int menu_images=0x7f070011;
         public static final int menu_sensors=0x7f070010;
         public static final int menu_state=0x7f07000f;
-        public static final int network_description=0x7f070020;
         public static final int network_icon=0x7f07001d;
+        public static final int network_latitude=0x7f070020;
+        public static final int network_longitude=0x7f070021;
         public static final int network_name=0x7f07001e;
         public static final int num_sensors=0x7f07001f;
         public static final int profile_title=0x7f070014;
@@ -96,57 +98,59 @@ public final class R {
     public static final class layout {
         public static final int footer_repeat=0x7f030000;
         public static final int header_gradient=0x7f030001;
-        public static final int listnetwork_layout=0x7f030002;
-        public static final int login=0x7f030003;
-        public static final int main=0x7f030004;
-        public static final int map_layout=0x7f030005;
-        public static final int mapnetwork_layout=0x7f030006;
-        public static final int menu_bottom=0x7f030007;
-        public static final int menu_network=0x7f030008;
-        public static final int networklist_layout=0x7f030009;
-        public static final int qrcode_layout=0x7f03000a;
-        public static final int row=0x7f03000b;
-        public static final int single_listnetwork=0x7f03000c;
-        public static final int splash_screen_layout=0x7f03000d;
-        public static final int tabmenu=0x7f03000e;
+        public static final int login=0x7f030002;
+        public static final int main=0x7f030003;
+        public static final int map_layout=0x7f030004;
+        public static final int mapnetwork_layout=0x7f030005;
+        public static final int menu_bottom=0x7f030006;
+        public static final int menu_network=0x7f030007;
+        public static final int networklist_layout=0x7f030008;
+        public static final int qrcode_layout=0x7f030009;
+        public static final int row=0x7f03000a;
+        public static final int single_listnetwork=0x7f03000b;
+        public static final int splash_screen_layout=0x7f03000c;
+        public static final int tabmenu=0x7f03000d;
     }
     public static final class string {
         public static final int accept=0x7f050005;
         public static final int app_name=0x7f050001;
-        public static final int lst_click_network=0x7f050010;
+        public static final int exit_app=0x7f050006;
+        public static final int lst_click_network=0x7f050011;
         /**  Literales para ListNetworkActivity 
          */
-        public static final int lst_not_available=0x7f05000d;
-        public static final int lst_retreive_data=0x7f05000f;
-        public static final int lst_wait=0x7f05000e;
-        public static final int menu_nt_images=0x7f050014;
-        public static final int menu_nt_sensors=0x7f050013;
+        public static final int lst_not_available=0x7f05000e;
+        public static final int lst_retreive_data=0x7f050010;
+        public static final int lst_wait=0x7f05000f;
+        public static final int menu_nt_images=0x7f050017;
+        public static final int menu_nt_sensors=0x7f050016;
         /**  Literales para el option menu de una Network 
          */
-        public static final int menu_nt_state=0x7f050012;
+        public static final int menu_nt_state=0x7f050015;
         public static final int no_connection=0x7f050004;
-        public static final int no_internet_available=0x7f050011;
+        public static final int no_internet_available=0x7f050012;
+        public static final int ntwk_latitude=0x7f050014;
+        public static final int ntwk_longitude=0x7f050013;
         /**  Literales Generales 
          */
         public static final int ok=0x7f050002;
-        public static final int tab_list=0x7f050016;
+        public static final int tab_list=0x7f050019;
         /**  Literales para el TabMenu 
          */
-        public static final int tab_map=0x7f050015;
-        public static final int tab_qrcode=0x7f050017;
+        public static final int tab_map=0x7f050018;
+        public static final int tab_qrcode=0x7f05001a;
         public static final int title_alert_error=0x7f050003;
         /**  Titulos 
          */
-        public static final int title_listnetwork=0x7f050006;
-        public static final int title_map=0x7f050008;
-        public static final int title_qrcode=0x7f050007;
+        public static final int title_listnetwork=0x7f050007;
+        public static final int title_map=0x7f050009;
+        public static final int title_qrcode=0x7f050008;
         public static final int uoc_id=0x7f050000;
-        public static final int url_ws=0x7f05000b;
+        public static final int url_ws=0x7f05000c;
         /**  Literales para Login Activity 
          */
-        public static final int user_name=0x7f050009;
-        public static final int user_pass=0x7f05000a;
-        public static final int visit_ws=0x7f05000c;
+        public static final int user_name=0x7f05000a;
+        public static final int user_pass=0x7f05000b;
+        public static final int visit_ws=0x7f05000d;
     }
     public static final class style {
         public static final int LoginButton=0x7f060000;

@@ -58,7 +58,7 @@ public class ListNetworksActivity extends LoadSensingActivity implements ListVie
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) 
             {
             	
-            	Toast.makeText(mContext, "Es el "+position, Toast.LENGTH_LONG).show();
+            	//Toast.makeText(mContext, "Es el "+position, Toast.LENGTH_LONG).show();
             	
 				// Launching new Activity on selecting single List Item
 				Intent i = new Intent(mContext, SingleNetworkActivity.class);
@@ -190,19 +190,26 @@ public class ListNetworksActivity extends LoadSensingActivity implements ListVie
                 
                 NetworkBean o = items.get(position);
                 if (o != null) {
-                        TextView tName = (TextView) convertView.findViewById(R.id.network_name);
-                        TextView tDescript = (TextView) convertView.findViewById(R.id.network_description);
-                        TextView tNumSensors = (TextView) convertView.findViewById(R.id.num_sensors);
+                        TextView tName			= (TextView) convertView.findViewById(R.id.network_name);
+                        TextView tLatitude		= (TextView) convertView.findViewById(R.id.network_latitude);
+                        TextView tLongitude		= (TextView) convertView.findViewById(R.id.network_longitude);
+                        TextView tNumSensors	= (TextView) convertView.findViewById(R.id.num_sensors);
                         
                         if (tName != null) {
                         	tName.setText(o.getName());         
                         }
                         
-                        if(tDescript != null){
-                        	tDescript.setText(o.getDescription());
+                        if (tLatitude != null) {
+                        	tLatitude.setText(mContext.getString(R.string.ntwk_latitude)+ " " + String.valueOf(o.getLatitude()));
                         }
                         
-                        tNumSensors.setText("0");
+                        if (tLongitude != null) {
+                        	tLongitude.setText(mContext.getString(R.string.ntwk_longitude)+ " " + String.valueOf(o.getLongitude()));
+                        }                        
+                        
+                        if (tNumSensors != null ) {
+                        	tNumSensors.setText(String.valueOf(o.getNum_of_sensors()));
+                        }
                         
                 }
                 return convertView;

@@ -23,6 +23,9 @@ public class LoginActivity extends Activity {
 	EditText etUser;
 	EditText etPass;
 	
+	private Toast toast;
+	private long lastBackPressTime = 0;
+	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,4 +74,18 @@ public class LoginActivity extends Activity {
     }
 
     
+    
+    @Override
+    public void onBackPressed() {
+      if (this.lastBackPressTime < System.currentTimeMillis() - 4000) {
+        toast = Toast.makeText(this, getApplicationContext().getString(R.string.exit_app), 4000);
+        toast.show();
+        this.lastBackPressTime = System.currentTimeMillis();
+      } else {
+        if (toast != null) {
+        toast.cancel();
+      }
+      super.onBackPressed();
+     }
+    }    
 }

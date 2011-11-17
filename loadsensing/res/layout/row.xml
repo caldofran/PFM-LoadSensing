@@ -32,15 +32,14 @@
 	  android:layout_toRightOf="@+id/network_icon" 
 	  android:paddingLeft="3dip" android:layout_marginLeft="1dip" android:layout_marginRight="65dip" android:layout_marginTop="11dip"/>
          
-        <TextView
+        <TextView android:id="@+id/num_sensors"
 	  android:textColor="#FFF" 
 	  android:maxHeight="20dip"
 	  android:minHeight="20dip"
 	  android:maxWidth="20dip"
 	  android:minWidth="20dip"  
-	  android:layout_height="wrap_content" 
-	  android:id="@+id/num_sensors"  
-	  android:text="65" 
+	  android:layout_height="wrap_content"   
+	  android:text="" 
 	  android:textSize="11sp" 
 	  android:layout_width="wrap_content" 
 	  android:layout_alignParentRight="true"
@@ -49,16 +48,26 @@
 	  android:gravity="center_vertical|center_horizontal" android:layout_marginRight="4dip" android:layout_marginTop="10dip"/>
 
 	<TextView 
-    	android:id="@+id/network_description"
+    	android:id="@+id/network_latitude"
     	android:layout_toRightOf="@+id/network_icon"   
     	android:textColor="#FFF" 
     	android:textSize="12sp" 
-    	android:layout_height="65sp" 
-    	android:lines="3" 
+    	android:layout_height="35sp" 
+    	android:lines="1" 
     	android:text="" 
     	android:layout_alignParentRight="true" android:layout_width="fill_parent" android:paddingLeft="5dip" android:paddingRight="6dip" android:layout_marginTop="29dip" android:layout_marginBottom="3.5sp">
     	</TextView>
         
+	<TextView 
+    	android:id="@+id/network_longitude"
+    	android:layout_toRightOf="@+id/network_icon"   
+    	android:textColor="#FFF" 
+    	android:textSize="12sp" 
+    	android:layout_height="35sp" 
+    	android:lines="1" 
+    	android:text="" 
+    	android:layout_alignParentRight="true" android:layout_width="fill_parent" android:paddingLeft="5dip" android:paddingRight="6dip" android:layout_marginTop="45dip" android:layout_marginBottom="3.5sp">
+    	</TextView>        
         
     </RelativeLayout>
 </LinearLayout>

@@ -4,10 +4,11 @@
     <string name="app_name">LoadSensing</string>
     
     <!-- Literales Generales -->
-    <string name="ok">Aceptar</string>
-    <string name="title_alert_error">Aviso</string>
-    <string name="no_connection">Debe estar conectado a internet para trabajar con LoadSensing</string>
-    <string name="accept">Aceptar</string>
+    <string name="ok">Ok</string>
+    <string name="title_alert_error">Alert</string>
+    <string name="no_connection">You must be connected to use LoadSensing</string>
+    <string name="accept">Accept</string>
+    <string name="exit_app">Press back again to close LoadSensing</string>
 
 	<!-- Titulos -->
 	<string name="title_listnetwork">Network List</string>
@@ -26,6 +27,8 @@
     <string name="lst_retreive_data">Retrieving Network List...</string>
     <string name="lst_click_network">Click Menu Button to see Actions</string>
     <string name="no_internet_available">Your Device doesn\'t have access to Internet!</string>
+    <string name="ntwk_longitude">Longitude:</string>
+    <string name="ntwk_latitude">Latitude:</string>
     
     <!-- Literales para el option menu de una Network -->
     <string name="menu_nt_state">State</string>
