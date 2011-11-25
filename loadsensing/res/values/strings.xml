@@ -35,6 +35,10 @@
     <string name="menu_nt_sensors">Sensors</string>
     <string name="menu_nt_images">Images</string>
     
+    <!-- Literales para QR Activity -->
+    <string name="get_qr">Scan QR Code</string>
+    <string name="send_qr">Send QR Code</string>
+    
     <!-- Literales para el TabMenu -->
     <string name="tab_map">Map</string>
     <string name="tab_list">Networks</string>

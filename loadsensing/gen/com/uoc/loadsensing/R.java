@@ -115,6 +115,9 @@ public final class R {
         public static final int accept=0x7f050005;
         public static final int app_name=0x7f050001;
         public static final int exit_app=0x7f050006;
+        /**  Literales para QR Activity 
+         */
+        public static final int get_qr=0x7f050018;
         public static final int lst_click_network=0x7f050011;
         /**  Literales para ListNetworkActivity 
          */
@@ -133,11 +136,12 @@ public final class R {
         /**  Literales Generales 
          */
         public static final int ok=0x7f050002;
-        public static final int tab_list=0x7f050019;
+        public static final int send_qr=0x7f050019;
+        public static final int tab_list=0x7f05001b;
         /**  Literales para el TabMenu 
          */
-        public static final int tab_map=0x7f050018;
-        public static final int tab_qrcode=0x7f05001a;
+        public static final int tab_map=0x7f05001a;
+        public static final int tab_qrcode=0x7f05001c;
         public static final int title_alert_error=0x7f050003;
         /**  Titulos 
          */

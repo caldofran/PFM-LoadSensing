@@ -18,7 +18,7 @@
         </activity>
         
         <!-- Login Activity -->
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".LoginActivity" android:windowSoftInputMode="stateHidden"></activity>
  
         <!--  Map Activity -->
         <activity android:name=".MapNetworkActivity" android:launchMode="singleTask"></activity>
