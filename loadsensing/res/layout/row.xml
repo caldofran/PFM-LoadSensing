@@ -14,7 +14,7 @@
 	<ImageView  android:id="@+id/network_icon"
 	    android:layout_width="70dip"
 	    android:layout_height="70dip"
-	    android:layout_marginLeft="10dip" 
+	    android:layout_marginLeft="0dip" 
 	    android:layout_marginTop="10dip"
 	    android:src="@drawable/no_network_image"/>
         
@@ -26,7 +26,7 @@
 	  android:textSize="14sp" 
 	  android:textStyle="bold" 
 	  android:textColor="#7db229" 
-	  android:text="Templo de Debod"  
+	  android:text=""  
 	  android:layout_height="wrap_content" 
 	  android:layout_width="fill_parent" 
 	  android:layout_toRightOf="@+id/network_icon" 

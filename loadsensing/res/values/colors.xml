@@ -3,6 +3,7 @@
     <color name="background_app">#5C6195</color>
     
     <color name="background_activity">#686a7c</color>
+    <color name="list_sensor">#7c7d83</color>
     <color name="list_bg">#686a7c</color>
     <color name="list_bg_focus">#46494F</color>    
 </resources>

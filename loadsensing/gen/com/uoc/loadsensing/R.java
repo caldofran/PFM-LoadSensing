@@ -13,8 +13,9 @@ public final class R {
     public static final class color {
         public static final int background_activity=0x7f040001;
         public static final int background_app=0x7f040000;
-        public static final int list_bg=0x7f040002;
-        public static final int list_bg_focus=0x7f040003;
+        public static final int list_bg=0x7f040003;
+        public static final int list_bg_focus=0x7f040004;
+        public static final int list_sensor=0x7f040002;
     }
     public static final class drawable {
         public static final int bg=0x7f020000;
@@ -67,12 +68,12 @@ public final class R {
         public static final int btn_map=0x7f07000a;
         public static final int btn_qrcode=0x7f07000e;
         public static final int editTextShowLocation=0x7f07001a;
-        public static final int embeddedwebview=0x7f070022;
+        public static final int embeddedwebview=0x7f070029;
         public static final int et_pass=0x7f070003;
         public static final int et_user=0x7f070002;
         public static final int footer=0x7f070001;
         public static final int header=0x7f070000;
-        public static final int imageView1=0x7f070023;
+        public static final int imageView1=0x7f07002c;
         public static final int lay_list=0x7f07000b;
         public static final int lay_map=0x7f070009;
         public static final int lay_qrcode=0x7f07000d;
@@ -80,7 +81,11 @@ public final class R {
         public static final int linearLayout2=0x7f070015;
         public static final int linearLayout3=0x7f070016;
         public static final int linearLayout4=0x7f070018;
+        public static final int linearLayout5=0x7f070027;
+        public static final int linearLayout7=0x7f070028;
+        public static final int linearLayout8=0x7f07002a;
         public static final int list=0x7f070017;
+        public static final int listSensors=0x7f07002b;
         public static final int mapa=0x7f070007;
         public static final int mapview=0x7f070006;
         public static final int menu_app=0x7f070019;
@@ -93,6 +98,11 @@ public final class R {
         public static final int network_name=0x7f07001e;
         public static final int num_sensors=0x7f07001f;
         public static final int profile_title=0x7f070014;
+        public static final int sensor_description=0x7f070026;
+        public static final int sensor_icon=0x7f070022;
+        public static final int sensor_id=0x7f070023;
+        public static final int sensor_name=0x7f070024;
+        public static final int sensor_type=0x7f070025;
         public static final int visit_worldsensing=0x7f070005;
     }
     public static final class layout {
@@ -107,9 +117,10 @@ public final class R {
         public static final int networklist_layout=0x7f030008;
         public static final int qrcode_layout=0x7f030009;
         public static final int row=0x7f03000a;
-        public static final int single_listnetwork=0x7f03000b;
-        public static final int splash_screen_layout=0x7f03000c;
-        public static final int tabmenu=0x7f03000d;
+        public static final int row_sensor=0x7f03000b;
+        public static final int single_listnetwork=0x7f03000c;
+        public static final int splash_screen_layout=0x7f03000d;
+        public static final int tabmenu=0x7f03000e;
     }
     public static final class string {
         public static final int accept=0x7f050005;
@@ -117,18 +128,19 @@ public final class R {
         public static final int exit_app=0x7f050006;
         /**  Literales para QR Activity 
          */
-        public static final int get_qr=0x7f050018;
+        public static final int get_qr=0x7f050019;
         public static final int lst_click_network=0x7f050011;
         /**  Literales para ListNetworkActivity 
          */
         public static final int lst_not_available=0x7f05000e;
         public static final int lst_retreive_data=0x7f050010;
+        public static final int lst_sensors=0x7f050015;
         public static final int lst_wait=0x7f05000f;
-        public static final int menu_nt_images=0x7f050017;
-        public static final int menu_nt_sensors=0x7f050016;
+        public static final int menu_nt_images=0x7f050018;
+        public static final int menu_nt_sensors=0x7f050017;
         /**  Literales para el option menu de una Network 
          */
-        public static final int menu_nt_state=0x7f050015;
+        public static final int menu_nt_state=0x7f050016;
         public static final int no_connection=0x7f050004;
         public static final int no_internet_available=0x7f050012;
         public static final int ntwk_latitude=0x7f050014;
@@ -136,12 +148,12 @@ public final class R {
         /**  Literales Generales 
          */
         public static final int ok=0x7f050002;
-        public static final int send_qr=0x7f050019;
-        public static final int tab_list=0x7f05001b;
+        public static final int send_qr=0x7f05001a;
+        public static final int tab_list=0x7f05001c;
         /**  Literales para el TabMenu 
          */
-        public static final int tab_map=0x7f05001a;
-        public static final int tab_qrcode=0x7f05001c;
+        public static final int tab_map=0x7f05001b;
+        public static final int tab_qrcode=0x7f05001d;
         public static final int title_alert_error=0x7f050003;
         /**  Titulos 
          */

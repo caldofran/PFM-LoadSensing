@@ -27,7 +27,6 @@ public class ListNetworksActivity extends LoadSensingActivity implements ListVie
     public Activity activity;
 	public Context mContext;
 	public ListView list;
-	//public ActivityAdapter adapter;
 	public ProgressDialog dialog;
 	
 	public ArrayList<NetworkBean> aNetworkList = null;
