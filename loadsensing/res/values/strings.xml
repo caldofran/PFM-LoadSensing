@@ -3,6 +3,18 @@
     <string name="uoc_id">UOC Project</string>
     <string name="app_name">LoadSensing</string>
     
+    <!-- Literales Generales -->
+    <string name="ok">Ok</string>
+    <string name="title_alert_error">Alert</string>
+    <string name="no_connection">You must be connected to use LoadSensing</string>
+    <string name="accept">Accept</string>
+    <string name="exit_app">Press back again to close LoadSensing</string>
+
+	<!-- Titulos -->
+	<string name="title_listnetwork">Network List</string>
+	<string name="title_qrcode">QR Code</string>
+	<string name="title_map">Map</string>
+    
     <!-- Literales para Login Activity -->
     <string name="user_name">User</string>
     <string name="user_pass">Password</string>
@@ -14,11 +26,20 @@
     <string name="lst_wait">Please wait...</string>
     <string name="lst_retreive_data">Retrieving Network List...</string>
     <string name="lst_click_network">Click Menu Button to see Actions</string>
+    <string name="no_internet_available">Your Device doesn\'t have access to Internet!</string>
+    <string name="ntwk_longitude">Longitude:</string>
+    <string name="ntwk_latitude">Latitude:</string>
+	<string name="lst_sensors">Sensor List</string>    
+
     
     <!-- Literales para el option menu de una Network -->
     <string name="menu_nt_state">State</string>
     <string name="menu_nt_sensors">Sensors</string>
     <string name="menu_nt_images">Images</string>
+    
+    <!-- Literales para QR Activity -->
+    <string name="get_qr">Scan QR Code</string>
+    <string name="send_qr">Send QR Code</string>
     
     <!-- Literales para el TabMenu -->
     <string name="tab_map">Map</string>

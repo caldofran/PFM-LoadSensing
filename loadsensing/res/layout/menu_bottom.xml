@@ -11,7 +11,7 @@
 		    android:layout_weight = "1"
 		    android:layout_gravity="center_vertical|center_horizontal" android:id="@+id/lay_map">
 			    <ImageButton 
-			    	android:src="@drawable/btn_map"
+			    	android:src="@drawable/btn_map_btn"
 			    	android:layout_gravity="center_vertical|center_horizontal"
 			    	android:layout_weight = "1" 
 			        android:layout_alignParentBottom="true" 
@@ -31,7 +31,7 @@
 		    android:layout_gravity="center_vertical|center_horizontal" android:id="@+id/lay_list">
 			    <ImageButton 
 			        android:layout_gravity="center_vertical|center_horizontal"
-			    	android:src="@drawable/btn_map"
+			    	android:src="@drawable/btn_listnetwork_btn"
 			    	android:layout_weight = "1" 
 			        android:layout_alignParentBottom="true" 
 			        android:text="" 
@@ -49,7 +49,7 @@
 		    android:layout_gravity="center_vertical|center_horizontal" android:id="@+id/lay_qrcode">
 			    <ImageButton 
 			        android:layout_gravity="center_vertical|center_horizontal"
-			    	android:src="@drawable/btn_qrcode"
+			    	android:src="@drawable/btn_qrcode_btn"
 			    	android:layout_weight = "1" 
 			        android:layout_alignParentBottom="true" 
 			        android:text="" 
