@@ -6,6 +6,8 @@ import com.google.android.maps.MapView;
  
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+
+import com.uoc.loadsensing.R;
  
 public class AndroidMapViewActivity extends MapActivity {
 /** Called when the activity is first created. */

@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.uoc.loadsensing.R;
+
 public class LoginActivity extends Activity {
 	
 	TextView twVisitWS;

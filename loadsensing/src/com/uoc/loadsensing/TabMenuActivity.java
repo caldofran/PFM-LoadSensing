@@ -13,6 +13,8 @@ import android.os.Bundle;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 
+import com.uoc.loadsensing.R;
+
 public class TabMenuActivity extends TabActivity {
     
     @Override

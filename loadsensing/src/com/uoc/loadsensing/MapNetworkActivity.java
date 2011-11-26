@@ -18,6 +18,8 @@ import com.google.android.maps.MapView;
 import com.google.android.maps.MyLocationOverlay;
 import com.google.android.maps.Overlay;
 
+import com.uoc.loadsensing.R;
+
 
 public class MapNetworkActivity extends MapActivity {
 	MapView mapView;
