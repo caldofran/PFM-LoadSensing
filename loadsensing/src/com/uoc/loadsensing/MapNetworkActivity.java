@@ -2,16 +2,20 @@ package com.uoc.loadsensing;
 
 import java.util.List;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Point;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 
 import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapActivity;
 import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
+import com.google.android.maps.MyLocationOverlay;
 import com.google.android.maps.Overlay;
 
 
@@ -19,6 +23,7 @@ public class MapNetworkActivity extends MapActivity {
 	MapView mapView;
 	MapController mc;
 	GeoPoint p;
+	Context mContext;
 	
 	/** Extendemos la clase overlay para a–adir markers */
 	class MapOverlay extends com.google.android.maps.Overlay
@@ -45,6 +50,7 @@ public class MapNetworkActivity extends MapActivity {
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        mContext = this;
         setContentView(R.layout.mapnetwork_layout);
         
         mapView = (MapView) findViewById(R.id.mapa);
@@ -70,6 +76,22 @@ public class MapNetworkActivity extends MapActivity {
         
         mc.animateTo(p);
         mc.setZoom(17);
+        
+        final ImageButton my_location_button = (ImageButton)findViewById(R.id.my_location_button);
+        my_location_button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	final MyLocationOverlay myLocationOverlay = new MyLocationOverlay(mContext, mapView);
+                mapView.getOverlays().add(myLocationOverlay);
+                myLocationOverlay.enableCompass();
+                myLocationOverlay.enableMyLocation();
+                System.out.println("Obteniendo tu ubucacion");
+                myLocationOverlay.runOnFirstFix(new Runnable() {
+                    public void run() {
+                        mc.animateTo(myLocationOverlay.getMyLocation());
+                    }
+                });
+            }
+        });
         
         mapView.invalidate();
     }
