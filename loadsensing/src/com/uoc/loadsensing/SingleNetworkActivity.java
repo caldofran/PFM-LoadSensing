@@ -2,21 +2,12 @@ package com.uoc.loadsensing;
 
 import java.util.ArrayList;
 
-import com.uoc.loadsensing.beans.NetworkBean;
-import com.uoc.loadsensing.beans.SensorBean;
-import com.uoc.loadsensing.utils.Environment;
-
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
@@ -25,6 +16,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.uoc.loadsensing.beans.NetworkBean;
+import com.uoc.loadsensing.beans.SensorBean;
+import com.uoc.loadsensing.utils.Environment;
 
 public class SingleNetworkActivity extends LoadSensingActivity {
 
