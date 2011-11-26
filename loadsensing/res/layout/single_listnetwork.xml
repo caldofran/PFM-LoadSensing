@@ -10,4 +10,10 @@
   			android:textSize="25dip"
   			android:textStyle="bold"
   			android:padding="10dip"/>    
+  			
+  <WebView
+   android:id="@+id/embeddedwebview"
+   android:layout_width="300dp"
+   android:layout_height="150dp"
+   android:layout_gravity="center"/>  			
 </LinearLayout>

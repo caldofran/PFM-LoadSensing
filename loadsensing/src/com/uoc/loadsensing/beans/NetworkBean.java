@@ -4,9 +4,9 @@ public class NetworkBean {
 	
 	private String name = "";
 	private String description = "";
-	private int num_of_sensors;
-	private int latitude;
-	private int longitude;
+	private int num_of_sensors = 0;
+	private int latitude = 0;
+	private int longitude = 1;
 	public String getName() {
 		return name;
 	}
