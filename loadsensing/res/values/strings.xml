@@ -29,6 +29,8 @@
     <string name="no_internet_available">Your Device doesn\'t have access to Internet!</string>
     <string name="ntwk_longitude">Longitude:</string>
     <string name="ntwk_latitude">Latitude:</string>
+	<string name="lst_sensors">Sensor List</string>    
+
     
     <!-- Literales para el option menu de una Network -->
     <string name="menu_nt_state">State</string>
