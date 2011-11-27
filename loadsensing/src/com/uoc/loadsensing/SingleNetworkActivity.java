@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -138,6 +139,19 @@ public class SingleNetworkActivity extends LoadSensingActivity {
                 {
                 	
                 	Toast.makeText(getApplicationContext(), "Es el "+position, Toast.LENGTH_LONG).show();
+                	
+    				// Launching new Activity on selecting single List Item
+    				Intent i = new Intent(getApplicationContext(), SensorActivity.class);
+    				 
+    				// sending data to new activity
+    				i.putExtra("current_sensor", position);
+    				
+    				// establish sensor identifiers
+    				sensor_selected = position;
+    				array_sensors = aSensorsList;
+    				
+    				// launch activity
+    				startActivity(i);                 	
            	
                 }
             });            	

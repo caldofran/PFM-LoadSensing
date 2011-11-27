@@ -3,6 +3,7 @@ package com.uoc.loadsensing;
 import java.util.ArrayList;
 
 import com.uoc.loadsensing.beans.NetworkBean;
+import com.uoc.loadsensing.beans.SensorBean;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -37,6 +38,10 @@ public class LoadSensingActivity extends Activity {
 	// Lista de Redes
 	public static ArrayList<NetworkBean> array_networks = null;
 	public static int network_selected = -1;
+	
+	// Lista de Sensores
+	public static ArrayList<SensorBean> array_sensors = null;
+	public static int sensor_selected = -1;
 	
 	public void startActivity(int activityReference) {
 

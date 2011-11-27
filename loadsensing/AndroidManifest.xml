@@ -31,14 +31,17 @@
         <activity android:name=".QRCodeActivity" android:launchMode="singleTask"></activity>        
         
         <!-- Single Network Activity -->
-        <activity android:name=".SingleNetworkActivity"></activity>
+        <activity android:name=".SingleNetworkActivity" android:launchMode="singleTask"></activity>
 
         <!-- Single Network State Activity -->
-        <activity android:name=".SingleNetworkStateActivity"></activity>
+        <activity android:name=".SingleNetworkStateActivity" android:launchMode="singleTask"></activity>
         
 		<!-- Single Network Images Activity -->
-        <activity android:name=".SingleNetworkImagesActivity"></activity>
+        <activity android:name=".SingleNetworkImagesActivity" android:launchMode="singleTask"></activity>
 
+		<!-- Sensor Activity -->
+        <activity android:name=".SensorActivity" android:launchMode="singleTask"></activity>
+        
     </application>
     
     <!-- Set permisions -->

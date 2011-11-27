@@ -88,12 +88,12 @@ public final class R {
         public static final int btn_refresh=0x7f070016;
         public static final int btn_state=0x7f070012;
         public static final int editTextShowLocation=0x7f070020;
-        public static final int embeddedwebview=0x7f07002f;
+        public static final int embeddedwebview=0x7f070030;
         public static final int et_pass=0x7f070003;
         public static final int et_user=0x7f070002;
         public static final int footer=0x7f070001;
         public static final int header=0x7f070000;
-        public static final int imageView1=0x7f070036;
+        public static final int imageView1=0x7f070037;
         public static final int lay_images=0x7f070013;
         public static final int lay_list=0x7f07000b;
         public static final int lay_map=0x7f070009;
@@ -105,22 +105,22 @@ public final class R {
         public static final int linearLayout2=0x7f07001a;
         public static final int linearLayout3=0x7f07001b;
         public static final int linearLayout4=0x7f07001d;
-        public static final int linearLayout5=0x7f07002d;
-        public static final int linearLayout7=0x7f07002e;
-        public static final int linearLayout8=0x7f070030;
+        public static final int linearLayout5=0x7f07002e;
+        public static final int linearLayout7=0x7f07002f;
+        public static final int linearLayout8=0x7f070031;
         public static final int list=0x7f07001c;
-        public static final int listSensors=0x7f070031;
+        public static final int listSensors=0x7f070032;
         public static final int mapa=0x7f070007;
         public static final int mapview=0x7f070006;
         public static final int menu_app=0x7f07001e;
-        public static final int menu_network=0x7f070032;
+        public static final int menu_network=0x7f070033;
         public static final int network_icon=0x7f070023;
-        public static final int network_images_title=0x7f070033;
+        public static final int network_images_title=0x7f070034;
         public static final int network_latitude=0x7f070026;
         public static final int network_longitude=0x7f070027;
         public static final int network_name=0x7f070024;
-        public static final int network_state_chart=0x7f070035;
-        public static final int network_state_title=0x7f070034;
+        public static final int network_state_chart=0x7f070036;
+        public static final int network_state_title=0x7f070035;
         public static final int num_sensors=0x7f070025;
         public static final int profile_title=0x7f070019;
         public static final int qrcode_title=0x7f07001f;
@@ -128,6 +128,7 @@ public final class R {
         public static final int sensor_icon=0x7f070028;
         public static final int sensor_id=0x7f070029;
         public static final int sensor_name=0x7f07002a;
+        public static final int sensor_title=0x7f07002d;
         public static final int sensor_type=0x7f07002b;
         public static final int visit_worldsensing=0x7f070005;
     }
@@ -144,10 +145,11 @@ public final class R {
         public static final int qrcode_layout=0x7f030009;
         public static final int row=0x7f03000a;
         public static final int row_sensor=0x7f03000b;
-        public static final int single_listnetwork=0x7f03000c;
-        public static final int single_listnetwork_images=0x7f03000d;
-        public static final int single_listnetwork_state=0x7f03000e;
-        public static final int splash_screen_layout=0x7f03000f;
+        public static final int sensor_layout=0x7f03000c;
+        public static final int single_listnetwork=0x7f03000d;
+        public static final int single_listnetwork_images=0x7f03000e;
+        public static final int single_listnetwork_state=0x7f03000f;
+        public static final int splash_screen_layout=0x7f030010;
     }
     public static final class string {
         public static final int accept=0x7f050005;
