@@ -31,7 +31,7 @@ public class LoadSensingActivity extends Activity {
 	public static final String NT_NETWORK_SECTION	= "NTNETWORK";
 	public static final String NT_STATE_SECTION		= "NTSTATE";
 	public static final String NT_IMAGES_SECTION	= "NTIMAGES";
-	public static final String NT_REFRESH_SECTION	= "NTREFRESH";	
+	//public static final String NT_REFRESH_SECTION	= "NTREFRESH";	
 	
 	public static Context AppContext = null;
 	
@@ -133,7 +133,7 @@ public class LoadSensingActivity extends Activity {
 
 		final ImageButton img_btn_state 	= (ImageButton) findViewById(R.id.btn_state);
 		final ImageButton img_btn_images 	= (ImageButton) findViewById(R.id.btn_images);
-		final ImageButton img_btn_refresh	= (ImageButton) findViewById(R.id.btn_refresh);
+		//final ImageButton img_btn_refresh	= (ImageButton) findViewById(R.id.btn_refresh);
 		final ImageButton img_btn_network	= (ImageButton) findViewById(R.id.btn_network);
 
 		if (section.compareTo(NT_NETWORK_SECTION) != 0) {
@@ -175,18 +175,19 @@ public class LoadSensingActivity extends Activity {
 			img_btn_images.setImageResource(R.drawable.btn_images_btn_enabled);
 		}
 
-		if (section.compareTo(NT_REFRESH_SECTION) != 0) {
-			img_btn_refresh.setImageResource(R.drawable.btn_refresh_btn);
-			img_btn_refresh.setOnClickListener(new View.OnClickListener() {
-				@Override
-				public void onClick(View v) {
-					startActivity(getIntent()); finish();
-				}
-			});
-
-		} else {
-			img_btn_refresh.setImageResource(R.drawable.btn_refresh_btn_enabled);
-		}
+//		if (section.compareTo(NT_REFRESH_SECTION) != 0) {
+//			img_btn_refresh.setImageResource(R.drawable.btn_refresh_btn);
+//			img_btn_refresh.setOnClickListener(new View.OnClickListener() {
+//				@Override
+//				public void onClick(View v) {
+//					startActivity(NT_NETWORK_ACTIVITY);
+//					//startActivity(getIntent()); finish();
+//				}
+//			});
+//
+//		} else {
+//			img_btn_refresh.setImageResource(R.drawable.btn_refresh_btn_enabled);
+//		}
 
 	}	
 	
