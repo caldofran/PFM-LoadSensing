@@ -48,7 +48,6 @@ public class LoginActivity extends Activity {
 				{
 					Environment.errorAlert(LoginActivity.this, getApplicationContext().getString(R.string.no_connection));
 				}else{				
-					//Intent i = new Intent(getApplicationContext(), TabMenuActivity.class);
 					Intent i = new Intent(getApplicationContext(), ListNetworksActivity.class);
 					startActivity(i);
 				}

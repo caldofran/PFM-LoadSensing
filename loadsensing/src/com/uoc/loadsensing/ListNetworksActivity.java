@@ -56,15 +56,18 @@ public class ListNetworksActivity extends LoadSensingActivity implements ListVie
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) 
             {
-            	
-            	//Toast.makeText(mContext, "Es el "+position, Toast.LENGTH_LONG).show();
-            	
+
 				// Launching new Activity on selecting single List Item
 				Intent i = new Intent(mContext, SingleNetworkActivity.class);
 				 
 				// sending data to new activity
 				i.putExtra("current_network", position);
+				
+				// establish network identifiers
+				network_selected = position;
 				array_networks = aNetworkList;
+				
+				// launch activity
 				startActivity(i);             	
             }
         });    	

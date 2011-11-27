@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:orientation="vertical" 
+  android:gravity="center_vertical" 
+  android:weightSum="9" android:id="@+id/RootView">
+    <LinearLayout 
+		android:id="@+id/linearLayout1"
+		android:layout_width="fill_parent" 
+		android:layout_height="fill_parent"
+		android:layout_weight = "8"
+		android:background="@drawable/nav_bar" 
+		android:gravity="center_vertical|center_horizontal">
+		<TextView 
+			android:id="@+id/network_state_title" 
+			android:layout_height="wrap_content" 
+			android:layout_width="fill_parent"
+			android:gravity="center_vertical|center_horizontal" 
+			android:textColor="#FFF" 
+			android:textSize="22sp" 
+			android:textStyle="bold" android:text="">
+		</TextView>
+    </LinearLayout>
+    
+    <LinearLayout android:id="@+id/linearLayout2" 
+		android:layout_width="fill_parent" 
+		android:layout_height="fill_parent"
+		android:layout_weight = "1"
+		android:orientation="vertical" android:background="@color/background_activity">
+	
+        <LinearLayout android:id="@+id/linearLayout3" 
+        	android:layout_width="fill_parent" 
+    		android:layout_height="fill_parent"
+    		android:layout_weight = "1" 
+    		android:orientation="vertical">
+		<TextView 
+			android:text="Prueba" 
+			android:id="@+id/network_name" 
+			android:layout_height="wrap_content" 
+			android:layout_width="fill_parent"
+			android:gravity="center_vertical|center_horizontal" 
+			android:textColor="#FFF" 
+			android:textSize="22sp" 
+			android:textStyle="bold"
+			android:singleLine="true" ></TextView> 	
+			
+		<WebView
+			android:id="@+id/network_state_chart"
+			android:layout_width="300dp"
+			android:layout_height="150dp"/> 
+        </LinearLayout>
+	<LinearLayout android:id="@+id/linearLayout4" 
+                android:layout_width="fill_parent" 
+		android:layout_height="fill_parent"
+		android:layout_weight = "7"
+		android:layout_gravity="center_vertical|center_horizontal">
+		<include 
+		android:layout_gravity="center_vertical|center_horizontal"
+		    android:id="@+id/menu_network" 
+		    layout="@layout/menu_network_bottom" />
+	</LinearLayout>		
+    </LinearLayout>
+</LinearLayout>

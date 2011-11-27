@@ -39,6 +39,8 @@ public class SingleNetworkActivity extends LoadSensingActivity {
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.single_listnetwork);
         
+        enableNetworkBottomMenu(NT_NETWORK_SECTION);
+        
         TextView txtNetworkName = (TextView) findViewById(R.id.network_name);
         TextView txtNetworkLatitude   = (TextView) findViewById(R.id.network_latitude);
         TextView txtNetworkLongitude  = (TextView) findViewById(R.id.network_longitude);

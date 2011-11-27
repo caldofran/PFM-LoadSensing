@@ -33,6 +33,12 @@
         <!-- Single Network Activity -->
         <activity android:name=".SingleNetworkActivity"></activity>
 
+        <!-- Single Network State Activity -->
+        <activity android:name=".SingleNetworkStateActivity"></activity>
+        
+		<!-- Single Network Images Activity -->
+        <activity android:name=".SingleNetworkImagesActivity"></activity>
+
     </application>
     
     <!-- Set permisions -->
