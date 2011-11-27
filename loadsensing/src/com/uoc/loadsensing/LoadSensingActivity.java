@@ -31,7 +31,9 @@ public class LoadSensingActivity extends Activity {
 	public static final String NT_NETWORK_SECTION	= "NTNETWORK";
 	public static final String NT_STATE_SECTION		= "NTSTATE";
 	public static final String NT_IMAGES_SECTION	= "NTIMAGES";
-	//public static final String NT_REFRESH_SECTION	= "NTREFRESH";	
+	
+	public static int CAMERA_INTENT = 6000;
+	public static int SELECT_PICTURE_INTENT = 5000;
 	
 	public static Context AppContext = null;
 	

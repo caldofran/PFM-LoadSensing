@@ -30,10 +30,7 @@ public class SingleNetworkActivity extends LoadSensingActivity {
 	ArrayList<SensorBean> aSensorsList; 
     /** Clase propia que extiende de ArrayAdapter */
     private SensorAdapter sAdapter;
-	
-	WebView embeddedWebView;
-	String embeddedWeb = "http://chart.apis.google.com/chart?chxl=0:|2012|2011|2010|2009|2008|2007|1:|0|50|100|2:|min|average|max&chxp=2,10,50.83,90&chxr=0,-5,100&chxt=x,y,r&chs=300x150&cht=bvg&chco=76A4FB,FF9900&chd=t:20,30,10,40|50,50,50,50&chdl=Level+of+Tension|Not+Configured&chdlp=t&chg=20,50&chma=|5&chtt=Network+Current+State&chts=008000,11.5";
-	  
+ 
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -56,10 +53,6 @@ public class SingleNetworkActivity extends LoadSensingActivity {
         txtNetworkName.setText(mNetwork.getName());
         txtNetworkLatitude.setText(String.valueOf("Latitude: "+mNetwork.getLatitude()));
         txtNetworkLongitude.setText(String.valueOf("Longitude: "+mNetwork.getLongitude()));
-        
-        // Mostramos grafica
-        embeddedWebView = (WebView)findViewById(R.id.embeddedwebview);
-        embeddedWebView.loadUrl(embeddedWeb);
         
         // Creamos objetos contenedores
         sensorList = (ListView)findViewById(R.id.listSensors);
