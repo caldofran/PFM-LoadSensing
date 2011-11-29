@@ -35,25 +35,21 @@
     		android:layout_height="fill_parent"
     		android:layout_weight = "1" 
     		android:orientation="vertical">
-		<TextView 
-			android:text="Prueba 2..." 
-			android:id="@+id/network_name" 
-			android:layout_height="wrap_content" 
+		  <Button android:id="@+id/btnDoPicture" 
+		  		android:layout_width="fill_parent"
+		  		android:layout_height="wrap_content"
+		  		android:drawableTop="@drawable/camera"
+		  		android:layout_marginTop="5dip"
+		  		android:layout_marginLeft="5dip"
+		  		android:layout_marginRight="5dip"
+		  		android:layout_marginBottom="5dip"
+		  		style="@style/LoginButton"
+		  		android:text="Take a Picture"/>           
+		 <ListView
+			android:id="@+id/list_images"
 			android:layout_width="fill_parent"
-			android:gravity="center_vertical|center_horizontal" 
-			android:textColor="#FFF" 
-			android:textSize="22sp" 
-			android:textStyle="bold"
-			android:singleLine="true" ></TextView> 	  	
-		<ImageView android:id="@+id/camera_icon" 
-			android:layout_width="wrap_content" 
-            android:layout_height="wrap_content" 
-            android:layout_alignParentLeft="true" 
-            android:src="@drawable/camera" 
-            android:layout_marginLeft="15dip" 
-            android:layout_marginRight="10dip" 
-            android:layout_marginTop="10dip" 
-            android:layout_marginBottom="10dip"></ImageView>
+			android:layout_height="wrap_content"
+			/>
 								
         </LinearLayout>
 	<LinearLayout android:id="@+id/linearLayout4" 

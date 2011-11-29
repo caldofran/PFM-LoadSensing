@@ -14,6 +14,7 @@ import android.provider.MediaStore;
 import android.provider.MediaStore.Images.Media;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,10 +39,10 @@ public class SingleNetworkImagesActivity extends LoadSensingActivity {
         
         TextView txtTitle = (TextView) findViewById(R.id.network_images_title);
         txtTitle.setText(mNetwork.getName()+ " Images");
+      
+        final Button btnTakePicture = (Button) findViewById(R.id.btnDoPicture);
         
-        final ImageView imgCamera = (ImageView) findViewById(R.id.camera_icon);        
-        
-        imgCamera.setOnClickListener(new OnClickListener() {
+        btnTakePicture.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
 				AlertDialog.Builder dialog = new AlertDialog.Builder(

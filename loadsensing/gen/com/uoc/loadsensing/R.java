@@ -84,6 +84,7 @@ public final class R {
     public static final class id {
         public static final int RootView=0x7f080015;
         public static final int bottom_menu=0x7f080008;
+        public static final int btnDoPicture=0x7f080033;
         public static final int btnLogin=0x7f080004;
         public static final int btnScanQR=0x7f08001f;
         public static final int btnSendQR=0x7f080020;
@@ -93,13 +94,12 @@ public final class R {
         public static final int btn_network=0x7f080010;
         public static final int btn_qrcode=0x7f08000e;
         public static final int btn_state=0x7f080012;
-        public static final int camera_icon=0x7f080033;
         public static final int editTextShowLocation=0x7f08001e;
         public static final int et_pass=0x7f080003;
         public static final int et_user=0x7f080002;
         public static final int footer=0x7f080001;
         public static final int header=0x7f080000;
-        public static final int imageView1=0x7f080036;
+        public static final int imageView1=0x7f080037;
         public static final int lay_images=0x7f080013;
         public static final int lay_list=0x7f08000b;
         public static final int lay_map=0x7f080009;
@@ -115,6 +115,7 @@ public final class R {
         public static final int linearLayout8=0x7f08002f;
         public static final int list=0x7f08001a;
         public static final int listSensors=0x7f080030;
+        public static final int list_images=0x7f080034;
         public static final int mapa=0x7f080007;
         public static final int mapview=0x7f080006;
         public static final int menu_app=0x7f08001c;
@@ -124,8 +125,8 @@ public final class R {
         public static final int network_latitude=0x7f080024;
         public static final int network_longitude=0x7f080025;
         public static final int network_name=0x7f080022;
-        public static final int network_state_chart=0x7f080035;
-        public static final int network_state_title=0x7f080034;
+        public static final int network_state_chart=0x7f080036;
+        public static final int network_state_title=0x7f080035;
         public static final int num_sensors=0x7f080023;
         public static final int profile_title=0x7f080017;
         public static final int qrcode_title=0x7f08001d;
