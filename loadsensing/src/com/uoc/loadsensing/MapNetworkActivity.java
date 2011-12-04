@@ -1,22 +1,16 @@
 package com.uoc.loadsensing;
 
-import java.util.List;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Point;
+//import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapActivity;
 import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
 import com.google.android.maps.MyLocationOverlay;
-import com.google.android.maps.Overlay;
 
 import com.uoc.loadsensing.R;
 
@@ -24,28 +18,8 @@ import com.uoc.loadsensing.R;
 public class MapNetworkActivity extends MapActivity {
 	MapView mapView;
 	MapController mc;
-	GeoPoint p;
 	Context mContext;
-	
-	/** Extendemos la clase overlay para a–adir markers */
-	class MapOverlay extends com.google.android.maps.Overlay
-	{
-		@Override
-		public boolean draw(Canvas canvas, MapView mapView, boolean shadow, long when)
-		{
-			super.draw(canvas, mapView, shadow);
-			
-			// Translate the geopoint to screen pixels
-			Point screenPts = new Point();
-			mapView.getProjection().toPixels(p, screenPts);
-			
-			// Add the marker
-			Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.world);
-			canvas.drawBitmap(bmp, screenPts.x, screenPts.y - 37, null);
-			return true;
-			
-		}
-	}
+	//Cursor networkCursor; //Cursor that returns the networks we want to display on the map
 
 	/** Called when the activity is first created. */
     @Override
@@ -55,30 +29,24 @@ public class MapNetworkActivity extends MapActivity {
         mContext = this;
         setContentView(R.layout.mapnetwork_layout);
         
+        //String networkURI = NetworkProvider.CONTENT_URI;
+        //networkCursor = getContentResolver().query(networkURI, null, null, null, null);
+        
         mapView = (MapView) findViewById(R.id.mapa);
+        NetworksOverlay no = new NetworksOverlay(mContext); // Temporal
+        //NetworksOverlay no = new NetworksOverlay(networkCursor);
+        mapView.getOverlays().add(no);
+        
         mapView.setBuiltInZoomControls(true);
         mapView.setSatellite(false);
+        mapView.invalidate();
         
         mc = mapView.getController();
         
-        //Punto al azar, para nosotros lo obtendriamos del Sensor o Red
-        String coordinates[] = {"40.40941", "-3.70259"};
-        double lat = Double.parseDouble(coordinates[0]);
-        double lng = Double.parseDouble(coordinates[1]);
-        
-        p = new GeoPoint(
-                (int) (lat * 1E6), 
-                (int) (lng * 1E6));
-        
-        // Add a location marker
-        MapOverlay mapOverlay = new MapOverlay();
-        List<Overlay> listOfOverlays = mapView.getOverlays();
-        listOfOverlays.clear();
-        listOfOverlays.add(mapOverlay);
-        
-        mc.animateTo(p);
-        mc.setZoom(17);
-        
+        /**
+         * When the Location button is clicked this starts to locate user and
+         * add an overlay to the current mapView.
+         * */
         final ImageButton my_location_button = (ImageButton)findViewById(R.id.my_location_button);
         my_location_button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -86,7 +54,7 @@ public class MapNetworkActivity extends MapActivity {
                 mapView.getOverlays().add(myLocationOverlay);
                 myLocationOverlay.enableCompass();
                 myLocationOverlay.enableMyLocation();
-                System.out.println("Obteniendo tu ubucacion");
+                System.out.println("Obteniendo tu ubicacion");
                 myLocationOverlay.runOnFirstFix(new Runnable() {
                     public void run() {
                         mc.animateTo(myLocationOverlay.getMyLocation());
@@ -102,4 +70,27 @@ public class MapNetworkActivity extends MapActivity {
     protected boolean isRouteDisplayed() {
         return false;
     }
+    
+    /**
+     * requery on the Network result set whenever this Activity becomes visible.
+     * */
+    @Override
+    public void onResume() {
+    	//networkCursor.requery();
+    	super.onResume();
+    }
+    
+    /**
+     * Optimize use of Cursor resources when View is paused or destroyed
+     * */
+    @Override
+    public void onPause() {
+    	//networkCursor.deactivate();
+    	super.onPause();
+    }
+    
+    @Override
+    public void onDestroy() {
+    	//networkCursor.close();
+    	super.onDestroy(); }
 }
