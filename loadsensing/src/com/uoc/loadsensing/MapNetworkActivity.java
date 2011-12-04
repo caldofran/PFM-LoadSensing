@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapActivity;
 import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
@@ -37,11 +38,20 @@ public class MapNetworkActivity extends MapActivity {
         //NetworksOverlay no = new NetworksOverlay(networkCursor);
         mapView.getOverlays().add(no);
         
+        mc = mapView.getController();
+        
+        //TODO: centrar el mapa en una de las redes
+        //TODO: setear el zoom para que se vean los puntos correctamente
+        Double lat = 40.40281 * 1E6;
+		Double lng = -3.710461 * 1E6;
+		GeoPoint geoPoint = new GeoPoint(lat.intValue(), lng.intValue());
+        mc.animateTo(geoPoint);
+        mc.setZoom(15);
+        // Eliminar este codigo temporal
+        
         mapView.setBuiltInZoomControls(true);
         mapView.setSatellite(false);
         mapView.invalidate();
-        
-        mc = mapView.getController();
         
         /**
          * When the Location button is clicked this starts to locate user and
