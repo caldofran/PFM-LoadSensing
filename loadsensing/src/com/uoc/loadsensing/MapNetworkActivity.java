@@ -34,16 +34,29 @@ public class MapNetworkActivity extends MapActivity {
         //networkCursor = getContentResolver().query(networkURI, null, null, null, null);
         
         mapView = (MapView) findViewById(R.id.mapa);
-        NetworksOverlay no = new NetworksOverlay(mContext); // Temporal
+        //NetworksOverlay no = new NetworksOverlay(mContext); // Temporal
         //NetworksOverlay no = new NetworksOverlay(networkCursor);
-        mapView.getOverlays().add(no);
+        
+        //Usando MyItemizedOverlay
+        MyItemizedOverlay itemizedOverlay = new MyItemizedOverlay(getResources().getDrawable(R.drawable.world), mContext);
+        Double lat = 40.40281 * 1E6;
+		Double lng = -3.710461 * 1E6;
+		GeoPoint geoPoint1 = new GeoPoint(lat.intValue(), lng.intValue());
+		itemizedOverlay.addItem(geoPoint1, "Primer Punto", "Mas texto");
+		lat = 40.408627 * 1E6;
+		lng = -3.700998 * 1E6;
+		GeoPoint geoPoint2 = new GeoPoint(lat.intValue(), lng.intValue());
+		itemizedOverlay.addItem(geoPoint2, "Segundo Punto", "Mas texto 2");
+		mapView.getOverlays().add(itemizedOverlay);
+        //Fin del uso de ItemizedOverlay
+        //mapView.getOverlays().add(no);
         
         mc = mapView.getController();
         
         //TODO: centrar el mapa en una de las redes
         //TODO: setear el zoom para que se vean los puntos correctamente
-        Double lat = 40.40281 * 1E6;
-		Double lng = -3.710461 * 1E6;
+        lat = 40.40281 * 1E6;
+		lng = -3.710461 * 1E6;
 		GeoPoint geoPoint = new GeoPoint(lat.intValue(), lng.intValue());
         mc.animateTo(geoPoint);
         mc.setZoom(15);
