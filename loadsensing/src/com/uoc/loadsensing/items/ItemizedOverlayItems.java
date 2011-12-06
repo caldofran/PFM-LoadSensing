@@ -47,6 +47,7 @@ public class ItemizedOverlayItems extends BalloonItemizedOverlay<OverlayItem> {
 		double lat = point.getLatitudeE6() / 1.0E6;
 		double lon = point.getLongitudeE6() / 1.0E6;
 		//http://developer.android.com/guide/appendix/g-app-intents.html
+		//TODO: Aqui habra que meter el codigo que lleve a la ventana detalle de la red
 		Intent intent = new Intent(android.content.Intent.ACTION_VIEW,Uri.parse("http://maps.google.es/maps?f=q&source=s_q&hl=es&geocode=&q="+lat+","+lon+"&aq=&sll="+lat+","+lon+"&ie=UTF8&z=17"));
 		c.startActivity(intent);
 		return true;
