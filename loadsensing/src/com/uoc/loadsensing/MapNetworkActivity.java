@@ -2,6 +2,7 @@ package com.uoc.loadsensing;
 
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 //import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,8 @@ import com.google.android.maps.MapActivity;
 import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
 import com.google.android.maps.MyLocationOverlay;
+import com.google.android.maps.OverlayItem;
+import com.uoc.loadsensing.items.ItemizedOverlayItems;
 
 import com.uoc.loadsensing.R;
 
@@ -38,15 +41,18 @@ public class MapNetworkActivity extends MapActivity {
         //NetworksOverlay no = new NetworksOverlay(networkCursor);
         
         //Usando MyItemizedOverlay
-        MyItemizedOverlay itemizedOverlay = new MyItemizedOverlay(getResources().getDrawable(R.drawable.world), mContext);
+        Drawable drawable = this.getResources().getDrawable(R.drawable.world);
+        ItemizedOverlayItems itemizedOverlay = new ItemizedOverlayItems(drawable,mapView);
         Double lat = 40.40281 * 1E6;
 		Double lng = -3.710461 * 1E6;
 		GeoPoint geoPoint1 = new GeoPoint(lat.intValue(), lng.intValue());
-		itemizedOverlay.addItem(geoPoint1, "Primer Punto", "Mas texto");
+		OverlayItem overlayItem1 = new OverlayItem(geoPoint1, "Primer punto", "Subtitulo1");
+		itemizedOverlay.addOverlay(overlayItem1);
 		lat = 40.408627 * 1E6;
 		lng = -3.700998 * 1E6;
 		GeoPoint geoPoint2 = new GeoPoint(lat.intValue(), lng.intValue());
-		itemizedOverlay.addItem(geoPoint2, "Segundo Punto", "Mas texto 2");
+		OverlayItem overlayItem2 = new OverlayItem(geoPoint2, "Segundo punto", "Subtitulo2");
+		itemizedOverlay.addOverlay(overlayItem2);
 		mapView.getOverlays().add(itemizedOverlay);
         //Fin del uso de ItemizedOverlay
         //mapView.getOverlays().add(no);
