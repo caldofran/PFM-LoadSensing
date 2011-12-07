@@ -24,4 +24,7 @@
     <string name="tab_map">Map</string>
     <string name="tab_list">Networks</string>
     <string name="tab_qrcode">QR Code</string>
+    
+    <!-- Literales para el Mapa -->
+    <string name="network_map_title">Mapa</string>
 </resources>

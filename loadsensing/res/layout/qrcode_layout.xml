@@ -9,21 +9,21 @@
   		android:layout_marginLeft="10dip"
     	android:gravity="center"/>	
 	<FrameLayout
-	    android:layout_width="match_parent"
+	    android:layout_width="fill_parent"
 	    android:layout_height="wrap_content">
 	    <EditText android:id="@+id/editTextShowLocation"
 	    	android:layout_height="wrap_content" 
 	    	android:text=""
-    		android:layout_width="match_parent" 
+    		android:layout_width="fill_parent" 
     		android:lines="2" 
     		android:gravity="top"/>
 	</FrameLayout>
 	<Button android:layout_height="wrap_content"
-		android:layout_width="match_parent" android:id="@+id/btnScanQR"
+		android:layout_width="fill_parent" android:id="@+id/btnScanQR"
 		android:text="Scan QR Code" android:textSize="15sp"
 		android:textStyle="bold" android:layout_marginTop="10dip" />
 	<Button android:layout_height="wrap_content"
-		android:layout_width="match_parent" android:id="@+id/btnSendQR"
+		android:layout_width="fill_parent" android:id="@+id/btnSendQR"
 		android:text="Send QR Code" android:textSize="15sp"
 		android:textStyle="bold" android:layout_marginTop="10dip" />		
 </LinearLayout>

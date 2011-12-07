@@ -25,6 +25,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.uoc.loadsensing.R;
+
 public class ListNetworkActivity extends ListActivity {
 	
 	/** Cuadro de dialogo */

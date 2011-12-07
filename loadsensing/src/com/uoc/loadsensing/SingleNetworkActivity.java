@@ -9,6 +9,8 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.uoc.loadsensing.R;
+
 public class SingleNetworkActivity extends Activity {
 
 	@Override
