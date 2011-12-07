@@ -4,6 +4,8 @@ package com.uoc.loadsensing;
  * Cabecera de Clase
  */
 
+import com.uoc.loadsensing.utils.Environment;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
@@ -12,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.uoc.loadsensing.R;
 
@@ -21,6 +24,9 @@ public class LoginActivity extends Activity {
 	Button btnLogin;
 	EditText etUser;
 	EditText etPass;
+	
+	private Toast toast;
+	private long lastBackPressTime = 0;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,9 +46,14 @@ public class LoginActivity extends Activity {
 			public void onClick(View v) {
 
 				//twVisitWS.setText("Request Loging "+etUser.getText().toString()+"-"+etPass.getText().toString());
-				
-				Intent i = new Intent(getApplicationContext(), TabMenuActivity.class);
-				startActivity(i);
+				if (!Environment.internetIsAvailable(LoginActivity.this))
+				{
+					Environment.errorAlert(LoginActivity.this, getApplicationContext().getString(R.string.no_connection));
+				}else{				
+					//Intent i = new Intent(getApplicationContext(), TabMenuActivity.class);
+					Intent i = new Intent(getApplicationContext(), ListNetworksActivity.class);
+					startActivity(i);
+				}
 			}
 		});
         
@@ -50,12 +61,33 @@ public class LoginActivity extends Activity {
         twVisitWS.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View v) {
-				Intent i = new Intent(Intent.ACTION_VIEW);
-				i.setData(Uri.parse(getResources().getString(R.string.url_ws)));
-				startActivity(i);				
+				if (!Environment.internetIsAvailable(LoginActivity.this))
+				{
+					Environment.errorAlert(LoginActivity.this, getApplicationContext().getString(R.string.no_connection));
+				}else{				
+	
+					Intent i = new Intent(Intent.ACTION_VIEW);
+					i.setData(Uri.parse(getResources().getString(R.string.url_ws)));
+					startActivity(i);
+					
+				}
 			}
 		});
     }
 
     
+    
+    @Override
+    public void onBackPressed() {
+      if (this.lastBackPressTime < System.currentTimeMillis() - 4000) {
+        toast = Toast.makeText(this, getApplicationContext().getString(R.string.exit_app), 4000);
+        toast.show();
+        this.lastBackPressTime = System.currentTimeMillis();
+      } else {
+        if (toast != null) {
+        toast.cancel();
+      }
+      super.onBackPressed();
+     }
+    }    
 }

@@ -13,9 +13,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+<<<<<<< HEAD
 import com.uoc.loadsensing.R;
 
 public class QRCodeActivity extends Activity {
+=======
+public class QRCodeActivity extends LoadSensingActivity {
+>>>>>>> de714f52eef47fe03c38db67efbec91e89a45a83
 
     TextView txtQRCode;
     Button btnScanQR;
@@ -26,6 +30,8 @@ public class QRCodeActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.qrcode_layout);
+            
+            enableBottomMenu(QRCODE_SECTION);
             
             txtQRCode = (TextView) findViewById(R.id.editTextShowLocation);
             btnSendQR = (Button)findViewById(R.id.btnSendQR);
