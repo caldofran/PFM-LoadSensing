@@ -43,11 +43,19 @@
 			android:layout_width="fill_parent" 
 			android:layout_height="wrap_content"
 			android:layout_weight = "2">
+<<<<<<< HEAD
 
   				<WebView
    					android:id="@+id/embeddedwebview"
    					android:layout_width="250dp"
    					android:layout_height="100dp"/> 
+=======
+  				<ImageView
+   					android:id="@+id/test"
+   					android:layout_width="400dp"
+   					android:layout_height="60dp"
+   					android:src="@drawable/map_network_example"/> 
+>>>>>>> feature-detailnetwork
 
 			</RelativeLayout>
 
@@ -61,7 +69,6 @@
 				android:layout_alignParentLeft="true" 
 				android:textColor="#FFF" 
 				android:textSize="16sp" 
-				android:textStyle="bold" 
 				android:layout_marginTop="8dip" 
 				android:layout_marginLeft="10dip"  
 				android:singleLine="true" android:layout_width="fill_parent" android:layout_marginRight="8dip">
@@ -71,7 +78,8 @@
 				android:text="" 
 				android:layout_height="wrap_content" 
 				android:layout_below="@+id/network_latitude" 
-				android:layout_width="wrap_content" 
+				android:layout_width="wrap_content"
+				android:textColor="#FFF" 
 				android:layout_alignLeft="@+id/network_latitude"
 				android:singleLine="true"
 				android:maxLines="1"
@@ -104,7 +112,7 @@
             </ListView>
         </LinearLayout>
     </LinearLayout>
-        <!--
+    
 	<LinearLayout android:id="@+id/linearLayout4" 
                 android:layout_width="fill_parent" 
 		android:layout_height="fill_parent"
@@ -112,9 +120,9 @@
 		android:layout_gravity="center_vertical|center_horizontal">
 		<include 
 		android:layout_gravity="center_vertical|center_horizontal"
-		    android:id="@+id/menu_app" 
-		    layout="@layout/menu_bottom" />
+		    android:id="@+id/menu_network" 
+		    layout="@layout/menu_network_bottom" />
 	</LinearLayout>
-	-->
+
     </LinearLayout>
 </LinearLayout>

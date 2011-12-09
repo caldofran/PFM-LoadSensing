@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+   android:layout_width="fill_parent" 
+	    android:layout_alignParentBottom="true" android:orientation="horizontal" 
+	    android:layout_height="fill_parent"
+	    android:id="@+id/bottom_menu" android:background="@drawable/nav_bar" android:gravity="center_vertical|center_horizontal" android:layout_gravity="center_vertical|center_horizontal">    
+		    <LinearLayout android:layout_width="fill_parent" 
+		    android:layout_height="wrap_content" 
+		    android:layout_alignParentBottom="true" 
+		    android:orientation="vertical"
+		    android:layout_weight = "1"
+		    android:layout_gravity="center_vertical|center_horizontal" android:id="@+id/lay_network">
+			    <ImageButton 
+			    	android:src="@drawable/btn_network_btn"
+			    	android:layout_gravity="center_vertical|center_horizontal"
+			    	android:layout_weight = "1" 
+			        android:layout_alignParentBottom="true" 
+			        android:text="" 
+			        android:layout_alignParentLeft="true" 
+			        android:id="@+id/btn_network" 
+			        android:layout_height="wrap_content" 
+			        android:layout_width="wrap_content" 
+			        android:background="@drawable/transparent_bg">
+			        </ImageButton>
+		    </LinearLayout>
+		    <LinearLayout android:layout_width="fill_parent" 
+		    android:layout_height="wrap_content" 
+		    android:layout_alignParentBottom="true" 
+		    android:orientation="vertical"
+		    android:layout_weight = "1"
+		    android:layout_gravity="center_vertical|center_horizontal" android:id="@+id/lay_state">
+			    <ImageButton 
+			    	android:src="@drawable/btn_state_btn"
+			    	android:layout_gravity="center_vertical|center_horizontal"
+			    	android:layout_weight = "1" 
+			        android:layout_alignParentBottom="true" 
+			        android:text="" 
+			        android:layout_alignParentLeft="true" 
+			        android:id="@+id/btn_state" 
+			        android:layout_height="wrap_content" 
+			        android:layout_width="wrap_content" 
+			        android:background="@drawable/transparent_bg">
+			        </ImageButton>
+		    </LinearLayout>
+		   <LinearLayout android:layout_width="fill_parent" 
+		    android:layout_height="wrap_content" 
+		    android:layout_alignParentBottom="true" 
+		    android:orientation="vertical"
+		    android:layout_weight = "1"
+		    android:layout_gravity="center_vertical|center_horizontal" android:id="@+id/lay_images">
+			    <ImageButton 
+			        android:layout_gravity="center_vertical|center_horizontal"
+			    	android:src="@drawable/btn_images_btn"
+			    	android:layout_weight = "1" 
+			        android:layout_alignParentBottom="true" 
+			        android:text="" 
+			        android:id="@+id/btn_images" 
+			        android:layout_height="wrap_content" 
+			        android:layout_width="wrap_content"
+			        android:background="@drawable/transparent_bg">
+			        </ImageButton>
+	        </LinearLayout>
+	        <!--
+		   <LinearLayout android:layout_width="fill_parent" 
+		    android:layout_height="wrap_content" 
+		    android:layout_alignParentBottom="true" 
+		    android:orientation="vertical"
+		    android:layout_weight = "1"
+		    android:layout_gravity="center_vertical|center_horizontal" android:id="@+id/lay_refresh">
+			    <ImageButton 
+			        android:layout_gravity="center_vertical|center_horizontal"
+			    	android:src="@drawable/btn_refresh_btn"
+			    	android:layout_weight = "1" 
+			        android:layout_alignParentBottom="true" 
+			        android:text="" 
+			        android:id="@+id/btn_refresh" 
+			        android:layout_height="wrap_content" 
+			        android:layout_width="wrap_content"
+			        android:background="@drawable/transparent_bg">
+			        </ImageButton>
+	        </LinearLayout>
+	        -->	        
+</LinearLayout>	        
