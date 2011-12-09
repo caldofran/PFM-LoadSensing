@@ -2,11 +2,6 @@ package com.uoc.loadsensing;
 
 import java.util.ArrayList;
 
-import com.uoc.loadsensing.beans.NetworkBean;
-import com.uoc.loadsensing.beans.SensorBean;
-import com.uoc.loadsensing.utils.Environment;
-
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -14,9 +9,6 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
@@ -26,23 +18,36 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.uoc.loadsensing.beans.NetworkBean;
+import com.uoc.loadsensing.beans.SensorBean;
+import com.uoc.loadsensing.utils.Environment;
+
+/**
+ * @author  armisael
+ */
 public class SingleNetworkActivity extends LoadSensingActivity {
 
+	/**
+	 * @uml.property  name="mNetwork"
+	 * @uml.associationEnd  
+	 */
 	NetworkBean mNetwork = null;
 	public ProgressDialog dialog;
 	ListView sensorList;
 	ArrayList<SensorBean> aSensorsList; 
-    /** Clase propia que extiende de ArrayAdapter */
+    /**
+	 * Clase propia que extiende de ArrayAdapter
+	 * @uml.property  name="sAdapter"
+	 * @uml.associationEnd  
+	 */
     private SensorAdapter sAdapter;
 
-	WebView embeddedWebView;
-	String embeddedWeb = "http://chart.apis.google.com/chart?chxl=0:|2012|2011|2010|2009|2008|2007|1:|0|50|100|2:|min|average|max&chxp=2,10,50.83,90&chxr=0,-5,100&chxt=x,y,r&chs=300x150&cht=bvg&chco=76A4FB,FF9900&chd=t:20,30,10,40|50,50,50,50&chdl=Level+of+Tension|Not+Configured&chdlp=t&chg=20,50&chma=|5&chtt=Network+Current+State&chts=008000,11.5";
-
-
-	@Override
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.single_listnetwork);
+        
+        enableNetworkBottomMenu(NT_NETWORK_SECTION);
         
         TextView txtNetworkName = (TextView) findViewById(R.id.network_name);
         TextView txtNetworkLatitude   = (TextView) findViewById(R.id.network_latitude);
@@ -58,10 +63,6 @@ public class SingleNetworkActivity extends LoadSensingActivity {
         txtNetworkName.setText(mNetwork.getName());
         txtNetworkLatitude.setText(String.valueOf("Latitude: "+mNetwork.getLatitude()));
         txtNetworkLongitude.setText(String.valueOf("Longitude: "+mNetwork.getLongitude()));
-        
-        // Mostramos grafica
-        embeddedWebView = (WebView)findViewById(R.id.embeddedwebview);
-        embeddedWebView.loadUrl(embeddedWeb);
         
         // Creamos objetos contenedores
         sensorList = (ListView)findViewById(R.id.listSensors);
@@ -141,6 +142,19 @@ public class SingleNetworkActivity extends LoadSensingActivity {
                 {
                 	
                 	Toast.makeText(getApplicationContext(), "Es el "+position, Toast.LENGTH_LONG).show();
+                	
+    				// Launching new Activity on selecting single List Item
+    				Intent i = new Intent(getApplicationContext(), SensorActivity.class);
+    				 
+    				// sending data to new activity
+    				i.putExtra("current_sensor", position);
+    				
+    				// establish sensor identifiers
+    				sensor_selected = position;
+    				array_sensors = aSensorsList;
+    				
+    				// launch activity
+    				startActivity(i);                 	
            	
                 }
             });            	
