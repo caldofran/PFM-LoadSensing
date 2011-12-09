@@ -19,8 +19,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * @author  armisael
+ */
 public class SingleNetworkImagesActivity extends LoadSensingActivity {
 
+	/**
+	 * @uml.property  name="mNetwork"
+	 * @uml.associationEnd  
+	 */
 	NetworkBean mNetwork = null;
 	int selected_report = 0;
 	Uri imageUri;

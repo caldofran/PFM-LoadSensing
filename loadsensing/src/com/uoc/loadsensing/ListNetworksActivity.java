@@ -22,6 +22,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * @author  armisael
+ */
 public class ListNetworksActivity extends LoadSensingActivity implements ListView.OnScrollListener {
 
     public Activity activity;
@@ -31,7 +34,11 @@ public class ListNetworksActivity extends LoadSensingActivity implements ListVie
 	
 	public ArrayList<NetworkBean> aNetworkList = null;
 	
-    /** Clase propia que extiende de ArrayAdapter */
+    /**
+	 * Clase propia que extiende de ArrayAdapter
+	 * @uml.property  name="oAdapter"
+	 * @uml.associationEnd  
+	 */
     private OrderAdapter oAdapter;
 
 	

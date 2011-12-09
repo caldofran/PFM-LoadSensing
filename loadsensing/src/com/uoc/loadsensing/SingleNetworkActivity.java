@@ -22,13 +22,24 @@ import com.uoc.loadsensing.beans.NetworkBean;
 import com.uoc.loadsensing.beans.SensorBean;
 import com.uoc.loadsensing.utils.Environment;
 
+/**
+ * @author  armisael
+ */
 public class SingleNetworkActivity extends LoadSensingActivity {
 
+	/**
+	 * @uml.property  name="mNetwork"
+	 * @uml.associationEnd  
+	 */
 	NetworkBean mNetwork = null;
 	public ProgressDialog dialog;
 	ListView sensorList;
 	ArrayList<SensorBean> aSensorsList; 
-    /** Clase propia que extiende de ArrayAdapter */
+    /**
+	 * Clase propia que extiende de ArrayAdapter
+	 * @uml.property  name="sAdapter"
+	 * @uml.associationEnd  
+	 */
     private SensorAdapter sAdapter;
  
 	

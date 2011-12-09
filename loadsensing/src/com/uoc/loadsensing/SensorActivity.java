@@ -5,8 +5,15 @@ import com.uoc.loadsensing.beans.SensorBean;
 import android.os.Bundle;
 import android.widget.TextView;
 
+/**
+ * @author  armisael
+ */
 public class SensorActivity extends LoadSensingActivity {
 
+	/**
+	 * @uml.property  name="mSensor"
+	 * @uml.associationEnd  
+	 */
 	SensorBean mSensor = null;
 	
 	@Override

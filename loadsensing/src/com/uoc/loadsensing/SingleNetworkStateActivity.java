@@ -6,8 +6,15 @@ import android.os.Bundle;
 import android.webkit.WebView;
 import android.widget.TextView;
 
+/**
+ * @author  armisael
+ */
 public class SingleNetworkStateActivity extends LoadSensingActivity {
 	
+	/**
+	 * @uml.property  name="mNetwork"
+	 * @uml.associationEnd  
+	 */
 	NetworkBean mNetwork = null;
 	
 	WebView embeddedChart;
