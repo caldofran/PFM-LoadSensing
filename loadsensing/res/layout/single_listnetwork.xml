@@ -43,20 +43,11 @@
 			android:layout_width="fill_parent" 
 			android:layout_height="wrap_content"
 			android:layout_weight = "2">
-<<<<<<< HEAD
-
-  				<WebView
-   					android:id="@+id/embeddedwebview"
-   					android:layout_width="250dp"
-   					android:layout_height="100dp"/> 
-=======
   				<ImageView
    					android:id="@+id/test"
    					android:layout_width="400dp"
    					android:layout_height="60dp"
    					android:src="@drawable/map_network_example"/> 
->>>>>>> feature-detailnetwork
-
 			</RelativeLayout>
 
 			<RelativeLayout android:id="@+id/linearLayout8" 
