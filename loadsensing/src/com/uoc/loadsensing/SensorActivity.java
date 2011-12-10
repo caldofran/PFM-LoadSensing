@@ -51,14 +51,14 @@ public class SensorActivity extends LoadSensingActivity {
 			   "&chxr=0,0,50|2,5,100"+
 			   "&chxs=0,676767,11.5,0,lt,676767"+
 			   "&chxt=x,x,y,y"+
-			   "&chs=320x100"+
+			   "&chs=320x150"+
 			   "&cht=lc"+
 			   "&chco=76A4FB"+
 			   "&chd=s:QRSUWZcejmkjlghgbefe"+
 			   "&chls=2"+
 			   "&chma=40,20,20,30"+
 			   "&chtt=Vibrating+Wire"+
-			   "&chts=3072F3,5.5";
+			   "&chts=3072F3,10.5";
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
