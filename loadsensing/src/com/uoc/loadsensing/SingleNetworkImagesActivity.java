@@ -19,9 +19,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-/**
- * @author  armisael
- */
+
 public class SingleNetworkImagesActivity extends LoadSensingActivity {
 
 	/**

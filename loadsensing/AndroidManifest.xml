@@ -22,7 +22,6 @@
  
         <!--  Map Activity -->
         <activity android:name=".MapNetworkActivity" android:launchMode="singleTask"></activity>
-		<activity android:name=".AndroidMapViewActivity"></activity>
  
         <!--  List Network Activity -->
         <activity android:name=".ListNetworksActivity" android:launchMode="singleTask"></activity>

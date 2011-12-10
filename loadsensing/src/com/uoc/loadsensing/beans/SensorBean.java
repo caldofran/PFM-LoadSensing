@@ -1,8 +1,6 @@
 package com.uoc.loadsensing.beans;
 
-/**
- * @author  armisael
- */
+
 public class SensorBean {
 
 	/**
@@ -22,6 +20,43 @@ public class SensorBean {
 	 */
 	private String description = "";
 	
+	private int serial_number 	= 0;
+	private int max_load		= 0;
+	private int sensitivity		= 0;
+	private int offset			= 0;
+	private int alarm			= 0;
+	
+	
+	public int getSerial_number() {
+		return serial_number;
+	}
+	public void setSerial_number(int serial_number) {
+		this.serial_number = serial_number;
+	}
+	public int getMax_load() {
+		return max_load;
+	}
+	public void setMax_load(int max_load) {
+		this.max_load = max_load;
+	}
+	public int getSensitivity() {
+		return sensitivity;
+	}
+	public void setSensitivity(int sensitivity) {
+		this.sensitivity = sensitivity;
+	}
+	public int getOffset() {
+		return offset;
+	}
+	public void setOffset(int offset) {
+		this.offset = offset;
+	}
+	public int getAlarm() {
+		return alarm;
+	}
+	public void setAlarm(int alarm) {
+		this.alarm = alarm;
+	}
 	/**
 	 * @return
 	 * @uml.property  name="id"

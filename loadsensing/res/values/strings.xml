@@ -48,4 +48,17 @@
     
     <!-- Literales para el Mapa -->
     <string name="network_map_title">Mapa</string>
+    
+    <!-- Literales para detalle Sensor -->
+    <string name="sr_serial_number">Serial Number</string>
+    <string name="sr_max_load">Max Load (Kg)</string>
+    <string name="sr_sensitivity">Sensitivity (mV/V)</string>
+    <string name="sr_offset">Offset (uV/V)</string>
+    <string name="sr_alarm">Alarm at (Kg)</string>
+    
+    <!-- Literales para detalle Device -->
+    <string name="dev_id">Parent Id</string>
+    <string name="dev_voltage">Voltage (V)</string>
+    <string name="dev_temp">Temperature (ºC)</string>
+    
 </resources>
