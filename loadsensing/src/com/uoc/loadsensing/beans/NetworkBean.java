@@ -20,11 +20,11 @@ public class NetworkBean {
 	/**
 	 * @uml.property  name="latitude"
 	 */
-	private int latitude = 0;
+	private float latitude = 0;
 	/**
 	 * @uml.property  name="longitude"
 	 */
-	private int longitude = 1;
+	private float longitude = 1;
 	/**
 	 * @return
 	 * @uml.property  name="name"
@@ -71,28 +71,28 @@ public class NetworkBean {
 	 * @return
 	 * @uml.property  name="latitude"
 	 */
-	public int getLatitude() {
+	public float getLatitude() {
 		return latitude;
 	}
 	/**
-	 * @param latitude
+	 * @param f
 	 * @uml.property  name="latitude"
 	 */
-	public void setLatitude(int latitude) {
-		this.latitude = latitude;
+	public void setLatitude(float f) {
+		this.latitude = f;
 	}
 	/**
 	 * @return
 	 * @uml.property  name="longitude"
 	 */
-	public int getLongitude() {
+	public float getLongitude() {
 		return longitude;
 	}
 	/**
 	 * @param longitude
 	 * @uml.property  name="longitude"
 	 */
-	public void setLongitude(int longitude) {
+	public void setLongitude(float longitude) {
 		this.longitude = longitude;
 	}
 	
