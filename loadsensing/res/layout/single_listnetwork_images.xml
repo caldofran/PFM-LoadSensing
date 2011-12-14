@@ -6,13 +6,13 @@
   android:orientation="vertical" 
   android:gravity="center_vertical" 
   android:weightSum="9" android:id="@+id/RootView">
-    <LinearLayout 
-		android:id="@+id/linearLayout1"
-		android:layout_width="fill_parent" 
-		android:layout_height="fill_parent"
-		android:layout_weight = "8"
-		android:background="@drawable/nav_bar" 
-		android:gravity="center_vertical|center_horizontal">
+  <RelativeLayout android:layout_width="fill_parent" 
+    android:layout_height="fill_parent"
+    android:layout_weight = "8"
+    android:background="@drawable/nav_bar" 
+    android:id="@+id/map_menu_bar" 
+    android:baselineAligned="false" 
+    android:orientation="horizontal" android:gravity="center_vertical|center_horizontal">
 		<TextView 
 			android:id="@+id/network_images_title" 
 			android:layout_height="wrap_content" 
@@ -22,7 +22,17 @@
 			android:textSize="22sp" 
 			android:textStyle="bold" android:text="">
 		</TextView>
-    </LinearLayout>
+		
+ 		<ImageButton 
+        android:gravity="left" 
+        android:id="@+id/btnDoPicture" 
+        android:src="@drawable/camera" 
+        android:layout_height="wrap_content" 
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        style="@style/ButtonGray"
+        android:layout_margin="3dip" android:visibility="visible" android:layout_centerVertical="true"></ImageButton>  		
+    </RelativeLayout>
     
     <LinearLayout android:id="@+id/linearLayout2" 
 		android:layout_width="fill_parent" 
@@ -35,16 +45,7 @@
     		android:layout_height="fill_parent"
     		android:layout_weight = "1" 
     		android:orientation="vertical">
-		  <Button android:id="@+id/btnDoPicture" 
-		  		android:layout_width="fill_parent"
-		  		android:layout_height="wrap_content"
-		  		android:drawableTop="@drawable/camera"
-		  		android:layout_marginTop="5dip"
-		  		android:layout_marginLeft="5dip"
-		  		android:layout_marginRight="5dip"
-		  		android:layout_marginBottom="5dip"
-		  		style="@style/LoginButton"
-		  		android:text="Take a Picture"/>           
+       
 		 <ListView
 			android:id="@+id/list_images"
 			android:layout_width="fill_parent"

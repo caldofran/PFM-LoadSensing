@@ -49,7 +49,7 @@
     		android:id="@+id/mapa"
     		android:layout_width="fill_parent"
     		android:layout_height="fill_parent"
-  			android:apiKey="0QhwC8zAj3ptLnveVVM3FEJMqAl76OZoLM3Q2jw"  	
+  			android:apiKey="0QhwC8zAj3puB2zinULhl2SFw-HQwapI6VyP5yw"  	
     		android:clickable="true" />
     </LinearLayout>              
 </LinearLayout>
