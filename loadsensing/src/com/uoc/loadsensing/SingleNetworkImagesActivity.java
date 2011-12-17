@@ -131,7 +131,7 @@ public class SingleNetworkImagesActivity extends LoadSensingActivity {
             {
             	AlertDialog.Builder dialog = new AlertDialog.Builder(SingleNetworkImagesActivity.this);
             	
-				dialog.setTitle("Opciones");
+				dialog.setTitle(getApplicationContext().getString(R.string.options));
 				
             	dialog.setSingleChoiceItems(R.array.image_list_options, selected_button,new DialogInterface.OnClickListener() 
 				{
