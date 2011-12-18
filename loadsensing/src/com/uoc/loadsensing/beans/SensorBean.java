@@ -22,6 +22,16 @@ public class SensorBean {
 	 */
 	private String description = "";
 	
+	private String networkId = "";
+	/**
+	 * @uml.property  name="latitude"
+	 */
+	private float latitude = 0;
+	/**
+	 * @uml.property  name="longitude"
+	 */
+	private float longitude = 1;
+	
 	/**
 	 * @return
 	 * @uml.property  name="id"
@@ -79,4 +89,36 @@ public class SensorBean {
 		this.description = description;
 	}
 	
+	public String getNetworkId() {
+		return this.networkId;
+	}
+	
+	public void setNetworkId(String _networkId) {
+		this.networkId = _networkId;
+	}
+	
+	public float getLatitude() {
+		return latitude;
+	}
+	/**
+	 * @param f
+	 * @uml.property  name="latitude"
+	 */
+	public void setLatitude(float f) {
+		this.latitude = f;
+	}
+	/**
+	 * @return
+	 * @uml.property  name="longitude"
+	 */
+	public float getLongitude() {
+		return longitude;
+	}
+	/**
+	 * @param longitude
+	 * @uml.property  name="longitude"
+	 */
+	public void setLongitude(float longitude) {
+		this.longitude = longitude;
+	}
 }

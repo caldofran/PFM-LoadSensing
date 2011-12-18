@@ -7,7 +7,10 @@ import java.util.Iterator;
  * @author  armisael
  */
 public class NetworkBean {
-	
+	/**
+	 * @uml.property  name="id"
+	 */
+	private int id = 0;
 	/**
 	 * @uml.property  name="name"
 	 */
@@ -31,6 +34,20 @@ public class NetworkBean {
 	
 	private ArrayList<String> arrayPathsToImages = new ArrayList<String>();
 	
+	/**
+	 * @return
+	 * @uml.property  name="id"
+	 */
+	public int getId() {
+		return this.id;
+	}
+	/**
+	 * @param id
+	 * @uml.property  name="id"
+	 */
+	public void setId(int _id) {
+		this.id = _id;
+	}
 	/**
 	 * @return
 	 * @uml.property  name="name"
