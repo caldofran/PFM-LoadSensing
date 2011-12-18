@@ -1,5 +1,8 @@
 package com.uoc.loadsensing.beans;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 /**
  * @author  armisael
  */
@@ -25,6 +28,9 @@ public class NetworkBean {
 	 * @uml.property  name="longitude"
 	 */
 	private float longitude = 1;
+	
+	private ArrayList<String> arrayPathsToImages = new ArrayList<String>();
+	
 	/**
 	 * @return
 	 * @uml.property  name="name"
@@ -96,6 +102,23 @@ public class NetworkBean {
 		this.longitude = longitude;
 	}
 	
+	public ArrayList<String> getArrayPathsToImages() {
+		return arrayPathsToImages;
+	}
 	
+	public void setArrayPathsToImages(ArrayList<String> array) {
+		this.arrayPathsToImages = array;
+	}
+	
+	public void addStringToArrayPathsToImages(String path) {
+		this.arrayPathsToImages.add(path);
+	}
+	
+	public void printImagesPaths() {
+		Iterator iteratorItem = this.arrayPathsToImages.iterator();
+		while(iteratorItem.hasNext()) {
+			System.out.println("Path to Image: " + iteratorItem.next());
+		}
+	}
 
 }

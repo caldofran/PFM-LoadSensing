@@ -29,8 +29,12 @@ public class SplashActivity extends LoadSensingActivity {
 			" {\"userName\": \"Jesus\", \"password\": \"4321\"}]}";
 	
 	private String jNetworks = "{\"networks\":" +
-			"[{\"name\": \"Madrid\", \"description\": \"Blah blah blah\", \"numberOfSensors\": \"4\", \"latitude\": \"40.40255\", \"longitude\": \"-3.71128\"}," +
-			"{\"name\": \"Barcelona\", \"description\": \"Bleh bleh bleh\", \"numberOfSensors\": \"6\", \"latitude\": \"41.38085\", \"longitude\": \"2.12161\"}]}";
+			"[{\"name\": \"Madrid\", \"description\": \"Blah blah blah\", \"numberOfSensors\": \"4\", \"latitude\": \"40.40255\", \"longitude\": \"-3.71128\"," +
+			"\"images\": [{\"path\": \"localPath1\"}, " +
+			"{\"path\": \"localPath2\"}]}," +
+			"{\"name\": \"Barcelona\", \"description\": \"Bleh bleh bleh\", \"numberOfSensors\": \"6\", \"latitude\": \"41.38085\", \"longitude\": \"2.12161\"," +
+			"\"images\": [{\"path\": \"localPath3\"}, " +
+			"{\"path\": \"localPath4\"}]}]}";
 	
 	private void loadJSON() {
 		network = new NetworkBean();
@@ -51,6 +55,7 @@ public class SplashActivity extends LoadSensingActivity {
 			JSONArray networksItemArray = jNetworksObject.getJSONArray("networks");
 			
 			for (int i = 0; i < networksItemArray.length(); i++) {
+				NetworkBean network = new NetworkBean();
 				network.setName(networksItemArray.getJSONObject(i)
 						.getString("name").toString());
 				System.out.println(network.getName());
@@ -66,6 +71,15 @@ public class SplashActivity extends LoadSensingActivity {
 				network.setLongitude(Float.parseFloat(networksItemArray.getJSONObject(i).getString(
 						"longitude").toString()));
 				System.out.println(String.valueOf(network.getLongitude()));
+				
+				JSONArray arrayPathToImages = networksItemArray.getJSONObject(i).getJSONArray("images");
+				System.out.println(""+arrayPathToImages.length());
+				for (int j = 0; j < arrayPathToImages.length(); j++) {
+					network.addStringToArrayPathsToImages(arrayPathToImages.getJSONObject(j).getString("path").toString());
+					System.out.println("Iteracion numero: "+j);
+				}
+				network.printImagesPaths(); 
+				
 				array_networks.add(network);
 			}
 			System.out.println("Numero de redes en el array: " + array_networks.size());
