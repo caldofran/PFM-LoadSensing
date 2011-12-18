@@ -1,8 +1,6 @@
 package com.uoc.loadsensing.beans;
 
-/**
- * @author  armisael
- */
+
 public class NetworkBean {
 	
 	/**

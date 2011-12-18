@@ -1,7 +1,9 @@
 package com.uoc.loadsensing;
 
 import java.util.ArrayList;
+import java.util.Vector;
 
+import com.uoc.loadsensing.beans.DeviceBean;
 import com.uoc.loadsensing.beans.NetworkBean;
 import com.uoc.loadsensing.beans.SensorBean;
 
@@ -44,6 +46,14 @@ public class LoadSensingActivity extends Activity {
 	// Lista de Sensores
 	public static ArrayList<SensorBean> array_sensors = null;
 	public static int sensor_selected = -1;
+	
+	// Lista de Devices
+	public static ArrayList<DeviceBean> array_devices = null;
+	
+	// Imagenes
+	//public static ArrayList<String> PicturesPathList = null;
+	//public static Vector<String> PicturesPathList = null;
+	
 	
 	public void startActivity(int activityReference) {
 

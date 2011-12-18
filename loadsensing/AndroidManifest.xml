@@ -18,11 +18,10 @@
         </activity>
         
         <!-- Login Activity -->
-        <activity android:name=".LoginActivity" android:windowSoftInputMode="stateHidden"></activity>
+        <activity android:name=".LoginActivity" android:windowSoftInputMode="stateHidden" android:launchMode="singleTask"></activity>
  
         <!--  Map Activity -->
         <activity android:name=".MapNetworkActivity" android:launchMode="singleTask"></activity>
-		<activity android:name=".AndroidMapViewActivity"></activity>
  
         <!--  List Network Activity -->
         <activity android:name=".ListNetworksActivity" android:launchMode="singleTask"></activity>
@@ -42,6 +41,9 @@
 		<!-- Sensor Activity -->
         <activity android:name=".SensorActivity" android:launchMode="singleTask"></activity>
         
+        <!-- Image Activity -->
+        <activity android:name=".ImageItemActivity" android:launchMode="singleTask"></activity>
+        
     </application>
     
     <!-- Set permisions -->
@@ -50,5 +52,5 @@
 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.CAMERA"/>
-    
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 </manifest>
