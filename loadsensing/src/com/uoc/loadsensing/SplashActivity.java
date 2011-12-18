@@ -9,6 +9,7 @@ import org.json.JSONObject;
 import com.uoc.loadsensing.LoginActivity;
 import com.uoc.loadsensing.R;
 import com.uoc.loadsensing.beans.NetworkBean;
+import com.uoc.loadsensing.beans.Users;
 
 import android.content.Context;
 import android.content.Intent;
@@ -22,7 +23,6 @@ public class SplashActivity extends LoadSensingActivity {
 	public Context mContext;
 	private JSONObject jUsersObject;
 	private JSONObject jNetworksObject;
-	private NetworkBean network;
 	
 	private String jUsersString = "{\"users\":" +
 			"[{\"userName\": \"Ruben\", \"password\": \"1234\"}," +
@@ -37,19 +37,29 @@ public class SplashActivity extends LoadSensingActivity {
 			"{\"path\": \"localPath4\"}]}]}";
 	
 	private void loadJSON() {
-		network = new NetworkBean();
 		array_networks = new ArrayList<NetworkBean>();
+		array_users = new ArrayList<Users>();
+		
 		try {
 			/* Parseo de usuarios */
 			jUsersObject = new JSONObject(jUsersString);
 			JSONArray usersItemArray = jUsersObject.getJSONArray("users");
 			
 			for (int i = 0; i < usersItemArray.length(); i++) {
-				System.out.println(usersItemArray.getJSONObject(i)
+				Users user = new Users();
+				user.setName(usersItemArray.getJSONObject(i)
 						.getString("userName").toString());
-				System.out.println(usersItemArray.getJSONObject(i).getString(
+				System.out.println(user.getName());
+				
+				user.setPassword(usersItemArray.getJSONObject(i).getString(
 						"password").toString());
+				System.out.println(user.getPassword());
+				
+				array_users.add(user);
 			}
+			
+			System.out.println("Numero de usuarios en el array: " + array_users.size());
+			
 			/* Parseo de redes */
 			jNetworksObject = new JSONObject(jNetworks);
 			JSONArray networksItemArray = jNetworksObject.getJSONArray("networks");

@@ -4,11 +4,10 @@ import java.util.ArrayList;
 
 import com.uoc.loadsensing.beans.NetworkBean;
 import com.uoc.loadsensing.beans.SensorBean;
+import com.uoc.loadsensing.beans.Users;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.View;
 import android.widget.ImageButton;
@@ -44,6 +43,9 @@ public class LoadSensingActivity extends Activity {
 	// Lista de Sensores
 	public static ArrayList<SensorBean> array_sensors = null;
 	public static int sensor_selected = -1;
+	
+	// Lista de Usuarios
+	public static ArrayList<Users> array_users = null;
 	
 	public void startActivity(int activityReference) {
 
