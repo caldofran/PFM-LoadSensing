@@ -1,10 +1,16 @@
 package com.uoc.loadsensing.beans;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 /**
  * @author  armisael
  */
 public class NetworkBean {
-	
+	/**
+	 * @uml.property  name="id"
+	 */
+	private int id = 0;
 	/**
 	 * @uml.property  name="name"
 	 */
@@ -20,11 +26,28 @@ public class NetworkBean {
 	/**
 	 * @uml.property  name="latitude"
 	 */
-	private int latitude = 0;
+	private float latitude = 0;
 	/**
 	 * @uml.property  name="longitude"
 	 */
-	private int longitude = 1;
+	private float longitude = 1;
+	
+	private ArrayList<String> arrayPathsToImages = new ArrayList<String>();
+	
+	/**
+	 * @return
+	 * @uml.property  name="id"
+	 */
+	public int getId() {
+		return this.id;
+	}
+	/**
+	 * @param id
+	 * @uml.property  name="id"
+	 */
+	public void setId(int _id) {
+		this.id = _id;
+	}
 	/**
 	 * @return
 	 * @uml.property  name="name"
@@ -71,31 +94,48 @@ public class NetworkBean {
 	 * @return
 	 * @uml.property  name="latitude"
 	 */
-	public int getLatitude() {
+	public float getLatitude() {
 		return latitude;
 	}
 	/**
-	 * @param latitude
+	 * @param f
 	 * @uml.property  name="latitude"
 	 */
-	public void setLatitude(int latitude) {
-		this.latitude = latitude;
+	public void setLatitude(float f) {
+		this.latitude = f;
 	}
 	/**
 	 * @return
 	 * @uml.property  name="longitude"
 	 */
-	public int getLongitude() {
+	public float getLongitude() {
 		return longitude;
 	}
 	/**
 	 * @param longitude
 	 * @uml.property  name="longitude"
 	 */
-	public void setLongitude(int longitude) {
+	public void setLongitude(float longitude) {
 		this.longitude = longitude;
 	}
 	
+	public ArrayList<String> getArrayPathsToImages() {
+		return arrayPathsToImages;
+	}
 	
+	public void setArrayPathsToImages(ArrayList<String> array) {
+		this.arrayPathsToImages = array;
+	}
+	
+	public void addStringToArrayPathsToImages(String path) {
+		this.arrayPathsToImages.add(path);
+	}
+	
+	public void printImagesPaths() {
+		Iterator iteratorItem = this.arrayPathsToImages.iterator();
+		while(iteratorItem.hasNext()) {
+			System.out.println("Path to Image: " + iteratorItem.next());
+		}
+	}
 
 }
