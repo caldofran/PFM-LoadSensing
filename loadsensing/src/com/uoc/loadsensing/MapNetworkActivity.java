@@ -2,6 +2,7 @@ package com.uoc.loadsensing;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 //import android.database.Cursor;
 import android.os.Bundle;
@@ -20,16 +21,39 @@ import com.uoc.loadsensing.R;
 
 
 public class MapNetworkActivity extends MapActivity {
+	private static final int LISTNETWORKS_ACTIVITY	= 1;
+	private static final int QRCODE_ACTIVITY 		= 2;
+	
 	MapView mapView;
 	MapController mc;
 	Context mContext;
 	//Cursor networkCursor; //Cursor that returns the networks we want to display on the map
+	
+	//Menu bar methods
+    public void startActivity(int activityReference) {
+
+		final Intent activityIntent = new Intent();
+
+		switch (activityReference) 
+		{
+			case LISTNETWORKS_ACTIVITY:
+				activityIntent.setClass(getApplicationContext(), ListNetworksActivity.class);
+				break;
+				
+			case QRCODE_ACTIVITY: 
+				activityIntent.setClass(getApplicationContext(), QRCodeActivity.class);
+				break;				
+		}
+		
+		startActivity(activityIntent);
+	}
 
 	/** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        
         mContext = this;
         setContentView(R.layout.mapnetwork_layout);
         
@@ -93,6 +117,28 @@ public class MapNetworkActivity extends MapActivity {
         });
         
         mapView.invalidate();
+        
+        // Opciones del tabBar
+        final ImageButton tabBarMapButton = (ImageButton) findViewById(R.id.btn_map);
+        final ImageButton tabBarListButton = (ImageButton) findViewById(R.id.btn_listnetwork);
+        final ImageButton tabBarQrcodeButton = (ImageButton) findViewById(R.id.btn_qrcode);
+        //Marcamos boton mapa del tabBar como seleccionado
+        tabBarMapButton.setImageResource(R.drawable.btn_map_btn_enabled);
+        tabBarListButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				tabBarListButton.setImageResource(R.drawable.btn_listnetwork_btn_enabled);
+				startActivity(LISTNETWORKS_ACTIVITY);
+			}
+		});
+        
+        tabBarQrcodeButton.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				tabBarQrcodeButton.setImageResource(R.drawable.btn_qrcode_btn_enabled);
+				startActivity(QRCODE_ACTIVITY);
+			}
+		});
     }
  
     @Override
