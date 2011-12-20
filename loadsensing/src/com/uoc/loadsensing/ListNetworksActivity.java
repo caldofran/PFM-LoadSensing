@@ -169,12 +169,6 @@ public class ListNetworksActivity extends LoadSensingActivity implements ListVie
         		//t.setDescription("Description "+network.getDescription());
         		aNetworkList.add(network);
     		}
-        	/*for ( int i=0; i<10; i++ ) {
-        		NetworkBean t = new NetworkBean();
-        		t.setName("Red "+i);
-        		t.setDescription("Description "+i);
-        		aNetworkList.add(t);
-        	}*/
         	
             oAdapter = new OrderAdapter(mContext, R.layout.row, aNetworkList);
             list.setAdapter(oAdapter);              	
