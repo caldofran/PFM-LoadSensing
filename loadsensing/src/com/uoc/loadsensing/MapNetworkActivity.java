@@ -1,6 +1,8 @@
 package com.uoc.loadsensing;
 
 
+import java.util.Iterator;
+
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -15,7 +17,10 @@ import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
 import com.google.android.maps.MyLocationOverlay;
 import com.google.android.maps.OverlayItem;
+import com.uoc.loadsensing.beans.NetworkBean;
+import com.uoc.loadsensing.beans.Users;
 import com.uoc.loadsensing.items.ItemizedOverlayItems;
+import com.uoc.loadsensing.LoadSensingActivity;
 
 import com.uoc.loadsensing.R;
 
@@ -23,6 +28,8 @@ import com.uoc.loadsensing.R;
 public class MapNetworkActivity extends MapActivity {
 	private static final int LISTNETWORKS_ACTIVITY	= 1;
 	private static final int QRCODE_ACTIVITY 		= 2;
+	
+	LoadSensingActivity loadSensing = new LoadSensingActivity();
 	
 	MapView mapView;
 	MapController mc;
@@ -64,19 +71,36 @@ public class MapNetworkActivity extends MapActivity {
         //NetworksOverlay no = new NetworksOverlay(mContext); // Temporal
         //NetworksOverlay no = new NetworksOverlay(networkCursor);
         
-        //Usando MyItemizedOverlay
+        //Iteramos sobre las redes
+        Iterator<NetworkBean> iter = loadSensing.array_networks.iterator();
+		NetworkBean network = new NetworkBean();
+		//Usando MyItemizedOverlay
         Drawable drawable = this.getResources().getDrawable(R.drawable.world);
         ItemizedOverlayItems itemizedOverlay = new ItemizedOverlayItems(drawable,mapView);
-        Double lat = 40.40281 * 1E6;
-		Double lng = -3.710461 * 1E6;
-		GeoPoint geoPoint1 = new GeoPoint(lat.intValue(), lng.intValue());
-		OverlayItem overlayItem1 = new OverlayItem(geoPoint1, "Primer punto", "Subtitulo1");
-		itemizedOverlay.addOverlay(overlayItem1);
-		lat = 40.408627 * 1E6;
-		lng = -3.700998 * 1E6;
-		GeoPoint geoPoint2 = new GeoPoint(lat.intValue(), lng.intValue());
-		OverlayItem overlayItem2 = new OverlayItem(geoPoint2, "Segundo punto", "Subtitulo2");
-		itemizedOverlay.addOverlay(overlayItem2);
+        Double lat;
+		Double lng;
+		while (iter.hasNext()) {
+			System.out.println("Entramos en el bucle");
+			network = (NetworkBean) iter.next();
+			lat = network.getLatitude() * 1E6;
+			lng = network.getLongitude() * 1E6;
+			GeoPoint geoPoint = new GeoPoint(lat.intValue(), lng.intValue());
+			OverlayItem overlayItem = new OverlayItem(geoPoint, network.getName(), String.valueOf(network.getNum_of_sensors()));
+			itemizedOverlay.addOverlay(overlayItem);
+		}
+        //Usando MyItemizedOverlay
+        //Drawable drawable = this.getResources().getDrawable(R.drawable.world);
+        //ItemizedOverlayItems itemizedOverlay = new ItemizedOverlayItems(drawable,mapView);
+        //Double lat = 40.40281 * 1E6;
+		//Double lng = -3.710461 * 1E6;
+		//GeoPoint geoPoint1 = new GeoPoint(lat.intValue(), lng.intValue());
+		//OverlayItem overlayItem1 = new OverlayItem(geoPoint1, "Primer punto", "Subtitulo1");
+		//itemizedOverlay.addOverlay(overlayItem1);
+		//lat = 40.408627 * 1E6;
+		//lng = -3.700998 * 1E6;
+		//GeoPoint geoPoint2 = new GeoPoint(lat.intValue(), lng.intValue());
+		//OverlayItem overlayItem2 = new OverlayItem(geoPoint2, "Segundo punto", "Subtitulo2");
+		//itemizedOverlay.addOverlay(overlayItem2);
 		mapView.getOverlays().add(itemizedOverlay);
         //Fin del uso de ItemizedOverlay
         //mapView.getOverlays().add(no);
@@ -89,7 +113,7 @@ public class MapNetworkActivity extends MapActivity {
 		lng = -3.710461 * 1E6;
 		GeoPoint geoPoint = new GeoPoint(lat.intValue(), lng.intValue());
         mc.animateTo(geoPoint);
-        mc.setZoom(15);
+        mc.setZoom(5);
         // Eliminar este codigo temporal
         
         mapView.setBuiltInZoomControls(true);

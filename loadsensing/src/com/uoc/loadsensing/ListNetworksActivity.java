@@ -1,7 +1,10 @@
 package com.uoc.loadsensing;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
+import com.google.android.maps.GeoPoint;
+import com.google.android.maps.OverlayItem;
 import com.uoc.loadsensing.beans.NetworkBean;
 import com.uoc.loadsensing.utils.Environment;
 
@@ -155,13 +158,17 @@ public class ListNetworksActivity extends LoadSensingActivity implements ListVie
         @Override
         protected void onPostExecute(Void result) {
         	
-        	// TODO Utilizar Redes de WS: Now Fake Items 
-        	for ( int i=0; i<10; i++ ) {
-        		NetworkBean t = new NetworkBean();
-        		t.setName("Red "+i);
-        		t.setDescription("Description "+i);
-        		aNetworkList.add(t);
-        	}
+        	// TODO Utilizar Redes de WS: Now Fake Items
+        	//Iteramos sobre las redes
+            Iterator<NetworkBean> iter = array_networks.iterator();
+    		NetworkBean network = new NetworkBean();
+    		while (iter.hasNext()) {
+    			System.out.println("Entramos en el bucle");
+    			network = (NetworkBean) iter.next();
+    			//t.setName("Red "+network.getName());
+        		//t.setDescription("Description "+network.getDescription());
+        		aNetworkList.add(network);
+    		}
         	
             oAdapter = new OrderAdapter(mContext, R.layout.row, aNetworkList);
             list.setAdapter(oAdapter);              	
