@@ -3,8 +3,8 @@ package com.uoc.loadsensing;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import com.google.android.maps.GeoPoint;
-import com.google.android.maps.OverlayItem;
+//import com.google.android.maps.GeoPoint;
+//import com.google.android.maps.OverlayItem;
 import com.uoc.loadsensing.beans.NetworkBean;
 import com.uoc.loadsensing.utils.Environment;
 
@@ -23,7 +23,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
+//import android.widget.Toast;
 
 /**
  * @author  armisael
@@ -71,6 +71,7 @@ public class ListNetworksActivity extends LoadSensingActivity implements ListVie
 				Intent i = new Intent(mContext, SingleNetworkActivity.class);
 				 
 				// sending data to new activity
+				System.out.println("Posicion que se le pasa: "+position);
 				i.putExtra("current_network", position);
 				
 				// establish network identifiers

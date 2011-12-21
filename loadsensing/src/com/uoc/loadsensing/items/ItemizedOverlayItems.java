@@ -4,17 +4,17 @@ import java.util.ArrayList;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.net.Uri;
 
-import com.google.android.maps.GeoPoint;
+//import com.google.android.maps.GeoPoint;
+//import com.google.android.maps.MapActivity;
 import com.google.android.maps.MapView;
 import com.google.android.maps.OverlayItem;
 import com.uoc.loadsensing.BalloonItemizedOverlay;
+import com.uoc.loadsensing.SingleNetworkActivity;
 
 public class ItemizedOverlayItems extends BalloonItemizedOverlay<OverlayItem> {
 	private ArrayList<OverlayItem> m_overlays = new ArrayList<OverlayItem>();
 	private Context c;
-
 		
 	public ItemizedOverlayItems(Drawable defaultMarker, MapView mapView) {
 		super(boundCenter(defaultMarker), mapView);
@@ -43,13 +43,14 @@ public class ItemizedOverlayItems extends BalloonItemizedOverlay<OverlayItem> {
 	
 	@Override
 	protected boolean onBalloonTap(int index) {
-		GeoPoint point = m_overlays.get(index).getPoint();
-		double lat = point.getLatitudeE6() / 1.0E6;
-		double lon = point.getLongitudeE6() / 1.0E6;
+		//GeoPoint point = m_overlays.get(index).getPoint();
+		//double lat = point.getLatitudeE6() / 1.0E6;
+		//double lon = point.getLongitudeE6() / 1.0E6;
 		//http://developer.android.com/guide/appendix/g-app-intents.html
-		//TODO: Aqui habra que meter el codigo que lleve a la ventana detalle de la red
-		Intent intent = new Intent(android.content.Intent.ACTION_VIEW,Uri.parse("http://maps.google.es/maps?f=q&source=s_q&hl=es&geocode=&q="+lat+","+lon+"&aq=&sll="+lat+","+lon+"&ie=UTF8&z=17"));
+		Intent intent = new Intent(c, SingleNetworkActivity.class);
+		intent.putExtra("current_network", index);
 		c.startActivity(intent);
+		//c.startActivity(intent);
 		return true;
 	}
 }

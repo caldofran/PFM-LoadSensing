@@ -18,7 +18,6 @@ import com.google.android.maps.MapView;
 import com.google.android.maps.MyLocationOverlay;
 import com.google.android.maps.OverlayItem;
 import com.uoc.loadsensing.beans.NetworkBean;
-import com.uoc.loadsensing.beans.Users;
 import com.uoc.loadsensing.items.ItemizedOverlayItems;
 import com.uoc.loadsensing.LoadSensingActivity;
 

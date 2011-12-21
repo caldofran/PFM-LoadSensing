@@ -1,6 +1,7 @@
 package com.uoc.loadsensing;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -68,7 +69,7 @@ public class SingleNetworkActivity extends LoadSensingActivity {
         sensorList = (ListView)findViewById(R.id.listSensors);
         aSensorsList = new ArrayList<SensorBean>();        
         
-        // Obtenemos la lista de redes
+        // Obtenemos la lista de sensores
         requestListSensors();
         
 	}
@@ -119,8 +120,20 @@ public class SingleNetworkActivity extends LoadSensingActivity {
         @Override
         protected void onPostExecute(Void result) {
         	
+        	//Iteramos sobre los sensores
+            Iterator<SensorBean> iter = array_sensors.iterator();
+    		SensorBean sensor = new SensorBean();
+    		while (iter.hasNext()) {
+    			System.out.println("Entramos en el bucle");
+    			sensor = (SensorBean) iter.next();
+    			System.out.println("ID de la mNetwork pasada: "+String.valueOf(mNetwork.getId()));
+    			System.out.println("ID de la red del Sensor: "+sensor.getNetworkId());
+    			if(Integer.parseInt(sensor.getNetworkId()) == mNetwork.getId()){
+    				aSensorsList.add(sensor);
+    			}
+    		}
         	// TODO Utilizar Sensors de WS: Now Fake Items 
-        	for ( int i=0; i<10; i++ ) {
+        	/*for ( int i=0; i<10; i++ ) {
         		SensorBean t = new SensorBean();
         		t.setId(0);
         		t.setDescription("2003 sensor strain, channel "+i);
@@ -128,7 +141,7 @@ public class SingleNetworkActivity extends LoadSensingActivity {
         		t.setType("A");
 
         		aSensorsList.add(t);
-        	}
+        	}*/
         	
         	sAdapter = new SensorAdapter(getApplicationContext(), R.layout.row_sensor, aSensorsList);
         	sensorList.setAdapter(sAdapter);              	
