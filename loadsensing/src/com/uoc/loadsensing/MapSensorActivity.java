@@ -10,6 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapActivity;
@@ -18,19 +19,20 @@ import com.google.android.maps.MapView;
 import com.google.android.maps.MyLocationOverlay;
 import com.google.android.maps.OverlayItem;
 import com.uoc.loadsensing.beans.NetworkBean;
-import com.uoc.loadsensing.items.ItemizedOverlayItems;
+import com.uoc.loadsensing.beans.SensorBean;
+import com.uoc.loadsensing.items.ItemizedOverlayItemsForSensors;
 import com.uoc.loadsensing.LoadSensingActivity;
 
 import com.uoc.loadsensing.R;
 
 
-public class MapNetworkActivity extends MapActivity {
+public class MapSensorActivity extends MapActivity {
 	private static final int LISTNETWORKS_ACTIVITY	= 1;
 	private static final int QRCODE_ACTIVITY 		= 2;
 	
 	LoadSensingActivity loadSensing = new LoadSensingActivity();
 	
-	MapView mapView;
+	MapView mapV;
 	MapController mc;
 	Context mContext;
 	//Cursor networkCursor; //Cursor that returns the networks we want to display on the map
@@ -60,32 +62,55 @@ public class MapNetworkActivity extends MapActivity {
     {
         super.onCreate(savedInstanceState);
         
+        final Bundle bundle = getIntent().getExtras();
+        // Recogemos informacion del Intent
+        int sNetworkId = bundle.getInt("current_network");
+        System.out.println("Red pasada al mapa: " + sNetworkId);
+        NetworkBean mNetwork = new NetworkBean();
+        mNetwork = loadSensing.array_networks.get(sNetworkId);
+        
         mContext = this;
         setContentView(R.layout.mapnetwork_layout);
         
+        TextView title = (TextView) findViewById(R.id.map_name);
+        System.out.println("Nombre del mapa: " + mNetwork.getName());
+        title.setText("" + mNetwork.getName());
+        
         //String networkURI = NetworkProvider.CONTENT_URI;
         //networkCursor = getContentResolver().query(networkURI, null, null, null, null);
-        
-        mapView = (MapView) findViewById(R.id.mapa);
+        System.out.println("ID del layout mapa: "+R.id.mapa);
+        mapV = (MapView) findViewById(R.id.mapa);
+        if(mapV == null) {
+        	System.out.println("MapView es null");
+        }
         //NetworksOverlay no = new NetworksOverlay(mContext); // Temporal
         //NetworksOverlay no = new NetworksOverlay(networkCursor);
         
-        //Iteramos sobre las redes
-        Iterator<NetworkBean> iter = loadSensing.array_networks.iterator();
-		NetworkBean network = new NetworkBean();
+        //Iteramos sobre los sensores
+        System.out.println("Creamos iterator para recorrer la lista sensores...");
+        Iterator<SensorBean> iter = loadSensing.array_sensors.iterator();
+		SensorBean sensor = new SensorBean();
+		System.out.println("Obtenemos los recursos para pintar el mapa...");
 		//Usando MyItemizedOverlay
         Drawable drawable = this.getResources().getDrawable(R.drawable.world);
-        ItemizedOverlayItems itemizedOverlay = new ItemizedOverlayItems(drawable,mapView);
+        System.out.println("Obtenida imagen para los markers...");
+        ItemizedOverlayItemsForSensors itemizedOverlay = new ItemizedOverlayItemsForSensors(drawable,mapV);
+        System.out.println("Inicializamos los itemizedOverlay...");
         Double lat;
 		Double lng;
+		System.out.println("Vamos a iterar sobre los sensores...");
 		while (iter.hasNext()) {
 			System.out.println("Entramos en el bucle");
-			network = (NetworkBean) iter.next();
-			lat = network.getLatitude() * 1E6;
-			lng = network.getLongitude() * 1E6;
-			GeoPoint geoPoint = new GeoPoint(lat.intValue(), lng.intValue());
-			OverlayItem overlayItem = new OverlayItem(geoPoint, network.getName(), String.valueOf(network.getNum_of_sensors()));
-			itemizedOverlay.addOverlay(overlayItem);
+			sensor = (SensorBean) iter.next();
+			System.out.println("NetworkId del sensor: " + sensor.getNetworkId());
+			System.out.println("NetworkId pasada desde la vista previa: " + sNetworkId);
+			if(Integer.parseInt(sensor.getNetworkId()) == sNetworkId + 1) {
+				lat = sensor.getLatitude() * 1E6;
+				lng = sensor.getLongitude() * 1E6;
+				GeoPoint geoPoint = new GeoPoint(lat.intValue(), lng.intValue());
+				OverlayItem overlayItem = new OverlayItem(geoPoint, sensor.getSensor(), sensor.getType());
+				itemizedOverlay.addOverlay(overlayItem);
+			}
 		}
         //Usando MyItemizedOverlay
         //Drawable drawable = this.getResources().getDrawable(R.drawable.world);
@@ -100,24 +125,24 @@ public class MapNetworkActivity extends MapActivity {
 		//GeoPoint geoPoint2 = new GeoPoint(lat.intValue(), lng.intValue());
 		//OverlayItem overlayItem2 = new OverlayItem(geoPoint2, "Segundo punto", "Subtitulo2");
 		//itemizedOverlay.addOverlay(overlayItem2);
-		mapView.getOverlays().add(itemizedOverlay);
+		mapV.getOverlays().add(itemizedOverlay);
         //Fin del uso de ItemizedOverlay
         //mapView.getOverlays().add(no);
         
-        mc = mapView.getController();
+        mc = mapV.getController();
         
         //TODO: centrar el mapa en una de las redes
         //TODO: setear el zoom para que se vean los puntos correctamente
-        lat = 40.40281 * 1E6;
-		lng = -3.710461 * 1E6;
+        lat = mNetwork.getLatitude() * 1E6;
+		lng = mNetwork.getLongitude() * 1E6;
 		GeoPoint geoPoint = new GeoPoint(lat.intValue(), lng.intValue());
         mc.animateTo(geoPoint);
-        mc.setZoom(5);
+        mc.setZoom(16);
         // Eliminar este codigo temporal
         
-        mapView.setBuiltInZoomControls(true);
-        mapView.setSatellite(false);
-        mapView.invalidate();
+        mapV.setBuiltInZoomControls(true);
+        mapV.setSatellite(false);
+        mapV.invalidate();
         
         /**
          * When the Location button is clicked this starts to locate user and
@@ -126,8 +151,8 @@ public class MapNetworkActivity extends MapActivity {
         final ImageButton my_location_button = (ImageButton)findViewById(R.id.my_location_button);
         my_location_button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-            	final MyLocationOverlay myLocationOverlay = new MyLocationOverlay(mContext, mapView);
-                mapView.getOverlays().add(myLocationOverlay);
+            	final MyLocationOverlay myLocationOverlay = new MyLocationOverlay(mContext, mapV);
+                mapV.getOverlays().add(myLocationOverlay);
                 myLocationOverlay.enableCompass();
                 myLocationOverlay.enableMyLocation();
                 System.out.println("Obteniendo tu ubicacion");
@@ -139,7 +164,7 @@ public class MapNetworkActivity extends MapActivity {
             }
         });
         
-        mapView.invalidate();
+        mapV.invalidate();
         
         // Opciones del tabBar
         final ImageButton tabBarMapButton = (ImageButton) findViewById(R.id.btn_map);

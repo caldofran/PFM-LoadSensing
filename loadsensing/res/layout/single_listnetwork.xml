@@ -43,8 +43,8 @@
 			android:layout_width="fill_parent" 
 			android:layout_height="wrap_content"
 			android:layout_weight = "2">
-  				<ImageView
-   					android:id="@+id/test"
+  				<ImageButton
+   					android:id="@+id/mapButton"
    					android:layout_width="400dp"
    					android:layout_height="60dp"
    					android:src="@drawable/map_network_example"/> 

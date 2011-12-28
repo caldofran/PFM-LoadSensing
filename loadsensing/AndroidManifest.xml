@@ -40,6 +40,7 @@
 
 		<!-- Sensor Activity -->
         <activity android:name=".SensorActivity" android:launchMode="singleTask"></activity>
+        <activity android:name=".MapSensorActivity"></activity>
         
         <!-- Image Activity -->
         <activity android:name=".ImageItemActivity" android:launchMode="singleTask"></activity>

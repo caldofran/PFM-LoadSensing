@@ -12,11 +12,11 @@ import com.google.android.maps.OverlayItem;
 import com.uoc.loadsensing.BalloonItemizedOverlay;
 import com.uoc.loadsensing.SingleNetworkActivity;
 
-public class ItemizedOverlayItems extends BalloonItemizedOverlay<OverlayItem> {
+public class ItemizedOverlayItemsForSensors extends BalloonItemizedOverlay<OverlayItem> {
 	private ArrayList<OverlayItem> m_overlays = new ArrayList<OverlayItem>();
 	private Context c;
 		
-	public ItemizedOverlayItems(Drawable defaultMarker, MapView mapView) {
+	public ItemizedOverlayItemsForSensors(Drawable defaultMarker, MapView mapView) {
 		super(boundCenter(defaultMarker), mapView);
 		c = mapView.getContext();
 		System.out.println("Inicializado el itemizedOverlayItems");
@@ -41,7 +41,7 @@ public class ItemizedOverlayItems extends BalloonItemizedOverlay<OverlayItem> {
 	public void Tap(int index){
 		tap_tap(index);
 	}
-	/*
+	
 	@Override
 	protected boolean onBalloonTap(int index) {
 		//GeoPoint point = m_overlays.get(index).getPoint();
@@ -53,5 +53,5 @@ public class ItemizedOverlayItems extends BalloonItemizedOverlay<OverlayItem> {
 		c.startActivity(intent);
 		//c.startActivity(intent);
 		return true;
-	}*/
+	}
 }

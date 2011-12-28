@@ -92,6 +92,7 @@ public class SingleNetworkImagesActivity extends LoadSensingActivity {
 								switch (selected_report) {
 									case 0:
 										// Opcion Camara
+										//Camara
 										String fileName = "new-photo-name.jpg";
 										ContentValues values = new ContentValues();
 										values.put(MediaStore.Images.Media.TITLE,fileName);
@@ -104,6 +105,7 @@ public class SingleNetworkImagesActivity extends LoadSensingActivity {
 										break;
 									case 1:
 										// Opcion Galeria
+										// Galeria
 										intent = new Intent(Intent.ACTION_PICK,Media.EXTERNAL_CONTENT_URI);
 										startActivityForResult(intent,SELECT_PICTURE_INTENT);
 										dialog.dismiss();
