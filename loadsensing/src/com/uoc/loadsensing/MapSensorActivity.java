@@ -6,7 +6,6 @@ import java.util.Iterator;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
-//import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
