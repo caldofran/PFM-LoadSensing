@@ -41,8 +41,6 @@
     	android:layout_height="fill_parent"
     	android:layout_weight = "1"
     	android:orientation="vertical" android:background="@color/background_activity">
- 
-<<<<<<< HEAD
   	<!-- Screen Design for the MapNetwork Activity -->
   	<!--  
   		android:apiKey="0QhwC8zAj3ptLnveVVM3FEJMqAl76OZoLM3Q2jw"   (Emulador)
@@ -71,7 +69,6 @@
 				layout="@layout/menu_bottom" />
 		</LinearLayout>
 	</LinearLayout>              
-=======
   <!-- Screen Design for the MapNetwork Activity -->
   <!--  
   	android:apiKey="0QhwC8zAj3ptLnveVVM3FEJMqAl76OZoLM3Q2jw"   (Emulador)
@@ -89,6 +86,5 @@
   			android:apiKey="0QhwC8zAj3ptLnveVVM3FEJMqAl76OZoLM3Q2jw"  	
     		android:clickable="true" />
     </LinearLayout>              
->>>>>>> 7e5637bb546f7b90c4d25711e5975ebe86ea1aa6
 </LinearLayout>
 

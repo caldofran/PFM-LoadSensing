@@ -20,7 +20,6 @@ public class SensorBean {
 	 */
 	private String description = "";
 	
-<<<<<<< HEAD
 	private String networkId = "";
 	/**
 	 * @uml.property  name="latitude"
@@ -31,7 +30,6 @@ public class SensorBean {
 	 */
 	private float longitude = 1;
 	
-=======
 	private int serial_number 	= 0;
 	private int max_load		= 0;
 	private int sensitivity		= 0;
@@ -69,7 +67,7 @@ public class SensorBean {
 	public void setAlarm(int alarm) {
 		this.alarm = alarm;
 	}
->>>>>>> 7e5637bb546f7b90c4d25711e5975ebe86ea1aa6
+
 	/**
 	 * @return
 	 * @uml.property  name="id"

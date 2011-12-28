@@ -1,15 +1,12 @@
 package com.uoc.loadsensing.beans;
 
-<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.Iterator;
 
 /**
  * @author  armisael
  */
-=======
 
->>>>>>> 7e5637bb546f7b90c4d25711e5975ebe86ea1aa6
 public class NetworkBean {
 	/**
 	 * @uml.property  name="id"
