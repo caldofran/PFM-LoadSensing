@@ -5,4 +5,9 @@
         <item>Take a picture</item>
         <item>Galery Image</item>
     </string-array>
+    
+    <string-array name="image_list_options">
+        <item>See Image</item>
+        <item>Delete Image</item>
+    </string-array>    
  </resources>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+			<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    			android:layout_width="fill_parent"
+    			android:layout_height="fill_parent"
+    			android:stretchColumns="1">
+
+			    <TableRow>
+		    
+        			<TextView
+        				android:id="@+id/dev_name"
+        				android:layout_span="3"
+	  					android:textSize="10sp" 
+	  					android:textStyle="bold" 
+	  					android:textColor="#7db229"         				
+            			android:layout_column="1"
+            			android:padding="3dip" />
+				
+				</TableRow>
+				
+			    <TableRow>
+		    
+        			<TextView
+            			android:layout_column="1"
+            			android:textSize="8sp" 
+            			android:text="@string/dev_id"
+            			android:padding="3dip" />
+        			<TextView
+            			android:id="@+id/dev_id"
+            			android:textSize="8sp" 
+            			android:gravity="right"
+            			android:padding="3dip" />
+    			</TableRow>
+    			
+			    <TableRow>
+        			<TextView
+            			android:layout_column="1"
+            			android:textSize="8sp"
+            			android:text="@string/dev_voltage"
+            			android:padding="3dip" />
+        			<TextView
+            			android:id="@+id/dev_voltage"
+            			android:textSize="8sp" 
+            			android:gravity="right"
+            			android:padding="3dip" />
+    			</TableRow>
+			    <TableRow>
+        			<TextView
+            			android:layout_column="1"
+            			android:textSize="8sp"
+            			android:text="@string/dev_temp"
+            			android:padding="3dip" />
+        			<TextView
+            			android:id="@+id/dev_temp"
+            			android:textSize="8sp" 
+            			android:gravity="right"
+            			android:padding="3dip" />
+    			</TableRow>    			    
+			</TableLayout>
+</LinearLayout>

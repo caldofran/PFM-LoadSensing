@@ -35,17 +35,7 @@
     		android:layout_height="fill_parent"
     		android:layout_weight = "1" 
     		android:orientation="vertical">
-		<TextView 
-			android:text="Prueba" 
-			android:id="@+id/network_name" 
-			android:layout_height="wrap_content" 
-			android:layout_width="fill_parent"
-			android:gravity="center_vertical|center_horizontal" 
-			android:textColor="#FFF" 
-			android:textSize="22sp" 
-			android:textStyle="bold"
-			android:singleLine="true" ></TextView> 	
-			
+		
 		<WebView
 			android:id="@+id/network_state_chart"
 			android:layout_width="300dp"

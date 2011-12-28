@@ -25,7 +25,7 @@ import android.widget.Toast;
 
 import com.uoc.loadsensing.R;
 
-public class LoginActivity extends Activity {
+public class LoginActivity extends LoadSensingActivity {
 	
 	Context mContext;
 	TextView twVisitWS;

@@ -22,9 +22,7 @@ import com.uoc.loadsensing.beans.NetworkBean;
 import com.uoc.loadsensing.beans.SensorBean;
 import com.uoc.loadsensing.utils.Environment;
 
-/**
- * @author  armisael
- */
+
 public class SingleNetworkActivity extends LoadSensingActivity {
 
 	/**
@@ -141,7 +139,7 @@ public class SingleNetworkActivity extends LoadSensingActivity {
                 public void onItemClick(AdapterView<?> parent, View v, int position, long id) 
                 {
                 	
-                	Toast.makeText(getApplicationContext(), "Es el "+position, Toast.LENGTH_LONG).show();
+                	//Toast.makeText(getApplicationContext(), "Es el "+position, Toast.LENGTH_LONG).show();
                 	
     				// Launching new Activity on selecting single List Item
     				Intent i = new Intent(getApplicationContext(), SensorActivity.class);

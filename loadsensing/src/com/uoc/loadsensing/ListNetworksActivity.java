@@ -25,9 +25,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-/**
- * @author  armisael
- */
+
 public class ListNetworksActivity extends LoadSensingActivity implements ListView.OnScrollListener {
 
     public Activity activity;

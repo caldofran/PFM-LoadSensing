@@ -20,7 +20,7 @@
 			android:gravity="center_vertical|center_horizontal" 
 			android:textColor="#FFF" 
 			android:textSize="22sp" 
-			android:textStyle="bold" android:text="">
+			android:textStyle="bold">
 		</TextView>
     </LinearLayout>
     
@@ -32,19 +32,113 @@
 	
         <LinearLayout android:id="@+id/linearLayout3" 
         	android:layout_width="fill_parent" 
-    		android:layout_height="fill_parent"
+    		android:layout_height="wrap_content"
     		android:layout_weight = "1" 
     		android:orientation="vertical">
-		<TextView 
-			android:text="..." 
-			android:id="@+id/sensor_name" 
-			android:layout_height="wrap_content" 
-			android:layout_width="fill_parent"
-			android:gravity="center_vertical|center_horizontal" 
-			android:textColor="#FFF" 
-			android:textSize="22sp" 
-			android:textStyle="bold"
-			android:singleLine="true" ></TextView> 	  						
+			<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    			android:layout_width="fill_parent"
+    			android:layout_height="wrap_content"
+    			android:stretchColumns="1">
+
+			    <TableRow>
+        			<TextView
+            			android:layout_column="1"
+            			android:textSize="12sp" 
+            			android:textStyle="bold" 
+            			android:text="@string/sr_serial_number"
+            			android:padding="3dip" />
+        			<TextView
+            			android:id="@+id/sensor_serial"
+            			android:textSize="12sp" 
+            			android:gravity="right"
+            			android:padding="3dip" />
+    			</TableRow>
+
+    			<TableRow>
+        			<TextView
+            			android:layout_column="1"
+            			android:textSize="12sp"
+            			android:textStyle="bold" 
+            			android:text="@string/sr_max_load"
+            			android:padding="3dip" />
+        			<TextView
+			            android:id="@+id/sensor_maxload"
+			            android:textSize="12sp" 
+            			android:gravity="right"
+            			android:padding="3dip" />
+    				</TableRow>
+
+    			<TableRow>
+        			<TextView
+            			android:layout_column="1"
+            			android:textSize="12sp"
+            			android:textStyle="bold" 
+            			android:text="@string/sr_sensitivity"
+            			android:padding="3dip" />
+        			<TextView
+            			android:id="@+id/sensor_sensitivity"
+            			android:textSize="12sp" 
+            			android:gravity="right"
+            			android:padding="3dip" />
+    			</TableRow>
+
+    			<TableRow>
+        			<TextView
+            			android:layout_column="1"
+            			android:text="@string/sr_offset"
+            			android:textSize="12sp"
+            			android:textStyle="bold" 
+            			android:padding="3dip" />
+        			<TextView
+            			android:id="@+id/sensor_offset"
+            			android:textSize="12sp" 
+            			android:gravity="right"
+            			android:padding="3dip" />
+    			</TableRow>
+
+    			<TableRow>
+        			<TextView
+            			android:layout_column="1"
+            			android:text="@string/sr_alarm"
+            			android:textSize="12sp"
+            			android:textStyle="bold" 
+            			android:padding="3dip" />
+        			<TextView
+            			android:id="@+id/sensor_alarm"
+            			android:textSize="12sp" 
+            			android:gravity="right"
+            			android:padding="3dip" />
+    			</TableRow>
+
+    			<View
+        			android:layout_height="2dip"
+        			android:background="#FF909090" />
+
+				</TableLayout> 	
+		<LinearLayout android:id="@+id/linearLayout4" 
+        	android:layout_width="fill_parent" 
+    		android:layout_height="fill_parent"
+    		android:layout_weight = "1" android:orientation="vertical">
+        				<WebView
+							android:id="@+id/sensor_state_chart"
+							android:layout_width="400dp"
+							android:layout_height="150dp"/>      		
+			<TextView 
+				android:text="Devices"
+				android:background="#3f4044" 
+				android:layout_height="wrap_content" 
+				android:layout_width="fill_parent"
+				android:gravity="center_vertical|center_horizontal" 
+				android:textColor="#FFF" 
+				android:textSize="12sp" 
+				android:textStyle="bold"
+				android:singleLine="true"/>    		        
+        	<ListView android:id="@+id/listDevices"
+            	android:layout_width="fill_parent" android:layout_height="fill_parent" 
+            	android:background="@color/list_sensor" android:divider="@color/list_bg">
+        	</ListView>
+		</LinearLayout> 					
         </LinearLayout>
-    </LinearLayout>
+       	
+	</LinearLayout>
 </LinearLayout>
