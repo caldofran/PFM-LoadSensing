@@ -23,3 +23,8 @@ Ahora esta linea va para ver si puedo hacer push solo en la rama "develop"
 Esta rama va a ser para crear el feature "mapa".
 Cuando haya terminado con el mapa fusionare esta rama con la de desarrollo.
 
+<<<<<<< HEAD
+Volviendo a crear la rama feature-mapa para ver si en el remoto me lo crea
+=======
+Linea en la rama "feature-listanetworks".
+>>>>>>> de714f52eef47fe03c38db67efbec91e89a45a83

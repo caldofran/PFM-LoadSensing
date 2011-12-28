@@ -3,6 +3,21 @@
     <string name="uoc_id">UOC Project</string>
     <string name="app_name">LoadSensing</string>
     
+    <!-- Literales Generales -->
+    <string name="ok">Ok</string>
+    <string name="title_alert_error">Alert</string>
+    <string name="no_connection">You must be connected to use LoadSensing</string>
+    <string name="accept">Accept</string>
+    <string name="exit_app">Press back again to close LoadSensing</string>
+    <string name="cancel">Cancel</string>
+    <string name="loading">Loading</string>
+    <string name="options">Options</string>
+
+	<!-- Titulos -->
+	<string name="title_listnetwork">Network List</string>
+	<string name="title_qrcode">QR Code</string>
+	<string name="title_map">Map</string>
+    
     <!-- Literales para Login Activity -->
     <string name="user_name">User</string>
     <string name="user_pass">Password</string>
@@ -14,14 +29,42 @@
     <string name="lst_wait">Please wait...</string>
     <string name="lst_retreive_data">Retrieving Network List...</string>
     <string name="lst_click_network">Click Menu Button to see Actions</string>
+    <string name="no_internet_available">Your Device doesn\'t have access to Internet!</string>
+    <string name="ntwk_longitude">Longitude:</string>
+    <string name="ntwk_latitude">Latitude:</string>
+	<string name="lst_sensors">Sensor List</string>    
+
     
     <!-- Literales para el option menu de una Network -->
     <string name="menu_nt_state">State</string>
     <string name="menu_nt_sensors">Sensors</string>
     <string name="menu_nt_images">Images</string>
     
+    <!-- Literales para QR Activity -->
+    <string name="get_qr">Scan QR Code</string>
+    <string name="send_qr">Send QR Code</string>
+    
     <!-- Literales para el TabMenu -->
     <string name="tab_map">Map</string>
     <string name="tab_list">Networks</string>
     <string name="tab_qrcode">QR Code</string>
+    
+    <!-- Literales para el Mapa -->
+    <string name="network_map_title">Mapa</string>
+    
+    <!-- Literales para detalle Sensor -->
+    <string name="sr_serial_number">Serial Number</string>
+    <string name="sr_max_load">Max Load (Kg)</string>
+    <string name="sr_sensitivity">Sensitivity (mV/V)</string>
+    <string name="sr_offset">Offset (uV/V)</string>
+    <string name="sr_alarm">Alarm at (Kg)</string>
+    
+    <!-- Literales para detalle Device -->
+    <string name="dev_id">Parent Id</string>
+    <string name="dev_voltage">Voltage (V)</string>
+    <string name="dev_temp">Temperature (ºC)</string>
+    
+    <!-- Literales para SingleNetworkImages Activity -->
+    <string name="img_title">Images</string>
+	<string name="img_add_images">Add Images</string>    
 </resources>

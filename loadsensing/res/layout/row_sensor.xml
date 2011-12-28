@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+
+  <RelativeLayout android:id="@+id/linearLayout1" 
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content"
+  	android:layout_marginLeft="0dip"
+  	android:layout_marginRight="5dip"   
+	android:gravity="left|center_horizontal">
+	
+	<ImageView  android:id="@+id/sensor_icon"
+	    android:layout_width="70dip"
+	    android:layout_height="70dip"
+	    android:layout_marginLeft="2dip" 
+	    android:layout_marginTop="5dip"
+	    android:src="@drawable/no_sensor_image"/>
+
+    <TextView
+	  android:id="@+id/sensor_id"
+	  android:singleLine="true"
+	  android:maxLines="1"
+	  android:ellipsize="end" 
+	  android:textSize="10sp" 
+	  android:textStyle="bold" 
+	  android:textColor="#7db229" 
+	  android:text=""  
+	  android:layout_height="wrap_content" 
+	  android:layout_width="fill_parent" 
+	  android:layout_toRightOf="@+id/sensor_icon" 
+	  android:paddingLeft="3dip" android:layout_marginLeft="1dip" android:layout_marginRight="65dip" android:layout_marginTop="11dip"/>
+
+
+	<TextView 
+    	android:id="@+id/sensor_name"
+    	android:layout_toRightOf="@+id/sensor_icon"   
+    	android:textColor="#FFF" 
+    	android:textSize="10sp" 
+    	android:layout_height="25sp" 
+    	android:lines="1" 
+    	android:text="" 
+    	android:layout_alignParentRight="true" android:layout_width="fill_parent" android:paddingLeft="5dip" android:paddingRight="6dip" android:layout_marginTop="29dip" android:layout_marginBottom="3.5sp">
+    	</TextView>
+        
+	<TextView 
+    	android:id="@+id/sensor_type"
+    	android:layout_toRightOf="@+id/sensor_icon"   
+    	android:textColor="#FFF" 
+    	android:textSize="10sp" 
+    	android:layout_height="25sp" 
+    	android:lines="1" 
+    	android:text="" 
+    	android:layout_alignParentRight="true" android:layout_width="fill_parent" android:paddingLeft="5dip" android:paddingRight="6dip" android:layout_marginTop="45dip" android:layout_marginBottom="3.5sp">
+    	</TextView>        
+
+	<TextView 
+    	android:id="@+id/sensor_description"
+    	android:layout_toRightOf="@+id/sensor_icon"   
+    	android:textColor="#FFF" 
+    	android:textSize="10sp" 
+    	android:layout_height="25sp" 
+    	android:lines="1" 
+    	android:text="" 
+    	android:layout_alignParentRight="true" android:layout_width="fill_parent" android:paddingLeft="5dip" android:paddingRight="6dip" android:layout_marginTop="60dip" android:layout_marginBottom="3.5sp">
+    	</TextView>  
+        
+    </RelativeLayout>
+</LinearLayout>
