@@ -11,10 +11,11 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,7 +36,8 @@ public class SingleNetworkActivity extends LoadSensingActivity {
 	NetworkBean mNetwork = null;
 	public ProgressDialog dialog;
 	ListView sensorList;
-	ArrayList<SensorBean> aSensorsList; 
+	ArrayList<SensorBean> aSensorsList;
+
     /**
 	 * Clase propia que extiende de ArrayAdapter
 	 * @uml.property  name="sAdapter"
@@ -53,10 +55,12 @@ public class SingleNetworkActivity extends LoadSensingActivity {
         TextView txtNetworkName = (TextView) findViewById(R.id.network_name);
         TextView txtNetworkLatitude   = (TextView) findViewById(R.id.network_latitude);
         TextView txtNetworkLongitude  = (TextView) findViewById(R.id.network_longitude);
+        
+        ImageButton mapButton = (ImageButton) findViewById(R.id.mapButton);
 
         final Bundle bundle = getIntent().getExtras();
         // Recogemos informacion del Intent
-        int sNetworkId = bundle.getInt("current_network");
+        final int sNetworkId = bundle.getInt("current_network");
         
         mNetwork = array_networks.get(sNetworkId);
 
@@ -71,6 +75,22 @@ public class SingleNetworkActivity extends LoadSensingActivity {
         
         // Obtenemos la lista de sensores
         requestListSensors();
+        
+        mapButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// Launching new Activity on selecting single List Item
+				Intent i = new Intent(getApplicationContext(), MapSensorActivity.class);
+				 
+				// sending data to new activity
+				i.putExtra("current_network", sNetworkId);
+				
+				// launch activity
+				startActivity(i); 
+				
+			}
+		});
         
 	}
 
@@ -132,7 +152,7 @@ public class SingleNetworkActivity extends LoadSensingActivity {
     				aSensorsList.add(sensor);
     			}
     		}
-        	// TODO Utilizar Sensors de WS: Now Fake Items 
+        	// Utilizar Sensors de WS: Now Fake Items 
         	/*for ( int i=0; i<10; i++ ) {
         		SensorBean t = new SensorBean();
         		t.setId(0);
@@ -170,7 +190,8 @@ public class SingleNetworkActivity extends LoadSensingActivity {
     				startActivity(i);                 	
            	
                 }
-            });            	
+            });
+            
             
         	// Al final quitamos dialog
         	dialog.dismiss();

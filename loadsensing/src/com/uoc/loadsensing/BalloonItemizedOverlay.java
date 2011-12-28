@@ -57,6 +57,7 @@ public abstract class BalloonItemizedOverlay<Item extends OverlayItem> extends I
 	 */
 	public BalloonItemizedOverlay(Drawable defaultMarker, MapView mapView) {
 		super(defaultMarker);
+		System.out.println("Entramos en el constructor del Ballon!");
 		this.mapView = mapView;
 		viewOffset = 0;
 		mc = mapView.getController();

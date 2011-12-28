@@ -41,6 +41,7 @@
 
 		<!-- Sensor Activity -->
         <activity android:name=".SensorActivity" android:launchMode="singleTask"></activity>
+        <activity android:name=".MapSensorActivity"></activity>
         
     </application>
     
