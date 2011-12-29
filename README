@@ -1,30 +1,40 @@
-Hello World!
+************** READ ME ******************
 
+DATE: 29/12/2011
+DEVELOPERS: Rubén Méndez and Jesús Sánchez-Migallón
+File Version: 1.0
 
-Seguimos con las pruebas de GIT. Voy a subir esto a mi local y luego al repositorio en gitHub.
+LoadSensing v1.1
 
+DESCRIPTION
+LoadSensing is a prototype application developed as part of the Final Proyect for the studies carried on by the students stated above. This proyect is framed within the Master Studies in Open Source Software from the Universidad Oberta de Catalunya and in cooperation with the company WorldSensing S.L. http://www.worldsensing.com/
 
-Ahora vamos a probar el cliente grafico que instale!
+This Android application aims to provide a tool to display and monitorize the state os the sensor networks belonging to WorldSensing and their sensors.
+The current status of the application is far from being completed but it can perfectly serve as a proof-of-concept of all the knowledge and experience adquired by the developers.
+As far as possible the people involve in this proyect will try to keep on with its development. This will depend on the free time the developers could find and the resources WorldSensing could provide for the acomplishment of the proyect.
 
+SYSTEM PREREQUISITES
+This application can be deployed in every Android device which have a camara, a GPS and an Internet connection.
 
-Otras lineas mas!
+INSTALLATION NOTES
+First get your machine ready for Android application development. You can find concese intructions here:
+http://developer.android.com/sdk/installing.html
+Then, download the latest revision of the repository and import the proyect to your Eclipse workspace.
 
-Ya le vamos pillando el punto a esto de GIT ;-)
+FEATURES
+- Login of users into the platform
+- It is possible to see al the networks and their sensors available in a map.
+- It is shown detailed information about the state of the networks and their sensors.
+- It is also shown graphs regarding the state of the networks and their sensors.
+- It is possible to get information about devices through QRCode scaning.
+- It is possible to take and to get pictures of the situation of the devices in the field.
 
-Ahora voy a editar estas lienas para bajarmelas a mi local...
+BUG FIXES
+- There are no bugs reported yet.
 
-Esta linea del README es para crear la branch "develop".
-Esta rama la usaremos para llevar a cabo todo el desarrollo.
-Cuando tengamos algo estable en esta rama fusionaremos los cambios a la rama "master".
-"master" sera la rama principal la cual liberaremos cuando tengamos la versión final.
+KNOWN ISSUES (that will be addressed in a future release)
+- Get real data from the API, if WorldSensing has enough resources for that.
 
-Ahora esta linea va para ver si puedo hacer push solo en la rama "develop"
-
-Esta rama va a ser para crear el feature "mapa".
-Cuando haya terminado con el mapa fusionare esta rama con la de desarrollo.
-
-<<<<<<< HEAD
-Volviendo a crear la rama feature-mapa para ver si en el remoto me lo crea
-=======
-Linea en la rama "feature-listanetworks".
->>>>>>> de714f52eef47fe03c38db67efbec91e89a45a83
+CONTACT INFO:
+Rubén Méndez: ruben.mendez@gmail.com
+Jesús Sánchez-Migallón: jsanchezmp@gmail.com
