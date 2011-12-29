@@ -41,7 +41,7 @@ public class ItemizedOverlayItems extends BalloonItemizedOverlay<OverlayItem> {
 	public void Tap(int index){
 		tap_tap(index);
 	}
-	/*
+	
 	@Override
 	protected boolean onBalloonTap(int index) {
 		//GeoPoint point = m_overlays.get(index).getPoint();
@@ -53,5 +53,5 @@ public class ItemizedOverlayItems extends BalloonItemizedOverlay<OverlayItem> {
 		c.startActivity(intent);
 		//c.startActivity(intent);
 		return true;
-	}*/
+	}
 }
