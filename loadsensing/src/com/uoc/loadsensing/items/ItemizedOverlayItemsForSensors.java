@@ -10,6 +10,7 @@ import android.graphics.drawable.Drawable;
 import com.google.android.maps.MapView;
 import com.google.android.maps.OverlayItem;
 import com.uoc.loadsensing.BalloonItemizedOverlay;
+import com.uoc.loadsensing.SensorActivity;
 import com.uoc.loadsensing.SingleNetworkActivity;
 
 public class ItemizedOverlayItemsForSensors extends BalloonItemizedOverlay<OverlayItem> {
@@ -48,8 +49,8 @@ public class ItemizedOverlayItemsForSensors extends BalloonItemizedOverlay<Overl
 		//double lat = point.getLatitudeE6() / 1.0E6;
 		//double lon = point.getLongitudeE6() / 1.0E6;
 		//http://developer.android.com/guide/appendix/g-app-intents.html
-		Intent intent = new Intent(c, SingleNetworkActivity.class);
-		intent.putExtra("current_network", index);
+		Intent intent = new Intent(c, SensorActivity.class);
+		intent.putExtra("current_sensor", index);
 		c.startActivity(intent);
 		//c.startActivity(intent);
 		return true;
