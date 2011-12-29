@@ -95,10 +95,11 @@ public class LoginActivity extends LoadSensingActivity {
 						}
 					}
 					if(matched) {
-						Intent i = new Intent(getApplicationContext(), ListNetworksActivity.class);
+						//Intent i = new Intent(getApplicationContext(), ListNetworksActivity.class);
+						Intent i = new Intent(getApplicationContext(), MapNetworkActivity.class);
 						startActivity(i);
 					} else {
-						errorAlert(mContext, "Ups!", "Usuario o contraseña no validos");
+						errorAlert(mContext, "Ups!", "Usuario o contrase√±a no validos");
 					}
 				}
 			}

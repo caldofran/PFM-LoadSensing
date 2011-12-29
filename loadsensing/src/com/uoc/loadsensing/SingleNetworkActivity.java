@@ -150,16 +150,6 @@ public class SingleNetworkActivity extends LoadSensingActivity {
     				aSensorsList.add(sensor);
     			}
     		}
-        	// Utilizar Sensors de WS: Now Fake Items 
-        	/*for ( int i=0; i<10; i++ ) {
-        		SensorBean t = new SensorBean();
-        		t.setId(0);
-        		t.setDescription("2003 sensor strain, channel "+i);
-        		t.setSensor("2003-ch."+i);
-        		t.setType("A");
-
-        		aSensorsList.add(t);
-        	}*/
         	
         	sAdapter = new SensorAdapter(getApplicationContext(), R.layout.row_sensor, aSensorsList);
         	sensorList.setAdapter(sAdapter);              	
@@ -171,8 +161,6 @@ public class SingleNetworkActivity extends LoadSensingActivity {
             sensorList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 public void onItemClick(AdapterView<?> parent, View v, int position, long id) 
                 {
-                	
-                	//Toast.makeText(getApplicationContext(), "Es el "+position, Toast.LENGTH_LONG).show();
                 	
     				// Launching new Activity on selecting single List Item
     				Intent i = new Intent(getApplicationContext(), SensorActivity.class);
