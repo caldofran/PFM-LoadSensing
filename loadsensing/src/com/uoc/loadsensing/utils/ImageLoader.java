@@ -1,5 +1,17 @@
 package com.uoc.loadsensing.utils;
 
+/**
+ * UOC - Universitat Oberta de Catalunya
+ * Proyecto Final Máster Software Libre
+ * Septiembre 2011
+ * 
+ * LoadSensing para WorldSensing
+ * 
+ * @authors
+ * 		Rubén Méndez Puente
+ * 		Jesús Sánchez-Migallón Pérez
+ * 
+ */
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -23,7 +35,6 @@ import android.widget.ImageView;
 public class ImageLoader {
     public Context context;
     public int stub_id=0;
-    //the simplest in-memory cache implementation. This should be replaced with something like SoftReference or BitmapOptions.inPurgeable(since 1.6)
     private HashMap<String, Bitmap> cache=new HashMap<String, Bitmap>();
     public Bitmap bitmap=null;
     public Bitmap b=null;
@@ -33,12 +44,10 @@ public class ImageLoader {
     
     public ImageLoader(Context context, int noimage, Boolean is_cacheable){
     	this.context = context;
-        //Make the background thead low priority. This way it will not affect the UI performance
         photoLoaderThread.setPriority(Thread.NORM_PRIORITY-2);
         
         cacheable=is_cacheable;
         
-        //Find the dir to save cached images
         if (android.os.Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED))
             cacheDir=new File(android.os.Environment.getExternalStorageDirectory(),"Minube");
         else
@@ -72,17 +81,13 @@ public class ImageLoader {
     
     private void queuePhoto(String url, Activity activity, ImageView imageView)
     {
-        //This ImageView may be used for other images before. So there may be some old tasks in the queue. We need to discard them. 
         photosQueue.Clean(imageView);
         PhotoToLoad p=new PhotoToLoad(url, imageView);
         synchronized(photosQueue.photosToLoad){
             photosQueue.photosToLoad.push(p);
             photosQueue.photosToLoad.notifyAll();
         }
-        
-        //Util.log("list",photoLoaderThread.getState() + "");
-        
-        //start thread if it's not started yet
+
         if(photoLoaderThread.getState()==Thread.State.NEW)
         {
             photoLoaderThread.start();
@@ -91,11 +96,9 @@ public class ImageLoader {
     
     private Bitmap getBitmap(String url) 
     {
-        //I identify images by hashcode. Not a perfect solution, good for the demo.
         String filename=String.valueOf(url.hashCode());
         File f=new File(cacheDir, filename);
-        
-        //from SD cache
+
         if (this.cacheable)
         {
         	if (b!= null)
@@ -112,7 +115,6 @@ public class ImageLoader {
         }
         
         
-        //from web
         try {
         	if (Runtime.getRuntime().freeMemory() / 100 > 800)
 			{
@@ -139,16 +141,12 @@ public class ImageLoader {
         }
     }
 
-    //decodes image and scales it to reduce memory consumption
     private Bitmap decodeFile(File f){
     	Bitmap tmp=null;
         try {
-            //decode image size
             BitmapFactory.Options o = new BitmapFactory.Options();
             o.inJustDecodeBounds = true;
-            //return BitmapFactory.decodeStream(new FileInputStream(f),null,o);
-            
-            //Find the correct scale value. It should be the power of 2.
+
             final int REQUIRED_SIZE=70;
             int width_tmp=o.outWidth, height_tmp=o.outHeight;
             int scale=1;
@@ -164,7 +162,6 @@ public class ImageLoader {
             {
             	scale = resize_scale;
             }
-            //decode with inSampleSize
             BitmapFactory.Options o2 = new BitmapFactory.Options();
             o2.inSampleSize=scale;
 
@@ -174,8 +171,7 @@ public class ImageLoader {
         } catch (Exception e) {}
         return tmp;
     }
-    
-    //Task for the queue
+
     private class PhotoToLoad
     {
         public String url;
@@ -192,13 +188,11 @@ public class ImageLoader {
     {
         photoLoaderThread.interrupt();
     }
-    
-    //stores list of photos to download
+
     class PhotosQueue
     {
         private Stack<PhotoToLoad> photosToLoad=new Stack<PhotoToLoad>();
         
-        //removes all instances of this ImageView
         public void Clean(ImageView image)
         {
             for(int j=0 ;j<photosToLoad.size();){
@@ -215,12 +209,12 @@ public class ImageLoader {
             try {
                 while(true)
                 {
-                    //thread waits until there are any images to load in the queue
+
                     if(photosQueue.photosToLoad.size()==0)
                         synchronized(photosQueue.photosToLoad){
                             photosQueue.photosToLoad.wait();
                         }
-                    //
+
                     if(photosQueue.photosToLoad.size()!=0)
                     {
                         PhotoToLoad photoToLoad;
@@ -245,15 +239,13 @@ public class ImageLoader {
                     if(Thread.interrupted())
                         break;
                 }
-            } catch (InterruptedException e) {
-                //allow thread to exit
-            }
+            } catch (InterruptedException e) {}
         }
     }
     
     PhotosLoader photoLoaderThread=new PhotosLoader();
     
-    //Used to display bitmap in the UI thread
+
     class BitmapDisplayer implements Runnable
     {
         Bitmap bitmap;
@@ -272,14 +264,10 @@ public class ImageLoader {
     }
 
     public void clearCache() {
-        //clear memory cache
         cache.clear();
-        
-        //clear SD cache
         File[] files=cacheDir.listFiles();
         for(File f:files)
         {
-        	//Util.log("list","Borrando " + f.getName());
             f.delete();
         }
     }

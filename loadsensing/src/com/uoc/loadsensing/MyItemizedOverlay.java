@@ -1,5 +1,18 @@
 package com.uoc.loadsensing;
 
+/**
+ * UOC - Universitat Oberta de Catalunya
+ * Proyecto Final Máster Software Libre
+ * Septiembre 2011
+ * 
+ * LoadSensing para WorldSensing
+ * 
+ * @authors
+ * 		Rubén Méndez Puente
+ * 		Jesús Sánchez-Migallón Pérez
+ * 
+ */
+
 import java.util.ArrayList;
 
 import android.content.Context;
@@ -19,16 +32,12 @@ public class MyItemizedOverlay extends ItemizedOverlay<OverlayItem> {
 	 
 	public MyItemizedOverlay(Drawable marker, Context c) {
 		super(boundCenterBottom(marker));
-		// TODO Auto-generated constructor stub
 		populate();
 		context = c;
 	}
 	 
 	@Override
 	protected boolean onTap(int index) {
-		// TODO Auto-generated method stub
-		//return super.onTap(index);
-		 
 		Toast.makeText(context,
 		 "Touch on marker: \n" + overlayItemList.get(index).getTitle(),
 		 Toast.LENGTH_LONG).show();
@@ -44,19 +53,16 @@ public class MyItemizedOverlay extends ItemizedOverlay<OverlayItem> {
 	 
 	@Override
 	protected OverlayItem createItem(int i) {
-		// TODO Auto-generated method stub
 		return overlayItemList.get(i);
 	}
 	 
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
 		return overlayItemList.size();
 	}
 	 
 	@Override
 	public void draw(Canvas canvas, MapView mapView, boolean shadow) {
-		// TODO Auto-generated method stub
 		super.draw(canvas, mapView, shadow);
 	}
 }

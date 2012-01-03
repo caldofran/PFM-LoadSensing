@@ -1,13 +1,23 @@
 package com.uoc.loadsensing;
 
+/**
+ * UOC - Universitat Oberta de Catalunya
+ * Proyecto Final Máster Software Libre
+ * Septiembre 2011
+ * 
+ * LoadSensing para WorldSensing
+ * 
+ * @authors
+ * 		Rubén Méndez Puente
+ * 		Jesús Sánchez-Migallón Pérez
+ * 
+ */
+
+
 import java.util.ArrayList;
 import java.util.Iterator;
-
-//import com.google.android.maps.GeoPoint;
-//import com.google.android.maps.OverlayItem;
 import com.uoc.loadsensing.beans.NetworkBean;
 import com.uoc.loadsensing.utils.Environment;
-
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -23,7 +33,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-//import android.widget.Toast;
 
 
 public class ListNetworksActivity extends LoadSensingActivity implements ListView.OnScrollListener {
@@ -90,7 +99,6 @@ public class ListNetworksActivity extends LoadSensingActivity implements ListVie
     public void onDestroy()
     {
         try{
-        	//adapter.imageLoader.stopThread();
         	list.setAdapter(null);
         }catch(Exception e){}
         super.onDestroy();
@@ -164,15 +172,12 @@ public class ListNetworksActivity extends LoadSensingActivity implements ListVie
     		while (iter.hasNext()) {
     			System.out.println("Entramos en el bucle");
     			network = (NetworkBean) iter.next();
-    			//t.setName("Red "+network.getName());
-        		//t.setDescription("Description "+network.getDescription());
         		aNetworkList.add(network);
     		}
         	
             oAdapter = new OrderAdapter(mContext, R.layout.row, aNetworkList);
             list.setAdapter(oAdapter);              	
         	
-        	//oAdapter.setDataSet(aNetworkList);
         	oAdapter.notifyDataSetChanged();            
             
         	// Al final quitamos dialog

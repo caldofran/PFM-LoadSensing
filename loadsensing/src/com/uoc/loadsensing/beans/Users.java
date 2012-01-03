@@ -1,5 +1,18 @@
 package com.uoc.loadsensing.beans;
 
+/**
+ * UOC - Universitat Oberta de Catalunya
+ * Proyecto Final Máster Software Libre
+ * Septiembre 2011
+ * 
+ * LoadSensing para WorldSensing
+ * 
+ * @authors
+ * 		Rubén Méndez Puente
+ * 		Jesús Sánchez-Migallón Pérez
+ * 
+ */
+
 public class Users {
 	private String name;
 	private String password;

@@ -1,5 +1,19 @@
 package com.uoc.loadsensing;
 
+/**
+ * UOC - Universitat Oberta de Catalunya
+ * Proyecto Final Máster Software Libre
+ * Septiembre 2011
+ * 
+ * LoadSensing para WorldSensing
+ * 
+ * @authors
+ * 		Rubén Méndez Puente
+ * 		Jesús Sánchez-Migallón Pérez
+ * 
+ */
+
+
 import java.util.ArrayList;
 
 //import android.content.ContentResolver;
@@ -88,16 +102,5 @@ public class NetworksOverlay extends Overlay {
 		GeoPoint geoPoint2 = new GeoPoint(lat.intValue(), lng.intValue());
 		networkLocations.add(geoPoint2);
 		System.out.println(networkLocations.size());
-		// Aqui acaba el temporal
-		
-		/*
-		if (networks.moveToFirst())
-			do {
-			Double lat = networks.getFloat(NetworkProvider.LATITUDE_COLUMN) * 1E6;
-			Double lng = networks.getFloat(NetworkProvider.LONGITUDE_COLUMN) * 1E6;
-			GeoPoint geoPoint = new GeoPoint(lng.intValue(), lat.intValue());
-			networkLocations.add(geoPoint);
-			} while(networks.moveToNext());
-			*/
 	}
 }

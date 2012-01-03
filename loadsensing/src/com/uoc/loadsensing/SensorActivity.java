@@ -1,27 +1,37 @@
 package com.uoc.loadsensing;
 
+/**
+ * UOC - Universitat Oberta de Catalunya
+ * Proyecto Final Máster Software Libre
+ * Septiembre 2011
+ * 
+ * LoadSensing para WorldSensing
+ * 
+ * @authors
+ * 		Rubén Méndez Puente
+ * 		Jesús Sánchez-Migallón Pérez
+ * 
+ */
+
 
 import java.util.ArrayList;
-
-import com.uoc.loadsensing.beans.DeviceBean;
-import com.uoc.loadsensing.beans.SensorBean;
-import com.uoc.loadsensing.utils.Environment;
 
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.uoc.loadsensing.beans.DeviceBean;
+import com.uoc.loadsensing.beans.SensorBean;
+import com.uoc.loadsensing.utils.Environment;
 
 
 

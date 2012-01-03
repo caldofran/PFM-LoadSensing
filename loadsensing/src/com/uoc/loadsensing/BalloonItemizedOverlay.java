@@ -33,7 +33,6 @@ import com.google.android.maps.MapController;
 import com.google.android.maps.MapView;
 import com.google.android.maps.Overlay;
 import com.google.android.maps.OverlayItem;
-//import com.minube.utilities.Util;
 
 /**
  * An abstract extension of ItemizedOverlay for displaying an information balloon

@@ -1,5 +1,19 @@
 package com.uoc.loadsensing;
 
+/**
+ * UOC - Universitat Oberta de Catalunya
+ * Proyecto Final Máster Software Libre
+ * Septiembre 2011
+ * 
+ * LoadSensing para WorldSensing
+ * 
+ * @authors
+ * 		Rubén Méndez Puente
+ * 		Jesús Sánchez-Migallón Pérez
+ * 
+ */
+
+
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -18,7 +32,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.uoc.loadsensing.beans.NetworkBean;
 import com.uoc.loadsensing.beans.SensorBean;

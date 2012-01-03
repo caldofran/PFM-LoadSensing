@@ -1,5 +1,18 @@
 package com.uoc.loadsensing.adapters;
 
+/**
+ * UOC - Universitat Oberta de Catalunya
+ * Proyecto Final Máster Software Libre
+ * Septiembre 2011
+ * 
+ * LoadSensing para WorldSensing
+ * 
+ * @authors
+ * 		Rubén Méndez Puente
+ * 		Jesús Sánchez-Migallón Pérez
+ * 
+ */
+
 import java.util.Vector;
 
 import android.app.Activity;
@@ -18,7 +31,6 @@ import com.uoc.loadsensing.utils.ImageLoader;
 public class ImagesAdapter extends BaseAdapter {
     
     private Activity activity;
-    //private ArrayList<String> data;
     private Vector<String> data;
     private static LayoutInflater inflater=null;
     public ImageLoader imageLoader; 

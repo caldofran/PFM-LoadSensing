@@ -1,18 +1,31 @@
 package com.uoc.loadsensing;
 
-import java.util.ArrayList;
-import java.util.Vector;
+/**
+ * UOC - Universitat Oberta de Catalunya
+ * Proyecto Final Máster Software Libre
+ * Septiembre 2011
+ * 
+ * LoadSensing para WorldSensing
+ * 
+ * @authors
+ * 		Rubén Méndez Puente
+ * 		Jesús Sánchez-Migallón Pérez
+ * 
+ */
 
-import com.uoc.loadsensing.beans.DeviceBean;
-import com.uoc.loadsensing.beans.NetworkBean;
-import com.uoc.loadsensing.beans.SensorBean;
-import com.uoc.loadsensing.beans.Users;
+
+import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 import android.widget.ImageButton;
+
+import com.uoc.loadsensing.beans.DeviceBean;
+import com.uoc.loadsensing.beans.NetworkBean;
+import com.uoc.loadsensing.beans.SensorBean;
+import com.uoc.loadsensing.beans.Users;
 
 
 public class LoadSensingActivity extends Activity {
@@ -50,11 +63,6 @@ public class LoadSensingActivity extends Activity {
 	public static ArrayList<Users> array_users = null;
 	// Lista de Devices
 	public static ArrayList<DeviceBean> array_devices = null;
-	
-	// Imagenes
-	//public static ArrayList<String> PicturesPathList = null;
-	//public static Vector<String> PicturesPathList = null;
-	
 	
 	public void startActivity(int activityReference) {
 
@@ -146,7 +154,6 @@ public class LoadSensingActivity extends Activity {
 
 		final ImageButton img_btn_state 	= (ImageButton) findViewById(R.id.btn_state);
 		final ImageButton img_btn_images 	= (ImageButton) findViewById(R.id.btn_images);
-		//final ImageButton img_btn_refresh	= (ImageButton) findViewById(R.id.btn_refresh);
 		final ImageButton img_btn_network	= (ImageButton) findViewById(R.id.btn_network);
 
 		if (section.compareTo(NT_NETWORK_SECTION) != 0) {
@@ -187,20 +194,6 @@ public class LoadSensingActivity extends Activity {
 		} else {
 			img_btn_images.setImageResource(R.drawable.btn_images_btn_enabled);
 		}
-
-//		if (section.compareTo(NT_REFRESH_SECTION) != 0) {
-//			img_btn_refresh.setImageResource(R.drawable.btn_refresh_btn);
-//			img_btn_refresh.setOnClickListener(new View.OnClickListener() {
-//				@Override
-//				public void onClick(View v) {
-//					startActivity(NT_NETWORK_ACTIVITY);
-//					//startActivity(getIntent()); finish();
-//				}
-//			});
-//
-//		} else {
-//			img_btn_refresh.setImageResource(R.drawable.btn_refresh_btn_enabled);
-//		}
 
 	}	
 	

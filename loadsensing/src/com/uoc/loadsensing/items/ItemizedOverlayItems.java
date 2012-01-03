@@ -1,5 +1,18 @@
 package com.uoc.loadsensing.items;
 
+/**
+ * UOC - Universitat Oberta de Catalunya
+ * Proyecto Final Máster Software Libre
+ * Septiembre 2011
+ * 
+ * LoadSensing para WorldSensing
+ * 
+ * @authors
+ * 		Rubén Méndez Puente
+ * 		Jesús Sánchez-Migallón Pérez
+ * 
+ */
+
 import java.util.ArrayList;
 import android.content.Context;
 import android.content.Intent;
@@ -10,6 +23,7 @@ import android.graphics.drawable.Drawable;
 import com.google.android.maps.MapView;
 import com.google.android.maps.OverlayItem;
 import com.uoc.loadsensing.BalloonItemizedOverlay;
+import com.uoc.loadsensing.LoadSensingActivity;
 import com.uoc.loadsensing.SingleNetworkActivity;
 
 public class ItemizedOverlayItems extends BalloonItemizedOverlay<OverlayItem> {
@@ -44,14 +58,13 @@ public class ItemizedOverlayItems extends BalloonItemizedOverlay<OverlayItem> {
 	
 	@Override
 	protected boolean onBalloonTap(int index) {
-		//GeoPoint point = m_overlays.get(index).getPoint();
-		//double lat = point.getLatitudeE6() / 1.0E6;
-		//double lon = point.getLongitudeE6() / 1.0E6;
-		//http://developer.android.com/guide/appendix/g-app-intents.html
 		Intent intent = new Intent(c, SingleNetworkActivity.class);
 		intent.putExtra("current_network", index);
+
+		// establish network identifiers
+		LoadSensingActivity.network_selected = index;
+		
 		c.startActivity(intent);
-		//c.startActivity(intent);
 		return true;
 	}
 }

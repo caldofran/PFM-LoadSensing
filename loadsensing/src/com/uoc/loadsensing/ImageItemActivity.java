@@ -1,8 +1,20 @@
 package com.uoc.loadsensing;
 
+/**
+ * UOC - Universitat Oberta de Catalunya
+ * Proyecto Final Máster Software Libre
+ * Septiembre 2011
+ * 
+ * LoadSensing para WorldSensing
+ * 
+ * @authors
+ * 		Rubén Méndez Puente
+ * 		Jesús Sánchez-Migallón Pérez
+ * 
+ */
+
 import android.os.Bundle;
 import android.webkit.WebView;
-import android.widget.Toast;
 
 
 public class ImageItemActivity extends LoadSensingActivity {
@@ -14,10 +26,7 @@ public class ImageItemActivity extends LoadSensingActivity {
         String url = bundle.getString("url");
         final WebView i = (WebView) findViewById(R.id.image_item);
         i.getSettings().setBuiltInZoomControls(true);
-        //i.setBackgroundColor(R.color.blue_back);
-        
         i.loadUrl(url);
 	}	
-	
 
 }

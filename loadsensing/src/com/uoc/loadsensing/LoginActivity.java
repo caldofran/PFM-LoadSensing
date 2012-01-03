@@ -1,16 +1,20 @@
 package com.uoc.loadsensing;
 
 /**
- * Cabecera de Clase
+ * UOC - Universitat Oberta de Catalunya
+ * Proyecto Final Máster Software Libre
+ * Septiembre 2011
+ * 
+ * LoadSensing para WorldSensing
+ * 
+ * @authors
+ * 		Rubén Méndez Puente
+ * 		Jesús Sánchez-Migallón Pérez
+ * 
  */
 
 import java.util.Iterator;
 
-import com.uoc.loadsensing.beans.Users;
-import com.uoc.loadsensing.utils.Environment;
-import com.uoc.loadsensing.LoadSensingActivity;
-
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -23,7 +27,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.uoc.loadsensing.R;
+import com.uoc.loadsensing.beans.Users;
+import com.uoc.loadsensing.utils.Environment;
 
 public class LoginActivity extends LoadSensingActivity {
 	
@@ -70,7 +75,6 @@ public class LoginActivity extends LoadSensingActivity {
 
 				InputMethodManager inputManager = (InputMethodManager) mContext.getSystemService(mContext.INPUT_METHOD_SERVICE); 
 				inputManager.hideSoftInputFromWindow(getWindow().getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
-				//twVisitWS.setText("Request Loging "+etUser.getText().toString()+"-"+etPass.getText().toString());
 				if (!Environment.internetIsAvailable(LoginActivity.this))
 				{
 					Environment.errorAlert(LoginActivity.this, getApplicationContext().getString(R.string.no_connection));

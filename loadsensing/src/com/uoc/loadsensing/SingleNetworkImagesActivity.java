@@ -1,8 +1,20 @@
 package com.uoc.loadsensing;
 
+/**
+ * UOC - Universitat Oberta de Catalunya
+ * Proyecto Final Máster Software Libre
+ * Septiembre 2011
+ * 
+ * LoadSensing para WorldSensing
+ * 
+ * @authors
+ * 		Rubén Méndez Puente
+ * 		Jesús Sánchez-Migallón Pérez
+ * 
+ */
+
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.ArrayList;
 import java.util.Vector;
 
 import android.app.Activity;
@@ -22,7 +34,6 @@ import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.uoc.loadsensing.adapters.ImagesAdapter;
 import com.uoc.loadsensing.beans.NetworkBean;
@@ -43,7 +54,6 @@ public class SingleNetworkImagesActivity extends LoadSensingActivity {
 	private int selected_button;
 	ImagesAdapter adapter;
 	
-	//ArrayList<String> aImages = new ArrayList<String>();
 	Vector<String> aImages = new Vector<String>();
 
 	@Override
@@ -91,7 +101,6 @@ public class SingleNetworkImagesActivity extends LoadSensingActivity {
 								Intent intent;
 								switch (selected_report) {
 									case 0:
-										// Opcion Camara
 										//Camara
 										String fileName = "new-photo-name.jpg";
 										ContentValues values = new ContentValues();
@@ -104,7 +113,6 @@ public class SingleNetworkImagesActivity extends LoadSensingActivity {
 										dialog.dismiss();
 										break;
 									case 1:
-										// Opcion Galeria
 										// Galeria
 										intent = new Intent(Intent.ACTION_PICK,Media.EXTERNAL_CONTENT_URI);
 										startActivityForResult(intent,SELECT_PICTURE_INTENT);
@@ -192,7 +200,6 @@ public class SingleNetworkImagesActivity extends LoadSensingActivity {
 			aImages.add(image);
 			adapter.notifyDataSetChanged();
 		}
-		//Toast.makeText(getApplicationContext(), image, Toast.LENGTH_LONG).show();
 		
 	}
 	

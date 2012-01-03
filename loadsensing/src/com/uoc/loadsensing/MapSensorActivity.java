@@ -1,5 +1,18 @@
 package com.uoc.loadsensing;
 
+/**
+ * UOC - Universitat Oberta de Catalunya
+ * Proyecto Final Máster Software Libre
+ * Septiembre 2011
+ * 
+ * LoadSensing para WorldSensing
+ * 
+ * @authors
+ * 		Rubén Méndez Puente
+ * 		Jesús Sánchez-Migallón Pérez
+ * 
+ */
+
 
 import java.util.Iterator;
 
@@ -34,7 +47,6 @@ public class MapSensorActivity extends MapActivity {
 	MapView mapV;
 	MapController mc;
 	Context mContext;
-	//Cursor networkCursor; //Cursor that returns the networks we want to display on the map
 	
 	//Menu bar methods
     public void startActivity(int activityReference) {
@@ -75,15 +87,11 @@ public class MapSensorActivity extends MapActivity {
         System.out.println("Nombre del mapa: " + mNetwork.getName());
         title.setText("" + mNetwork.getName());
         
-        //String networkURI = NetworkProvider.CONTENT_URI;
-        //networkCursor = getContentResolver().query(networkURI, null, null, null, null);
         System.out.println("ID del layout mapa: "+R.id.mapa);
         mapV = (MapView) findViewById(R.id.mapa);
         if(mapV == null) {
         	System.out.println("MapView es null");
         }
-        //NetworksOverlay no = new NetworksOverlay(mContext); // Temporal
-        //NetworksOverlay no = new NetworksOverlay(networkCursor);
         
         //Iteramos sobre los sensores
         System.out.println("Creamos iterator para recorrer la lista sensores...");
@@ -111,23 +119,7 @@ public class MapSensorActivity extends MapActivity {
 				itemizedOverlay.addOverlay(overlayItem);
 			}
 		}
-        //Usando MyItemizedOverlay
-        //Drawable drawable = this.getResources().getDrawable(R.drawable.world);
-        //ItemizedOverlayItems itemizedOverlay = new ItemizedOverlayItems(drawable,mapView);
-        //Double lat = 40.40281 * 1E6;
-		//Double lng = -3.710461 * 1E6;
-		//GeoPoint geoPoint1 = new GeoPoint(lat.intValue(), lng.intValue());
-		//OverlayItem overlayItem1 = new OverlayItem(geoPoint1, "Primer punto", "Subtitulo1");
-		//itemizedOverlay.addOverlay(overlayItem1);
-		//lat = 40.408627 * 1E6;
-		//lng = -3.700998 * 1E6;
-		//GeoPoint geoPoint2 = new GeoPoint(lat.intValue(), lng.intValue());
-		//OverlayItem overlayItem2 = new OverlayItem(geoPoint2, "Segundo punto", "Subtitulo2");
-		//itemizedOverlay.addOverlay(overlayItem2);
 		mapV.getOverlays().add(itemizedOverlay);
-        //Fin del uso de ItemizedOverlay
-        //mapView.getOverlays().add(no);
-        
         mc = mapV.getController();
         
         //TODO: centrar el mapa en una de las redes
@@ -137,8 +129,8 @@ public class MapSensorActivity extends MapActivity {
 		GeoPoint geoPoint = new GeoPoint(lat.intValue(), lng.intValue());
         mc.animateTo(geoPoint);
         mc.setZoom(16);
+
         // Eliminar este codigo temporal
-        
         mapV.setBuiltInZoomControls(true);
         mapV.setSatellite(false);
         mapV.invalidate();
@@ -198,7 +190,6 @@ public class MapSensorActivity extends MapActivity {
      * */
     @Override
     public void onResume() {
-    	//networkCursor.requery();
     	super.onResume();
     }
     
@@ -207,12 +198,10 @@ public class MapSensorActivity extends MapActivity {
      * */
     @Override
     public void onPause() {
-    	//networkCursor.deactivate();
     	super.onPause();
     }
     
     @Override
     public void onDestroy() {
-    	//networkCursor.close();
     	super.onDestroy(); }
 }
